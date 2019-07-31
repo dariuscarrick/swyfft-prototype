@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/dariuscarrick/swyfft-prototype/static/css/main.01080edc.chunk.css",
-    "main.js": "/dariuscarrick/swyfft-prototype/static/js/main.337162f6.chunk.js",
-    "main.js.map": "/dariuscarrick/swyfft-prototype/static/js/main.337162f6.chunk.js.map",
-    "runtime~main.js": "/dariuscarrick/swyfft-prototype/static/js/runtime~main.bb6cbf72.js",
-    "runtime~main.js.map": "/dariuscarrick/swyfft-prototype/static/js/runtime~main.bb6cbf72.js.map",
-    "static/js/2.41159031.chunk.js": "/dariuscarrick/swyfft-prototype/static/js/2.41159031.chunk.js",
-    "static/js/2.41159031.chunk.js.map": "/dariuscarrick/swyfft-prototype/static/js/2.41159031.chunk.js.map",
-    "index.html": "/dariuscarrick/swyfft-prototype/index.html",
-    "precache-manifest.1944d267f54f6420a995d9eb977708ac.js": "/dariuscarrick/swyfft-prototype/precache-manifest.1944d267f54f6420a995d9eb977708ac.js",
-    "service-worker.js": "/dariuscarrick/swyfft-prototype/service-worker.js",
-    "static/css/main.01080edc.chunk.css.map": "/dariuscarrick/swyfft-prototype/static/css/main.01080edc.chunk.css.map",
-    "static/media/chevron-down.2920207f.svg": "/dariuscarrick/swyfft-prototype/static/media/chevron-down.2920207f.svg",
-    "static/media/swyfft-wordmark-logo-multi.40c7f0ed.svg": "/dariuscarrick/swyfft-prototype/static/media/swyfft-wordmark-logo-multi.40c7f0ed.svg"
+    "main.css": "/swyfft-prototype/static/css/main.01080edc.chunk.css",
+    "main.js": "/swyfft-prototype/static/js/main.8450df06.chunk.js",
+    "main.js.map": "/swyfft-prototype/static/js/main.8450df06.chunk.js.map",
+    "runtime~main.js": "/swyfft-prototype/static/js/runtime~main.e940f1db.js",
+    "runtime~main.js.map": "/swyfft-prototype/static/js/runtime~main.e940f1db.js.map",
+    "static/js/2.41159031.chunk.js": "/swyfft-prototype/static/js/2.41159031.chunk.js",
+    "static/js/2.41159031.chunk.js.map": "/swyfft-prototype/static/js/2.41159031.chunk.js.map",
+    "index.html": "/swyfft-prototype/index.html",
+    "precache-manifest.86b672a365ee3c8e915f4db47f9770cd.js": "/swyfft-prototype/precache-manifest.86b672a365ee3c8e915f4db47f9770cd.js",
+    "service-worker.js": "/swyfft-prototype/service-worker.js",
+    "static/css/main.01080edc.chunk.css.map": "/swyfft-prototype/static/css/main.01080edc.chunk.css.map",
+    "static/media/chevron-down.2920207f.svg": "/swyfft-prototype/static/media/chevron-down.2920207f.svg",
+    "static/media/swyfft-wordmark-logo-multi.40c7f0ed.svg": "/swyfft-prototype/static/media/swyfft-wordmark-logo-multi.40c7f0ed.svg"
   }
 }
