@@ -1,0 +1,23 @@
+@import './colors.scss';
+@import './text-styles.scss';
+
+// Button Variables
+@mixin primary-button($color, $background-color, $border-color) {
+    @include primary-button-text($color);
+    background-color: $background-color;
+    border: 1px solid $border-color;
+    border-radius: 30px;
+    padding: 8px 24px;
+    cursor: pointer;
+    outline: none;
+}
+
+@mixin secondary-button($color, $background-color, $border-color) {
+    @include secondary-button-text($color);
+    background-color: $background-color;
+    border: 1px solid $border-color;
+    border-radius: 30px;
+    padding: 8px 24px;
+    cursor: pointer;
+    outline: none;
+}
