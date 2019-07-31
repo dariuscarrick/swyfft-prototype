@@ -1,0 +1,196 @@
+@import '../../assets/scss-variables/compiled-variables.scss';
+
+// Base Navigation Styles
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $black;
+    padding: 10px 16px;
+}
+
+
+// Product Selection
+.product-select {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    & .button {
+        padding: 0;
+    }
+}
+
+.mobile-product-list {
+    @media #{$grid-sm, $grid-md, $grid-lg} {
+        display: none;
+    }
+    @media #{$grid-xs} {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.desktop-product-list { 
+    @media #{$grid-sm, $grid-md, $grid-lg} {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    @media #{$grid-xxs, $grid-xs} {
+        display: none;
+    }
+    
+    .MuiListItem-root {
+        width: unset;
+    
+        @media #{$grid-xxs, $grid-xs} {
+            width: 100%;
+        }
+    }
+
+    .MuiList-padding {
+        padding: 0 !important;
+    }
+    
+    .MuiListItem-gutters {
+        padding: 0;
+    }
+    
+    .MuiPaper-root {
+        color: $medium-gray-3 !important;
+    }
+    
+    .MuiListItemText-root {
+        margin: 0 !important;
+    }
+    
+    .MuiTypography-body1 {
+        font-family: 'Lato', sans-serif !important;
+        color: $medium-gray-3;
+        line-height: 1 !important;
+        letter-spacing: 0.3px !important;
+        font-weight: 700 !important;
+    }
+    
+    .MuiMenuItem-root {
+        font-family: 'Lato', sans-serif !important;
+        font-size: 16px !important;
+        line-height: 1 !important;
+        letter-spacing: 0.3px !important;
+        font-weight: 700 !important;
+        color: $medium-gray-3;
+    }
+    
+    .MuiListItem-root.Mui-selected, .MuiListItem-root.Mui-selected:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+        color: $white;
+    }
+}
+
+.mobile-menu-chevron {
+    height: 14px;
+    width: 14px;
+    margin-left: 12px;
+}
+
+.product-link {
+    @include p-body-1($medium-gray-3);
+    @include hover-transition(all, 250ms, ease, 10ms);
+    line-height: 1;
+    font-weight: 700;
+    list-style: none;
+    margin: 0 0 2px 24px;
+    cursor: pointer;
+    
+    &:hover {
+        color: $white;
+    }
+    
+    &:active {
+        color: $white;
+    }
+
+    @media #{$grid-xxs} {
+        text-align: center;
+    }
+}
+
+.active {
+    color: $white;
+}
+
+// Reset Material UI Styles
+
+.MuiList-padding {
+    padding: 0 !important;
+}
+
+.MuiListItem-gutters {
+    padding: 0;
+}
+
+.MuiPaper-root {
+    color: $dark-gray-2 !important;
+    background-color: $light-gray-2 !important;
+}
+
+.MuiListItemText-root {
+    margin: 0 !important;
+}
+
+.MuiTypography-body1 {
+    font-family: 'Lato', sans-serif !important;
+    color: $white;
+    line-height: 1 !important;
+    letter-spacing: 0.3px !important;
+    font-weight: 700 !important;
+}
+
+.MuiMenuItem-root {
+    font-family: 'Lato', sans-serif !important;
+    font-size: 16px !important;
+    line-height: 1 !important;
+    letter-spacing: 0.3px !important;
+    font-weight: 700 !important;
+    color: $dark-gray-2;
+}
+
+.MuiListItem-root.Mui-selected, .MuiListItem-root.Mui-selected:hover {
+    background-color: rgba(228, 228, 228, .6);
+    color: $black;
+}
+
+// Navigation Menu
+.navigation-menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    justify-self: flex-end;
+}
+.hamburger {
+    cursor: pointer;
+    & .line {
+        height: 1.4px;
+        background-color: $white;
+        border-radius: 30px;
+        margin: 4px 0; 
+        width: 24px;
+    }
+}
+
+.login-button {
+    @include primary-button($white, $black, $white);
+    @include transition(all, 300ms, ease, 10ms);
+    margin-right: 24px;
+
+    &:hover {
+        @include primary-button($dark-green-1, $white, $white);
+    }
+
+    @media #{$grid-xs} {
+        display: none;
+    }
+}

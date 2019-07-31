@@ -1,0 +1,143 @@
+// Import Google fonts
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,900&display=swap');
+
+// Jumbo Font Styles
+@mixin h1-jumbo($color) {
+    font-family: 'Lato', sans-serif;
+    font-size: 56px;
+    font-weight: 900;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.07;
+    letter-spacing: 0.3px;
+    color: $color;
+}
+
+@mixin h2-jumbo($color) {
+    font-family: 'Lato', sans-serif;
+    font-size: 40px;
+    font-weight: 900;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.1;
+    letter-spacing: 0.3px;
+    color: $color;
+}
+
+// Hero Font Styles
+@mixin h1-hero($color) {
+    font-family: 'Lato', sans-serif;
+    font-size: 32px;
+    font-weight: 900;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.13;
+    letter-spacing: 0.3px;
+    color: $color;
+}
+
+@mixin h2-hero($color) {
+    font-family: 'Lato', sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.17;
+    letter-spacing: 0.3px;
+    color: $color;
+}
+
+// Body Font Styles
+@mixin h1-body($color) {
+    font-family: 'Lato', sans-serif;
+    font-size: 24px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.17;
+    letter-spacing: 0.3px;
+    color: $color;
+}
+
+@mixin h2-body($color) {
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    font-weight: 900;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.11;
+    letter-spacing: 0.3px;
+    color: $color;
+}
+
+@mixin h3-body($color) {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.25;
+    letter-spacing: 0.3px;
+    color: $color;
+}
+
+@mixin h4-body($color) {
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    font-weight: 900;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.14;
+    letter-spacing: 0.6px;
+    color: $color;
+}
+
+@mixin p-body-1($color) {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.38;
+    letter-spacing: 0.3px;
+    color: $color;
+}
+
+
+
+@mixin p-body-2($color) {
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: 0.3px;
+    color: $color;
+}
+
+@mixin p-body-3($color) {
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: 0.3px;
+    color: $color;
+}
+
+// Button Text Styles
+@mixin primary-button-text($color) {
+    @include p-body-2($color);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+@mixin secondary-button-text($color) {
+    @include p-body-1($color);
+    line-height: 1;
+    font-weight: 700;
+}
