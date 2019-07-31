@@ -1,0 +1,12 @@
+// Transition Prefix Mixin
+@mixin transition($property, $duration, $timing-function, $delay) {
+    -webkit-transition: $property $duration $timing-function $delay;
+    -moz-transition: $property $duration $timing-function $delay;
+    -o-transition: $property $duration $timing-function $delay;
+    transition: $property $duration $timing-function $delay;
+}
+
+// Hover Transition
+@mixin hover-transition($property, $duration, $timing-function, $delay) {
+    @include transition($property, $duration, $timing-function, $delay);
+}
