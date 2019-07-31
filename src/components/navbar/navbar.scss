@@ -25,7 +25,7 @@
     @media #{$grid-sm, $grid-md, $grid-lg} {
         display: none;
     }
-    @media #{$grid-xs} {
+    @media #{$grid-xxs, $grid-xs, $grid-sm} {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -33,13 +33,13 @@
 }
 
 .desktop-product-list { 
-    @media #{$grid-sm, $grid-md, $grid-lg} {
+    @media #{$grid-md, $grid-lg} {
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
 
-    @media #{$grid-xxs, $grid-xs} {
+    @media #{$grid-xxs, $grid-xs, $grid-sm} {
         display: none;
     }
     
@@ -95,7 +95,7 @@
 }
 
 .product-link {
-    @include p-body-1($medium-gray-3);
+    @include p-body-2($medium-gray-3);
     @include hover-transition(all, 250ms, ease, 10ms);
     line-height: 1;
     font-weight: 700;
@@ -121,6 +121,11 @@
 }
 
 // Reset Material UI Styles
+.MuiMenu-paper {
+    top: 8px !important;
+    border-radius: 0px !important;
+    margin-left: 16px;
+}
 
 .MuiList-padding {
     padding: 0 !important;
@@ -157,8 +162,17 @@
 }
 
 .MuiListItem-root.Mui-selected, .MuiListItem-root.Mui-selected:hover {
-    background-color: rgba(228, 228, 228, .6);
-    color: $black;
+    background-color: rgba(0, 0, 0, 0.06) !important;
+    color: $black !important;
+}
+
+.MuiListItem-button:hover {
+    background-color: rgba(0, 0, 0, 0.06) !important;
+    color: $black !important;
+}
+
+.MuiPaper-elevation8 {
+    box-shadow: unset !important;
 }
 
 // Navigation Menu

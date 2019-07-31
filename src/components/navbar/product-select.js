@@ -9,8 +9,8 @@ import {ReactComponent as ChevronDown} from '../../assets/images/chevron-down.sv
 
 const options = [
   'Homeowners',
-  'E&S Commercial Package',
-  'Commercial Package',
+  'E&S Commercial Package (FL, NY)',
+  'Commercial Package (CA, IL, NY)',
 ];
 
 export default function ProductSelect() {
