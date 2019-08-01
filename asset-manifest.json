@@ -1,17 +1,18 @@
 {
   "files": {
-    "main.css": "/swyfft-prototype/static/css/main.b0812c8a.chunk.css",
-    "main.js": "/swyfft-prototype/static/js/main.e6c36a8a.chunk.js",
-    "main.js.map": "/swyfft-prototype/static/js/main.e6c36a8a.chunk.js.map",
+    "main.css": "/swyfft-prototype/static/css/main.7cb89dc6.chunk.css",
+    "main.js": "/swyfft-prototype/static/js/main.58ab4ca0.chunk.js",
+    "main.js.map": "/swyfft-prototype/static/js/main.58ab4ca0.chunk.js.map",
     "runtime~main.js": "/swyfft-prototype/static/js/runtime~main.e940f1db.js",
     "runtime~main.js.map": "/swyfft-prototype/static/js/runtime~main.e940f1db.js.map",
-    "static/js/2.41159031.chunk.js": "/swyfft-prototype/static/js/2.41159031.chunk.js",
-    "static/js/2.41159031.chunk.js.map": "/swyfft-prototype/static/js/2.41159031.chunk.js.map",
+    "static/js/2.e152262a.chunk.js": "/swyfft-prototype/static/js/2.e152262a.chunk.js",
+    "static/js/2.e152262a.chunk.js.map": "/swyfft-prototype/static/js/2.e152262a.chunk.js.map",
     "index.html": "/swyfft-prototype/index.html",
-    "precache-manifest.55d1aab1c17e2c744cb7e520e4347802.js": "/swyfft-prototype/precache-manifest.55d1aab1c17e2c744cb7e520e4347802.js",
+    "precache-manifest.71202ec3aee2cf5574aea2e1eff72d47.js": "/swyfft-prototype/precache-manifest.71202ec3aee2cf5574aea2e1eff72d47.js",
     "service-worker.js": "/swyfft-prototype/service-worker.js",
-    "static/css/main.b0812c8a.chunk.css.map": "/swyfft-prototype/static/css/main.b0812c8a.chunk.css.map",
+    "static/css/main.7cb89dc6.chunk.css.map": "/swyfft-prototype/static/css/main.7cb89dc6.chunk.css.map",
     "static/media/chevron-down.068dac92.svg": "/swyfft-prototype/static/media/chevron-down.068dac92.svg",
+    "static/media/shield.6c5d25bf.svg": "/swyfft-prototype/static/media/shield.6c5d25bf.svg",
     "static/media/swyfft-wordmark-logo-multi.40c7f0ed.svg": "/swyfft-prototype/static/media/swyfft-wordmark-logo-multi.40c7f0ed.svg"
   }
 }
