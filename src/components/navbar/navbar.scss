@@ -1,11 +1,14 @@
 @import '../../assets/scss-variables/compiled-variables.scss';
 
 // Base Navigation Styles
+.navbar-container {
+    background-color: $black;
+}
+
 .navigation {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: $black;
     padding: 10px 16px;
 
     @media #{$grid-xxs, $grid-xs} {

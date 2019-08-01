@@ -5,7 +5,7 @@ import ProductSelect from './product-select';
 
 // NavBar Component
 const NavBar = () => (
-    <Container fluid={true}>
+    <Container className='navbar-container' fluid={true}>
         <nav className='navigation'>
             <ProductSelect />
             <menu className='navigation-menu'>

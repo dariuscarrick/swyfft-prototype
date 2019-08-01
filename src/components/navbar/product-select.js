@@ -20,7 +20,6 @@ export default function ProductSelect() {
 
   function handleClickListItem(event) {
     setAnchorEl(event.currentTarget);
-    this.setState({redirect: true});
   }
 
   function handleMenuItemClick(event, index) {
@@ -58,7 +57,7 @@ export default function ProductSelect() {
     <div>
         <Redirect push to={optionPath()} />
         <div className='product-select'>
-            <Link to='/'><Logo /></Link>
+            <Link to='/'><Logo alt='Swyfft Insurance' /></Link>
             <List className='mobile-product-list'>
                 <ListItem
                 button
