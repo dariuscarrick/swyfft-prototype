@@ -1,17 +1,20 @@
 import React from 'react';
-import NavBar from '../navbar/navbar'
-
-// Bootstrap Import
-import {Container} from 'react-bootstrap';
-
-// Main scss file
+import {Route} from 'react-router-dom';
 import './App.scss';
+import NavBar from '../navbar/navbar';
+import Homeowners from '../homeowners/homeowners';
+import ESCommercial from '../es-commercial/escommercial';
+import AdmittedCommercial from '../admitted-commercial/admitted-commercial';
+
 
 function App() {
   return (
-    <Container fluid={true}>
-          <NavBar />
-    </Container>
+    <div>
+      <NavBar />
+      <Route path='/' component={Homeowners} exact={true}/>
+      <Route path='/E&S-Commercial-Package' component={ESCommercial} exact={true}/>
+      <Route path='/Commercial-Package' component={AdmittedCommercial} exact={true} />
+    </div>
   );
 }
 

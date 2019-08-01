@@ -1,0 +1,72 @@
+@import '../../assets/scss-variables/compiled-variables.scss';
+
+.homeowners-container {
+    background-color: $dark-green-3;
+    height: 100vh;
+    padding-top: 25vh;
+}
+
+.shield {
+    width: 85px;
+    height: 95px;
+}
+
+.hero-text {
+    @include h2-jumbo($white);
+    font-size: 42px;
+    line-height: 1;
+    letter-spacing: 0.4px;
+    font-weight: 900;
+    margin: 0 0 24px 24px;
+
+    .first-line {
+        color: $dark-green-2;
+    }
+    .second-line {
+        color: $brand-green;
+    }
+}
+
+.address-input {
+    @include p-body-1($black);
+    font-style: italic;
+    font-weight: 300;
+    width: 100%;
+    height: 56px;
+    border-radius: 30px;
+    border: none;
+    padding: 0 0 0 24px;
+    margin: 0 0 0 24px;
+
+    &::placeholder {
+        color: $dark-gray-1;
+    }
+
+    &:focus {
+        box-shadow: 0 0 4px 2px $dark-green-1;
+    }
+
+    &:active {
+        color: $black;
+        font-style: regular;
+    }
+}
+
+.get-quote {
+    @include primary-button-text($white);
+    font-size: 16px;
+    letter-spacing: 4px;
+    background-color: $brand-green;
+    width: auto;
+    padding: 11px 30px;
+    height: 56px;
+    border-radius: 30px;
+    border: none;
+    margin: 0 0 0 24px;
+    @include hover-transition(all, 250ms, ease, 10ms);
+
+    &:hover {
+        background-color: $white;
+        color: $black;
+    }
+}
