@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link, Redirect} from 'react-router-dom';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -19,6 +20,7 @@ export default function ProductSelect() {
 
   function handleClickListItem(event) {
     setAnchorEl(event.currentTarget);
+    this.setState({redirect: true});
   }
 
   function handleMenuItemClick(event, index) {
@@ -34,10 +36,29 @@ export default function ProductSelect() {
     setAnchorEl(null);
   }
 
+  function optionPath() {
+    let path;
+    switch (options[selectedIndex]) {
+      case options[0]:
+        path = '/';
+        break;
+      case options[1]:
+        path = '/E&S-Commercial-Package';
+        break;
+      case options[2]:
+        path = '/Commercial-Package';
+        break;
+      default: path = '/';
+    }
+    console.log(path);
+    return path;
+  }
+
   return (
     <div>
+        <Redirect push to={optionPath()} />
         <div className='product-select'>
-            <Logo />
+            <Link to='/'><Logo /></Link>
             <List className='mobile-product-list'>
                 <ListItem
                 button
@@ -61,23 +82,22 @@ export default function ProductSelect() {
                     selected={index === selectedIndex}
                     onClick={event => handleMenuItemClick(event, index)}
                 >
-                    {option}
+                {option}
                 </MenuItem>
                 ))}
             </Menu>
             <List className='desktop-product-list'>
-              {options.map((option, index) => (
-                  <ListItem
-                      className='product-link'
-                      key={option}
-                      selected={index === selectedIndex}
-                      onClick={event => handleListItemClick(event, index)}
-                  >
-                      {option}
-                  </ListItem>
-                  ))}
+                {options.map((option, index) => (
+                      <ListItem
+                          className='product-link'
+                          key={option}
+                          selected={index === selectedIndex}
+                          onClick={event => handleListItemClick(event, index)}
+                      >
+                          {option}
+                      </ListItem>
+                    ))}
             </List>
-            
         </div>
     </div>
   );
