@@ -1,6 +1,6 @@
 import React from 'react';
 import './homeowners.scss';
-import {Grid, Container, Row, Col} from 'react-bootstrap';
+import {Container, Row, Col} from 'react-bootstrap';
 import {ReactComponent as Shield} from '../../assets/images/shield.svg';
 
 export default function Homeowners() {
