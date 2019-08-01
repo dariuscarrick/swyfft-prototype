@@ -3,6 +3,6 @@ import './homeowners.scss';
 
 export default function Homeowners() {
     return (
-        <h1>My balls itchy</h1>
+        <h1>Homeowners</h1>
     )
 }

@@ -3,6 +3,6 @@ import './escommercial.scss';
 
 export default function ESCommercial() {
     return (
-        <h1>My balls so stanked</h1>
+        <h1>E&S Commercial</h1>
     )
 }
