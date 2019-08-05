@@ -49,7 +49,6 @@ export default function ProductSelect() {
         break;
       default: path = '/';
     }
-    console.log(path);
     return path;
   }
 

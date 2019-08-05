@@ -4,8 +4,8 @@ import {Container} from 'react-bootstrap';
 import ProductSelect from './product-select';
 
 // NavBar Component
-const NavBar = () => (
-    <Container className='navbar-container' fluid={true}>
+const NavBar = props => (
+    <Container className={`navbar-container ${props.navbarClass}`} fluid={true}>
         <nav className='navigation'>
             <ProductSelect />
             <menu className='navigation-menu'>

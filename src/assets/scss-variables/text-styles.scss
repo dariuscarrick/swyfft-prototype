@@ -129,10 +129,10 @@
 
 // Button Text Styles
 @mixin primary-button-text($color) {
-    @include p-body-2($color);
+    @include p-body-3($color);
     font-weight: 700;
     line-height: 1;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     text-transform: uppercase;
 }
 
