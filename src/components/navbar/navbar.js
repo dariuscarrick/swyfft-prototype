@@ -1,25 +1,131 @@
 import React from 'react';
+import {Link, Redirect} from 'react-router-dom';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import MenuItem from '@material-ui/core/MenuItem';
+import Menu from '@material-ui/core/Menu';
+import {ReactComponent as Logo} from '../../assets/images/swyfft-wordmark-logo-multi.svg';
+import {ReactComponent as ChevronDown} from '../../assets/images/chevron-down.svg';
 import './navbar.scss';
 import {Container} from 'react-bootstrap';
-import ProductSelect from './product-select';
+
+const options = [
+    'Homeowners',
+    'E&S Commercial Package (FL, NY)',
+    'Commercial Package (CA, IL, NY)',
+  ];
 
 // NavBar Component
-const NavBar = props => (
-    <Container className={`navbar-container ${props.navbarClass}`} fluid={true}>
-        <nav className='navigation'>
-            <ProductSelect />
-            <menu className='navigation-menu'>
-                <button className='login-button'>
-                    Log In
-                </button>
-                <menu className='hamburger'>
-                    <div className='line'></div>
-                    <div className='line'></div>
-                    <div className='line'></div>
+function NavBar() {
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [selectedIndex, setSelectedIndex] = React.useState(0);
+
+  function handleClickListItem(event) {
+    setAnchorEl(event.currentTarget);
+  }
+
+  function handleMenuItemClick(event, index) {
+    setSelectedIndex(index);
+    setAnchorEl(null);
+  }
+
+  function handleListItemClick(event, index) {
+    setSelectedIndex(index);
+  }
+
+  function handleClose() {
+    setAnchorEl(null);
+  }
+
+ function optionPath() {
+    let path;
+    switch (options[selectedIndex]) {
+      case options[0]:
+        path = '/';
+        break;
+      case options[1]:
+        path = '/E&S-Commercial-Package';
+        break;
+      case options[2]:
+        path = '/Commercial-Package';
+        break;
+      default: path = '/';
+    }
+    return path;
+  }
+
+  function getNavbarClass() {
+    let navClass;
+    optionPath() === '/' ? navClass = 'homeowners-nav' : navClass = 'commercial-nav';
+    return navClass;
+}
+
+    return (
+        <Container className={`navbar-container ${getNavbarClass()}`} fluid={true}>
+            <nav className='navigation'>
+            <div>
+                <Redirect push to={optionPath()} />
+                    <div className='product-select'>
+                        <Link to='/'><Logo alt='Swyfft Insurance' /></Link>
+                        <List className='mobile-product-list'>
+                            <ListItem
+                            button
+                            aria-haspopup="true"
+                            onClick={handleClickListItem}
+                            >
+                            <ListItemText className='product-link' primary={options[selectedIndex]} />
+                            <ChevronDown className='mobile-menu-chevron' />
+                            </ListItem>
+                        </List>
+                        <Menu
+                            id="lock-menu"
+                            anchorEl={anchorEl}
+                            keepMounted
+                            open={Boolean(anchorEl)}
+                            onClose={handleClose}
+                        >
+                            {options.map((option, index) => (
+                            <MenuItem
+                                key={option}
+                                selected={index === selectedIndex}
+                                onClick={event => handleMenuItemClick(event, index)}
+                            >
+                            {option}
+                            </MenuItem>
+                            ))}
+                        </Menu>
+                        <List className='desktop-product-list'>
+                            {options.map((option, index) => (
+                                <ListItem
+                                    className='product-link'
+                                    key={option}
+                                    selected={index === selectedIndex}
+                                    onClick={event => handleListItemClick(event, index)}
+                                >
+                                    {option}
+                                </ListItem>
+                                ))}
+                        </List>
+                    </div>
+                </div>
+                <menu className='navigation-menu'>
+                        <div>
+                            <Link to='/log-in'>
+                                <button className='login-button'>
+                                    Log In
+                                </button>
+                            </Link>
+                        </div>
+                    <menu className='hamburger'>
+                        <div className='line'></div>
+                        <div className='line'></div>
+                        <div className='line'></div>
+                    </menu>
                 </menu>
-            </menu>
-        </nav>
-    </Container>
-);
+            </nav>
+        </Container>
+    );
+}
 
 export default NavBar;

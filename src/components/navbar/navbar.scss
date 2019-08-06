@@ -5,6 +5,10 @@
     background-color: $black;
 }
 
+.homeowners-nav {
+    background-color: $dark-green-3;
+}
+
 .navigation {
     display: flex;
     justify-content: space-between;
@@ -207,7 +211,7 @@
 }
 
 .login-button {
-    @include primary-button($white, $black, $white);
+    @include primary-button($white, $transparent, $white);
     @include transition(all, 300ms, ease, 10ms);
     margin-right: 24px;
 
