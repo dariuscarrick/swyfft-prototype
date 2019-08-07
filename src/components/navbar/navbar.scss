@@ -3,6 +3,7 @@
 // Base Navigation Styles
 .navbar-container {
     background-color: $black;
+    padding: 0;
 }
 
 .homeowners-nav {
@@ -18,18 +19,31 @@
     @media #{$grid-xxs, $grid-xs} {
         padding: 8px 12px;
     }
+
+    @media #{$grid-xxs, $grid-xs} {
+        flex-flow: row wrap;
+    }
 }
 
 
 // Product Selection
 .product-select {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    margin-right: auto;
 
     & .button {
         padding: 0;
     }
+
+    @media #{$grid-xxs, $grid-xs} {
+        order: 1;
+        padding: 16px 0 0 0;
+        width: 100%;
+    }
+}
+
+.states {
+    font-size: 12px;
+    font-weight: 400;
 }
 
 .mobile-product-list {
@@ -40,6 +54,32 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+
+    ul {
+        @media #{$grid-xxs} {
+            width: 100%;
+        }
+    }
+
+    .MuiListItem-button {
+        @media #{$grid-xxs, $grid-xs} {
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    .MuiListItemText-root {
+        @media #{$grid-xxs, $grid-xs} {
+            flex: unset;
+        }
+    }
+
+    .MuiListItem-gutters {
+        @media #{$grid-xxs, $grid-xs} {
+            padding-left: 0;
+            padding-right: 0;
+        }
     }
 }
 
@@ -98,7 +138,7 @@
     .MuiListItem-root.Mui-selected, .MuiListItem-root.Mui-selected:hover {
         background-color: rgba(0, 0, 0, 0.05);
         color: $white;
-    }
+    } 
 }
 
 .mobile-menu-chevron {
@@ -112,7 +152,7 @@
 
 .product-link {
     @include p-body-1($medium-gray-3);
-    @include hover-transition(all, 250ms, ease, 10ms);
+    @include hover-transition;
     line-height: 1;
     font-weight: 700;
     list-style: none;
@@ -129,6 +169,10 @@
 
     @media #{$grid-xxs} {
         text-align: center;
+    }
+
+    @media #{$grid-sm} {
+        margin: 0 0 2px 16px;
     }
 }
 
@@ -198,7 +242,9 @@
     justify-content: flex-end;
     align-items: center;
     justify-self: flex-end;
+    margin-left: 16px;
 }
+
 .hamburger {
     cursor: pointer;
     & .line {
@@ -212,14 +258,41 @@
 
 .login-button {
     @include primary-button($white, $transparent, $white);
-    @include transition(all, 300ms, ease, 10ms);
     margin-right: 24px;
 
     &:hover {
         @include primary-button($dark-green-1, $white, $white);
     }
+}
 
-    @media #{$grid-xxs, $grid-xs, $grid-sm} {
-        display: none;
+.logged-in-items {
+    display: flex;
+    align-items: center;
+    list-style: none;
+
+    & li {
+        @include p-body-1($dark-gray-1);
+        @include hover-transition;
+        margin-right: 16px;
+
+        &:hover {
+            color: $white;
+            cursor: pointer;
+        } 
+    }
+
+    .addresses {
+        @media #{$grid-xxs, $grid-xs, $grid-sm} {
+            display: none;
+        }
+    }
+}
+
+.user-icon {
+    @include user-icon-button($white, $transparent, $brand-green);
+    margin-right: 16px;
+
+    &:hover {
+        @include user-icon-button($white, $brand-green, $brand-green);
     }
 }

@@ -5,6 +5,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
+import LoginControl from './login';
 import {ReactComponent as Logo} from '../../assets/images/swyfft-wordmark-logo-multi.svg';
 import {ReactComponent as ChevronDown} from '../../assets/images/chevron-down.svg';
 import './navbar.scss';
@@ -12,8 +13,8 @@ import {Container} from 'react-bootstrap';
 
 const options = [
     'Homeowners',
-    'E&S Commercial Package (FL, NY)',
-    'Commercial Package (CA, IL, NY)',
+    <span>E&S Commercial Package <span className='states'>(FL, NY)</span></span>,
+    <span>Commercial Package <span className='states'>(CA, IL, NY)</span></span>,
   ];
 
 // NavBar Component
@@ -64,65 +65,50 @@ function NavBar() {
     return (
         <Container className={`navbar-container ${getNavbarClass()}`} fluid={true}>
             <nav className='navigation'>
-            <div>
-                <Redirect push to={optionPath()} />
-                    <div className='product-select'>
-                        <Link to='/'><Logo alt='Swyfft Insurance' /></Link>
-                        <List className='mobile-product-list'>
-                            <ListItem
-                            button
-                            aria-haspopup="true"
-                            onClick={handleClickListItem}
-                            >
-                            <ListItemText className='product-link' primary={options[selectedIndex]} />
-                            <ChevronDown className='mobile-menu-chevron' />
-                            </ListItem>
-                        </List>
-                        <Menu
-                            id="lock-menu"
-                            anchorEl={anchorEl}
-                            keepMounted
-                            open={Boolean(anchorEl)}
-                            onClose={handleClose}
-                        >
-                            {options.map((option, index) => (
-                            <MenuItem
-                                key={option}
-                                selected={index === selectedIndex}
-                                onClick={event => handleMenuItemClick(event, index)}
-                            >
-                            {option}
-                            </MenuItem>
-                            ))}
-                        </Menu>
-                        <List className='desktop-product-list'>
-                            {options.map((option, index) => (
-                                <ListItem
-                                    className='product-link'
-                                    key={option}
-                                    selected={index === selectedIndex}
-                                    onClick={event => handleListItemClick(event, index)}
-                                >
-                                    {option}
-                                </ListItem>
-                                ))}
-                        </List>
-                    </div>
-                </div>
-                <menu className='navigation-menu'>
-                        <div>
-                            <Link to='/log-in'>
-                                <button className='login-button'>
-                                    Log In
-                                </button>
-                            </Link>
-                        </div>
-                    <menu className='hamburger'>
-                        <div className='line'></div>
-                        <div className='line'></div>
-                        <div className='line'></div>
-                    </menu>
-                </menu>
+              <Link to='/'><Logo alt='Swyfft Insurance' /></Link>
+                  <Redirect push to={optionPath()} />
+                      <div className='product-select'>
+                          <List className='mobile-product-list'>
+                              <ListItem
+                              button
+                              aria-haspopup="true"
+                              onClick={handleClickListItem}
+                              >
+                              <ListItemText className='product-link' primary={options[selectedIndex]} />
+                              <ChevronDown className='mobile-menu-chevron' />
+                              </ListItem>
+                          </List>
+                          <Menu
+                              id="lock-menu"
+                              anchorEl={anchorEl}
+                              keepMounted
+                              open={Boolean(anchorEl)}
+                              onClose={handleClose}
+                          >
+                              {options.map((option, index) => (
+                              <MenuItem
+                                  key={option}
+                                  selected={index === selectedIndex}
+                                  onClick={event => handleMenuItemClick(event, index)}
+                              >
+                              {option}
+                              </MenuItem>
+                              ))}
+                          </Menu>
+                          <List className='desktop-product-list'>
+                              {options.map((option, index) => (
+                                  <ListItem
+                                      className='product-link'
+                                      key={option}
+                                      selected={index === selectedIndex}
+                                      onClick={event => handleListItemClick(event, index)}
+                                  >
+                                      {option}
+                                  </ListItem>
+                                  ))}
+                          </List>
+                      </div>
+                <LoginControl />
             </nav>
         </Container>
     );
