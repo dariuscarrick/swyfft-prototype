@@ -5,7 +5,9 @@ class LoginControl extends React.Component {
       super(props);
       this.handleLoginClick = this.handleLoginClick.bind(this);
       this.handleLogoutClick = this.handleLogoutClick.bind(this);
-      this.state = {isLoggedIn: false};
+      this.openUserClick = this.openUserClick.bind(this);
+      this.closeUserClick = this.closeUserClick.bind(this);
+      this.state = {isLoggedIn: false, isUserOpen: false};
     }
   
     handleLoginClick() {
@@ -13,15 +15,31 @@ class LoginControl extends React.Component {
     }
   
     handleLogoutClick() {
-      this.setState({isLoggedIn: false});
+      this.setState({isLoggedIn: false, isUserOpen: false});
+    }
+
+    openUserClick() {
+        this.setState({isUserOpen: true});
+    }
+    
+    closeUserClick() {
+        this.setState({isUserOpen: false});
     }
   
     render() {
       const isLoggedIn = this.state.isLoggedIn;
+      const isUserOpen = this.state.isUserOpen;
       let button;
+      let userCard;
+
+      if(isUserOpen) {
+          userCard = 'display';
+      } else {
+          userCard= 'display-none';
+      }
   
       if (isLoggedIn) {
-        button = <button className='user-icon' onClick={this.handleLogoutClick}>DC</button>;
+        button = <button className='user-icon' onClick={isUserOpen ? this.closeUserClick : this.openUserClick}>DC</button>;
       } else {
         button = <button className='login-button' onClick={this.handleLoginClick}>Log In</button>;
       }
@@ -33,6 +51,10 @@ class LoginControl extends React.Component {
               <li className='addresses'>Addresses</li>
           </ul>}
           {button}
+          <div className={`user-info ${userCard}`}>
+                <p>Logged in as: <br />darius@swyfft.com</p>
+                <button className='log-out-button' onClick={this.handleLogoutClick}>Log Out</button>
+          </div>
           <menu className='hamburger'>
                 <div className='line'></div>
                 <div className='line'></div>

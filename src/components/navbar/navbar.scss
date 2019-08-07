@@ -74,6 +74,24 @@
     }
 }
 
+.user-info {
+    @include hover-transition;
+    position: absolute;
+    top: 8%;
+    right: 4%;
+    background-color: #f2f4f5;
+    padding: 12px 24px;
+    border-radius: 4px;
+}
+
+.display-none {
+    display: none;
+}
+
+.display {
+    display: block;
+}
+
 // Homeowners Product Navigation
 .homeowners-nav {
     background-color: $dark-green-3;

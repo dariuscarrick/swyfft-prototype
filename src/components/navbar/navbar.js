@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link, Redirect} from 'react-router-dom';
+import {Redirect} from 'react-router-dom';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -61,10 +61,6 @@ function NavBar() {
     let navClass;
     optionPath() === '/' ? navClass = 'homeowners-nav' : navClass = 'commercial-nav';
     return navClass;
-}
-
-function goHome() {
-  return true;
 }
 
     return (
