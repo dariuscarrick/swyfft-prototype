@@ -6,7 +6,8 @@ import ListItemText from '@material-ui/core/ListItemText';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import LoginControl from './login';
-import {ReactComponent as Logo} from '../../assets/images/swyfft-wordmark-logo-multi.svg';
+import {ReactComponent as MultiLogo} from '../../assets/images/swyfft-wordmark-logo-multi.svg';
+import {ReactComponent as WhiteLogo} from '../../assets/images/white-wordmark-logo.svg';
 import {ReactComponent as ChevronDown} from '../../assets/images/chevron-down.svg';
 import './navbar.scss';
 import {Container} from 'react-bootstrap';
@@ -62,10 +63,17 @@ function NavBar() {
     return navClass;
 }
 
+function goHome() {
+  return true;
+}
+
     return (
         <Container className={`navbar-container ${getNavbarClass()}`} fluid={true}>
             <nav className='navigation'>
-              <Link to='/'><Logo alt='Swyfft Insurance' /></Link>
+                  {getNavbarClass() === 'homeowners-nav' ? 
+                    <MultiLogo alt='Swyfft Insurance'  /> :
+                    <WhiteLogo alt='Swyfft Insurance'  /> 
+                  }
                   <Redirect push to={optionPath()} />
                       <div className='product-select'>
                           <List className='mobile-product-list'>
