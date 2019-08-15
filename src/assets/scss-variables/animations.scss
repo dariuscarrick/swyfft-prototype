@@ -7,6 +7,6 @@
 }
 
 // Hover Transition
-@mixin hover-transition($property, $duration, $timing-function, $delay) {
-    @include transition($property, $duration, $timing-function, $delay);
+@mixin hover-transition {
+    @include transition(all, 200ms, ease, 5ms);
 }

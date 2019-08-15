@@ -3,6 +3,7 @@
 // Base Navigation Styles
 .navbar-container {
     background-color: $black;
+    padding: 0;
 }
 
 .navigation {
@@ -14,208 +15,308 @@
     @media #{$grid-xxs, $grid-xs} {
         padding: 8px 12px;
     }
-}
-
-
-// Product Selection
-.product-select {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-
-    & .button {
-        padding: 0;
-    }
-}
-
-.mobile-product-list {
-    @media #{$grid-sm, $grid-md, $grid-lg} {
-        display: none;
-    }
-    @media #{$grid-xxs, $grid-xs} {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-}
-
-.desktop-product-list { 
-    @media #{$grid-sm, $grid-md, $grid-lg} {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
 
     @media #{$grid-xxs, $grid-xs} {
-        display: none;
-    }
-    
-    .MuiListItem-root {
-        width: unset;
-    
-        @media #{$grid-xxs, $grid-xs} {
-            width: 100%;
-        }
-    }
-
-    .MuiList-padding {
-        padding: 0 !important;
-    }
-    
-    .MuiListItem-gutters {
-        padding: 0;
-    }
-    
-    .MuiPaper-root {
-        color: $medium-gray-3 !important;
-    }
-    
-    .MuiListItemText-root {
-        margin: 0 !important;
-    }
-    
-    .MuiTypography-body1 {
-        font-family: 'Lato', sans-serif !important;
-        color: $medium-gray-3;
-        line-height: 1 !important;
-        letter-spacing: 0.3px !important;
-        font-weight: 700 !important;
-    }
-    
-    .MuiMenuItem-root {
-        font-family: 'Lato', sans-serif !important;
-        font-size: 16px !important;
-        line-height: 1 !important;
-        letter-spacing: 0.3px !important;
-        font-weight: 700 !important;
-        color: $medium-gray-3;
-    }
-    
-    .MuiListItem-root.Mui-selected, .MuiListItem-root.Mui-selected:hover {
-        background-color: rgba(0, 0, 0, 0.05);
-        color: $white;
+        flex-flow: row wrap;
     }
 }
 
-.mobile-menu-chevron {
-    margin-left: 8px;
-
-    @media #{$grid-xxs} {
-        flex-basis: 10%;
-        margin-left: 4px;
-    }
-}
-
-.product-link {
-    @include p-body-1($medium-gray-3);
-    @include hover-transition(all, 250ms, ease, 10ms);
-    line-height: 1;
-    font-weight: 700;
-    list-style: none;
-    margin: 0 0 2px 24px;
-    cursor: pointer;
-    
-    &:hover {
-        color: $white;
-    }
-    
-    &:active {
-        color: $white;
-    }
-
-    @media #{$grid-xxs} {
-        text-align: center;
-    }
-}
-
-.active {
-    color: $white;
-}
-
-// Reset Material UI Styles
-.MuiMenu-paper {
-    border-radius: 0px !important;
-}
-
-.MuiList-padding {
-    padding: 0 !important;
-}
-
-.MuiListItem-gutters {
-    padding: 0;
-}
-
-.MuiPaper-root {
-    color: $dark-gray-2 !important;
-    background-color: $light-gray-2 !important;
-}
-
-.MuiListItemText-root {
-    margin: 0 !important;
-
-    @media #{$grid-xxs} { 
-        flex-basis: 50%;
-    }
-}
-
-.MuiTypography-body1 {
-    font-family: 'Lato', sans-serif !important;
-    color: $white;
-    line-height: 1 !important;
-    letter-spacing: 0.3px !important;
-    font-weight: 700 !important;
-}
-
-.MuiMenuItem-root {
-    font-family: 'Lato', sans-serif !important;
-    font-size: 16px !important;
-    line-height: 1 !important;
-    letter-spacing: 0.3px !important;
-    font-weight: 700 !important;
-    color: $dark-gray-2;
-}
-
-.MuiListItem-root.Mui-selected, .MuiListItem-root.Mui-selected:hover {
-    background-color: rgba(0, 0, 0, 0.06) !important;
-}
-
-.MuiListItem-button:hover {
-    background-color: rgba(0, 0, 0, 0.06) !important;
-    color: $black !important;
-}
-
-.MuiPaper-elevation8 {
-    box-shadow: unset !important;
-}
-
-// Navigation Menu
 .navigation-menu {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     justify-self: flex-end;
+    margin-left: 16px;
 }
-.hamburger {
-    cursor: pointer;
-    & .line {
-        height: 1.4px;
-        background-color: $white;
-        border-radius: 30px;
-        margin: 4px 0; 
-        width: 24px;
+
+.logged-in-items {
+    display: flex;
+    align-items: center;
+    list-style: none;
+
+    & li {
+        @include p-body-1($white);
+        @include hover-transition;
+        margin-right: 16px;
+
+        &:hover {
+            color: $medium-gray-2;
+            cursor: pointer;
+        }
+    }
+
+    .addresses {
+        @media #{$grid-xxs, $grid-xs, $grid-sm} {
+            display: none;
+        }
     }
 }
 
 .login-button {
-    @include primary-button($white, $black, $white);
-    @include transition(all, 300ms, ease, 10ms);
+    @include primary-button($white, $transparent, $white);
     margin-right: 24px;
+    min-width: 108px;
 
     &:hover {
         @include primary-button($dark-green-1, $white, $white);
     }
+}
 
-    @media #{$grid-xxs, $grid-xs, $grid-sm} {
-        display: none;
+.hamburger {
+    cursor: pointer;
+
+    & .line {
+        height: 1.4px;
+        background-color: $white;
+        border-radius: 30px;
+        margin: 4px 0;
+        width: 24px;
     }
+}
+
+.user-info {
+    @include hover-transition;
+    position: absolute;
+    top: 56px;
+    right: 4%;
+    background-color: rgba(0, 0, 0, .5);
+    padding: 12px 6%;
+    text-align: center;
+}
+
+.logged-in-status {
+    @include p-body-2($white);
+    text-align: center;
+    margin: 0 0 12px 0;
+}
+
+.log-out-button {
+    @include primary-button($white, $transparent, $white);
+
+    &:hover {
+        @include primary-button($dark-green-1, $white, $white);
+    }
+}
+
+.user-email {
+    font-size: 16px;
+    color: $brand-green;
+}
+
+.display-none {
+    display: none;
+}
+
+.display {
+    display: block;
+}
+
+.product-detail {
+    @include h3-body($white);
+    letter-spacing: 0.5px;
+    padding: 0 24px 0 0;
+    white-space: nowrap;
+
+    @media #{$grid-xxs, $grid-xs} {
+        padding: 0 0 8px 0;
+        text-align: left;
+        white-space: unset;
+    }
+}
+
+.available-in {
+    @include p-body-3($medium-gray-2);
+    display: block;
+    line-height: 1;
+    margin: 1px 0 0 0;
+
+    @media #{$grid-xxs, $grid-xs} {
+        margin: 0 0 8px 0;
+    }
+}
+
+.states {
+    @include p-body-1($white);
+    letter-spacing: 0.5px;
+    border-left: 1px solid $brand-green;
+    padding: 0 0 0 24px;
+
+    @media #{$grid-xxs, $grid-xs} {
+        padding: 12px 0;
+        border-left: none;
+        border-top: 1px solid $brand-green;
+        width: 100%;
+    }
+}
+
+.state-svg {
+    height: 18px;
+    width: 18px;
+    margin: 0 4px 0 0;
+}
+
+.state-instance {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 12px 0 0;
+}
+
+.homeowners-states, .es-commercial-states, .admitted-commercial-states {
+    opacity: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-flow: row;
+    visibility: hidden;
+    position: absolute;
+    width: 100%;
+    margin: 20px 0 0 0;
+    padding: 6px 16px;
+    left: 0;
+    background-color: rgba(0, 0, 0, .5);
+    @include transition(all, 500ms, ease, 5ms);
+
+    @media #{$grid-xxs, $grid-xs} {
+        flex-flow: column;
+        text-align: left;
+        align-items: flex-start;
+        margin: 8px 0 0 0;
+        padding: 12px 16px;
+    }
+}
+
+.homeowners {
+    &:hover .homeowners-states {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.escommercial {
+   &:hover .es-commercial-states {
+       opacity: 1;
+       visibility: visible;
+   }
+}
+
+.admittedcommercial {
+    &:hover .admitted-commercial-states {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+// Homeowners Product Navigation
+.homeowners-nav {
+    background-color: $dark-green-3;
+
+    .product-link {
+        @include p-body-1($medium-gray-3);
+        @include hover-transition;
+        line-height: 1;
+        font-weight: 700;
+        list-style: none;
+        margin: 0 0 0 24px;
+        cursor: pointer;
+
+        @media #{$grid-xxs, $grid-xs} {
+            text-align: center;
+            margin: 0;
+        }
+
+        @media #{$grid-xxs} {
+            font-size: 14px;
+        }
+
+        @media #{$grid-xxs} {
+            margin: 0 8px;
+        }
+
+        &:hover {
+            color: $white;
+        }
+
+        &:active {
+            color: $white;
+        }
+    }
+
+    .user-icon {
+        @include user-icon-button($white, $transparent, $brand-green);
+        margin-right: 16px;
+
+        &:hover {
+            @include user-icon-button($white, $brand-green, $brand-green);
+        }
+    }
+}
+
+// Commercial Product Navigation
+.commercial-nav {
+    background-color: $brand-green;
+
+    .product-link {
+        @include p-body-1($dark-green-2);
+        @include hover-transition;
+        line-height: 1;
+        font-weight: 700;
+        list-style: none;
+        margin: 0 0 0 24px;
+        cursor: pointer;
+
+        @media #{$grid-xxs} {
+            font-size: 14px;
+            text-align: center;
+            margin: 0;
+        }
+
+        @media #{$grid-xxs} {
+            margin: 0 8px;
+        }
+
+        &:hover {
+            color: $white;
+        }
+
+        &:active {
+            color: $white;
+        }
+    }
+
+    .user-icon {
+        @include user-icon-button($white, $transparent, $white);
+        margin-right: 16px;
+
+        &:hover {
+            @include user-icon-button($dark-green-1, $white, $white);
+        }
+    }
+}
+
+
+// Product Selection
+.product-select {
+    margin: 0 auto 0 0;
+
+    & .button {
+        padding: 0;
+    }
+
+    & .selected {
+        color: $white;
+    }
+
+    @media #{$grid-xxs, $grid-xs} {
+        order: 1;
+        padding: 14px 0 0 0;
+        width: 100%;
+        margin: 0;
+    }
+}
+
+// The Desktop Product Select List
+.product-list {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
