@@ -77,11 +77,30 @@
 .user-info {
     @include hover-transition;
     position: absolute;
-    top: 8%;
+    top: 56px;
     right: 4%;
-    background-color: #f2f4f5;
-    padding: 12px 24px;
-    border-radius: 4px;
+    background-color: rgba(0, 0, 0, .5);
+    padding: 12px 6%;
+    text-align: center;
+}
+
+.logged-in-status {
+    @include p-body-2($white);
+    text-align: center;
+    margin: 0 0 12px 0;
+}
+
+.log-out-button {
+    @include primary-button($white, $transparent, $white);
+
+    &:hover {
+        @include primary-button($dark-green-1, $white, $white);
+    }
+}
+
+.user-email {
+    font-size: 16px;
+    color: $brand-green;
 }
 
 .display-none {
@@ -90,6 +109,101 @@
 
 .display {
     display: block;
+}
+
+.product-detail {
+    @include h3-body($white);
+    letter-spacing: 0.5px;
+    padding: 0 24px 0 0;
+    white-space: nowrap;
+
+    @media #{$grid-xxs, $grid-xs} {
+        padding: 0 0 8px 0;
+        text-align: left;
+        white-space: unset;
+    }
+}
+
+.available-in {
+    @include p-body-3($medium-gray-2);
+    display: block;
+    line-height: 1;
+    margin: 1px 0 0 0;
+
+    @media #{$grid-xxs, $grid-xs} {
+        margin: 0 0 8px 0;
+    }
+}
+
+.states {
+    @include p-body-1($white);
+    letter-spacing: 0.5px;
+    border-left: 1px solid $brand-green;
+    padding: 0 0 0 24px;
+
+    @media #{$grid-xxs, $grid-xs} {
+        padding: 12px 0;
+        border-left: none;
+        border-top: 1px solid $brand-green;
+        width: 100%;
+    }
+}
+
+.state-svg {
+    height: 18px;
+    width: 18px;
+    margin: 0 4px 0 0;
+}
+
+.state-instance {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 12px 0 0;
+}
+
+.homeowners-states, .es-commercial-states, .admitted-commercial-states {
+    opacity: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-flow: row;
+    visibility: hidden;
+    position: absolute;
+    width: 100%;
+    margin: 20px 0 0 0;
+    padding: 6px 16px;
+    left: 0;
+    background-color: rgba(0, 0, 0, .5);
+    @include transition(all, 500ms, ease, 5ms);
+
+    @media #{$grid-xxs, $grid-xs} {
+        flex-flow: column;
+        text-align: left;
+        align-items: flex-start;
+        margin: 8px 0 0 0;
+        padding: 12px 16px;
+    }
+}
+
+.homeowners {
+    &:hover .homeowners-states {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.escommercial {
+   &:hover .es-commercial-states {
+       opacity: 1;
+       visibility: visible;
+   }
+}
+
+.admittedcommercial {
+    &:hover .admitted-commercial-states {
+        opacity: 1;
+        visibility: visible;
+    }
 }
 
 // Homeowners Product Navigation
@@ -102,16 +216,20 @@
         line-height: 1;
         font-weight: 700;
         list-style: none;
-        margin: 0 0 2px 24px;
+        margin: 0 0 0 24px;
         cursor: pointer;
 
-        @media #{$grid-xxs} {
+        @media #{$grid-xxs, $grid-xs} {
             text-align: center;
+            margin: 0;
         }
 
-        @media #{$grid-sm} {
-            margin: 0 0 2px 16px;
-            font-size: 15px;
+        @media #{$grid-xxs} {
+            font-size: 14px;
+        }
+
+        @media #{$grid-xxs} {
+            margin: 0 8px;
         }
 
         &:hover {
@@ -143,16 +261,17 @@
         line-height: 1;
         font-weight: 700;
         list-style: none;
-        margin: 0 0 2px 24px;
+        margin: 0 0 0 24px;
         cursor: pointer;
 
         @media #{$grid-xxs} {
+            font-size: 14px;
             text-align: center;
+            margin: 0;
         }
 
-        @media #{$grid-sm} {
-            margin: 0 0 2px 16px;
-            font-size: 15px;
+        @media #{$grid-xxs} {
+            margin: 0 8px;
         }
 
         &:hover {
@@ -183,163 +302,21 @@
         padding: 0;
     }
 
-    @media #{$grid-xs} {
-        margin: 0 auto 0 16px;
+    & .selected {
+        color: $white;
     }
 
-    @media #{$grid-xxs} {
+    @media #{$grid-xxs, $grid-xs} {
         order: 1;
-        padding: 16px 0 0 0;
+        padding: 14px 0 0 0;
         width: 100%;
         margin: 0;
     }
 }
 
-// Styles the States in the Select Links Smaller
-.states {
-    font-size: 14px;
-    font-weight: 400;
-}
-
-// The Mobile Product Select Menu
-.mobile-product-list {
-    @media #{$grid-sm, $grid-md, $grid-lg} {
-        display: none;
-    }
-
-    @media #{$grid-xxs, $grid-xs} {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    ul {
-        @media #{$grid-xxs} {
-            width: 100%;
-        }
-    }
-
-    .MuiListItem-button {
-        @media #{$grid-xxs, $grid-xs} {
-            display: flex;
-            justify-content: center;
-        }
-    }
-
-    .MuiListItemText-root {
-        @media #{$grid-xxs, $grid-xs} {
-            flex: unset;
-        }
-    }
-
-    .MuiListItem-gutters {
-        @media #{$grid-xxs, $grid-xs} {
-            padding-left: 0;
-            padding-right: 0;
-        }
-    }
-}
-
-.mobile-menu-chevron {
-    margin-left: 8px;
-
-    @media #{$grid-xxs} {
-        flex-basis: 10%;
-    }
-}
-
 // The Desktop Product Select List
-.desktop-product-list {
-    @media #{$grid-sm, $grid-md, $grid-lg} {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-    }
-
-    @media #{$grid-xxs, $grid-xs} {
-        display: none;
-    }
-
-    .MuiListItem-root {
-        width: unset;
-
-        @media #{$grid-xxs, $grid-xs} {
-            width: 100%;
-        }
-    }
-
-    .MuiList-padding {
-        padding: 0 !important;
-    }
-
-    .MuiListItem-gutters {
-        padding: 0;
-    }
-
-    .MuiListItemText-root {
-        margin: 0 !important;
-    }
-
-    .MuiListItem-root.Mui-selected,
-    .MuiListItem-root.Mui-selected:hover {
-        background-color: $transparent !important;
-        color: $white;
-    }
-}
-
-// Reset Material UI Styles used in Product Selector
-.MuiMenu-paper {
-    border-radius: 0px !important;
-}
-
-.MuiList-padding {
-    padding: 0 !important;
-}
-
-.MuiListItem-gutters {
-    padding: 0;
-}
-
-.MuiPaper-root {
-    color: $dark-gray-2 !important;
-    background-color: $light-gray-2 !important;
-}
-
-.MuiListItemText-root {
-    margin: 0 !important;
-
-    @media #{$grid-xxs} {
-        flex-basis: 50%;
-    }
-}
-
-.MuiTypography-body1 {
-    font-family: 'Lato', sans-serif !important;
-    color: $white;
-    line-height: 1 !important;
-    letter-spacing: 0.3px !important;
-    font-weight: 700 !important;
-}
-
-.MuiMenuItem-root {
-    font-family: 'Lato', sans-serif !important;
-    font-size: 16px !important;
-    line-height: 1 !important;
-    letter-spacing: 0.3px !important;
-    font-weight: 700 !important;
-    color: $dark-gray-2;
-}
-
-.MuiListItem-root.Mui-selected,
-.MuiListItem-root.Mui-selected:hover {
-    background-color: rgba(0, 0, 0, 0.06) !important;
-}
-
-.MuiListItem-button:hover {
-    background-color: rgba(0, 0, 0, 0.06) !important;
-    color: $black !important;
-}
-
-.MuiPaper-elevation8 {
-    box-shadow: unset !important;
+.product-list {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }

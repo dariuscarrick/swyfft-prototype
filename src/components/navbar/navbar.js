@@ -1,45 +1,69 @@
 import React from 'react';
 import {Redirect} from 'react-router-dom';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import MenuItem from '@material-ui/core/MenuItem';
-import Menu from '@material-ui/core/Menu';
 import LoginControl from './login';
 import {ReactComponent as MultiLogo} from '../../assets/images/swyfft-wordmark-logo-multi.svg';
 import {ReactComponent as WhiteLogo} from '../../assets/images/white-wordmark-logo.svg';
-import {ReactComponent as ChevronDown} from '../../assets/images/chevron-down.svg';
+import {ReactComponent as Alabama} from '../../assets/images/alabama.svg';
+import {ReactComponent as California} from '../../assets/images/california.svg';
+import {ReactComponent as Florida} from '../../assets/images/florida.svg';
+import {ReactComponent as Illinois} from '../../assets/images/illinois.svg';
+import {ReactComponent as Massachusetts} from '../../assets/images/massachusetts.svg';
+import {ReactComponent as NewJersey} from '../../assets/images/newjersey.svg';
+import {ReactComponent as NewYork} from '../../assets/images/newyork.svg';
+import {ReactComponent as Texas} from '../../assets/images/texas.svg';
 import './navbar.scss';
 import {Container} from 'react-bootstrap';
 
+
 const options = [
     'Homeowners',
-    <span>E&S Commercial Package <span className='states'>(FL, NY)</span></span>,
-    <span>Commercial Package <span className='states'>(CA, IL, NY)</span></span>,
+    'E&S Commercial',
+    'Admitted Commercial',
   ];
+
+const StateSvg = props => {
+  let stateImage;
+  switch (props.state) {
+    case 'Alabama' : 
+      stateImage = <Alabama className='state-svg' />;
+      break;
+    case 'California' : 
+      stateImage = <California className='state-svg' />;
+      break;
+    case 'Florida' : 
+      stateImage = <Florida className='state-svg' />;
+      break;
+    case 'Illinois' : 
+      stateImage = <Illinois className='state-svg' />;
+      break;
+    case 'Massachusetts' : 
+      stateImage = <Massachusetts className='state-svg' />;
+      break;
+    case 'NewJersey' : 
+      stateImage = <NewJersey className='state-svg' />;
+      break;
+    case 'NewYork' : 
+      stateImage = <NewYork className='state-svg' />;
+      break;
+    case 'Texas' : 
+      stateImage = <Texas className='state-svg' />;
+      break;
+    default: stateImage = '';
+  }
+  return stateImage;
+}
 
 // NavBar Component
 function NavBar() {
-  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  // Function to create the product list and handle selected state
   const [selectedIndex, setSelectedIndex] = React.useState(0);
 
-  function handleClickListItem(event) {
-    setAnchorEl(event.currentTarget);
-  }
-
-  function handleMenuItemClick(event, index) {
-    setSelectedIndex(index);
-    setAnchorEl(null);
-  }
-
-  function handleListItemClick(event, index) {
+  function handleListItemClick(index) {
     setSelectedIndex(index);
   }
 
-  function handleClose() {
-    setAnchorEl(null);
-  }
-
+  // Function to retrieve and render the path based on the selection
  function optionPath() {
     let path;
     switch (options[selectedIndex]) {
@@ -57,11 +81,55 @@ function NavBar() {
     return path;
   }
 
-  function getNavbarClass() {
-    let navClass;
-    optionPath() === '/' ? navClass = 'homeowners-nav' : navClass = 'commercial-nav';
-    return navClass;
-}
+    // Function to change navbar colors based on path
+    function getNavbarClass() {
+      let navClass;
+      optionPath() === '/' ? navClass = 'homeowners-nav' : navClass = 'commercial-nav';
+      return navClass;
+  }
+
+    // function to set class name of product link dynamically
+    function setProductClassName(option, index) {
+      return `product-link ${index === selectedIndex ? 'selected' : ''} ${option.replace('&', '').replace( /\s/g, '').toLowerCase()}`
+    }
+
+    // Function to get the correct states to display on hover
+    function getStates(option) {
+      let statesAvailable;
+      switch (option) {
+        case 'Homeowners':
+          statesAvailable = ['Alabama', 'California', 'Florida', 'Illinois', 'Massachusetts','New Jersey', 'New York', 'Texas'];
+          break;
+        case 'E&S Commercial':
+          statesAvailable = ['Florida'];
+          break;
+        case 'Admitted Commercial':
+          statesAvailable = ['Illinois', 'Florida'];
+          break;
+        default: statesAvailable = '';
+      }
+      return statesAvailable;
+    }
+
+    // Function to display dynamic product details
+    function productDetails(option) {
+      let productDetail;
+      switch (option) {
+        case 'Homeowners' :
+            productDetail = 'Homeowners Insurance';
+          break;
+        case 'E&S Commercial' : 
+            productDetail = 'E&S Commercial Package Insurance';
+          break;
+        case 'Admitted Commercial':
+            productDetail = 'Admitted Commercial Package Insurance';
+          break;
+        default: productDetail = '';
+      }
+      return productDetail;
+    }
+
+    
 
     return (
         <Container className={`navbar-container ${getNavbarClass()}`} fluid={true}>
@@ -72,45 +140,26 @@ function NavBar() {
                   }
                   <Redirect push to={optionPath()} />
                       <div className='product-select'>
-                          <List className='mobile-product-list'>
-                              <ListItem
-                              button
-                              aria-haspopup="true"
-                              onClick={handleClickListItem}
-                              >
-                              <ListItemText className='product-link' primary={options[selectedIndex]} />
-                              <ChevronDown className='mobile-menu-chevron' />
-                              </ListItem>
-                          </List>
-                          <Menu
-                              id="lock-menu"
-                              anchorEl={anchorEl}
-                              keepMounted
-                              open={Boolean(anchorEl)}
-                              onClose={handleClose}
-                          >
+                          <div className='product-list'>
                               {options.map((option, index) => (
-                              <MenuItem
-                                  key={option}
-                                  selected={index === selectedIndex}
-                                  onClick={event => handleMenuItemClick(event, index)}
-                              >
-                              {option}
-                              </MenuItem>
-                              ))}
-                          </Menu>
-                          <List className='desktop-product-list'>
-                              {options.map((option, index) => (
-                                  <ListItem
-                                      className='product-link'
-                                      key={option}
-                                      selected={index === selectedIndex}
-                                      onClick={event => handleListItemClick(event, index)}
+                                  <div
+                                      className={setProductClassName(option, index)}
+                                      key={index}
+                                      onClick={() => {handleListItemClick(index)}}
                                   >
                                       {option}
-                                  </ListItem>
+                                      <div id='statesContainer' className='homeowners-states es-commercial-states admitted-commercial-states'>
+                                          <div className='product-detail'>{productDetails(option)}</div>
+                                          <div className='states'><span className='available-in'>Available in:</span>
+                                            {getStates(option).map((state) => <div className='state-instance'>
+                                              <StateSvg state={state.replace( /\s/g, '')} />
+                                              <span>{state}</span>
+                                            </div>)}
+                                          </div>
+                                      </div>
+                                  </div>
                                   ))}
-                          </List>
+                          </div>
                       </div>
                 <LoginControl />
             </nav>

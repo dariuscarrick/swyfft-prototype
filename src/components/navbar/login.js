@@ -52,7 +52,7 @@ class LoginControl extends React.Component {
           </ul>}
           {button}
           <div className={`user-info ${userCard}`}>
-                <p>Logged in as: <br />darius@swyfft.com</p>
+                <p className='logged-in-status'>Logged in as: <br /><span className='user-email'>darius@swyfft.com</span></p>
                 <button className='log-out-button' onClick={this.handleLogoutClick}>Log Out</button>
           </div>
           <menu className='hamburger'>
