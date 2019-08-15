@@ -20,7 +20,7 @@ export default function Homeowners() {
                         <input className='address-input' type='text' placeholder='Type your address' />
                     </Col>
                     <Col lg={3}>
-                        <button class='get-quote'>Get Quote</button>
+                        <button className='get-quote'>Get Quote</button>
                     </Col>
                 </Row>
             </Container>
