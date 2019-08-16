@@ -49,9 +49,6 @@
     &:hover {
         @include primary-button($dark-green-1, $white, $white);
     }
-    &:focus {
-        @include primary-button($dark-green-1, $white, $white);
-    }
 }
 
 .hamburger {
@@ -98,9 +95,6 @@
     @include primary-button($dark-purple-2, $transparent, $transparent);
 
     &:hover {
-        @include primary-button($brand-green, $transparent, $brand-green);
-    }
-    &:focus {
         @include primary-button($brand-green, $transparent, $brand-green);
     }
 }
@@ -202,10 +196,6 @@
         opacity: 1;
         visibility: visible;
     }
-    &:focus .homeowners-states {
-        opacity: 1;
-        visibility: visible;
-    }
 }
 
 .escommercial {
@@ -213,18 +203,10 @@
        opacity: 1;
        visibility: visible;
    }
-   &:focus .es-commercial-states {
-       opacity: 1;
-       visibility: visible;
-   }
 }
 
 .admittedcommercial {
     &:hover .admitted-commercial-states {
-        opacity: 1;
-        visibility: visible;
-    }
-    &:focus .admitted-commercial-states {
         opacity: 1;
         visibility: visible;
     }
@@ -260,10 +242,6 @@
             color: $white;
         }
 
-        &:focus {
-            color: $white;
-        }
-
         &:active {
             color: $white;
         }
@@ -276,10 +254,6 @@
         &:hover {
             @include user-icon-button($white, $brand-green, $brand-green);
         }
-        
-        &:focus {
-            @include user-icon-button($white, $brand-green, $brand-green);
-        }
     }
 
     .logged-in-items {
@@ -289,11 +263,6 @@
             margin-right: 16px;
     
             &:hover {
-                color: $medium-gray-3;
-                cursor: pointer;
-            }
-
-            &:focus {
                 color: $medium-gray-3;
                 cursor: pointer;
             }
@@ -331,10 +300,6 @@
             color: $white;
         }
 
-        &:focus {
-            color: $white;
-        }
-
         &:active {
             color: $white;
         }
@@ -347,10 +312,6 @@
         &:hover {
             @include user-icon-button($white, $brand-green, $brand-green);
         }
-        
-        &:focus {
-            @include user-icon-button($white, $brand-green, $brand-green);
-        }
     }
 
     .logged-in-items {
@@ -360,11 +321,6 @@
             margin-right: 16px;
     
             &:hover {
-                color: $medium-gray-3;
-                cursor: pointer;
-            }
-
-            &:focus {
                 color: $medium-gray-3;
                 cursor: pointer;
             }
@@ -399,10 +355,6 @@
             color: $white;
         }
 
-        &:focus {
-            color: $white;
-        }
-
         &:active {
             color: $white;
         }
@@ -413,10 +365,6 @@
         margin-right: 16px;
 
         &:hover {
-            @include user-icon-button($dark-green-1, $white, $white);
-        }
-
-        &:focus {
             @include user-icon-button($dark-green-1, $white, $white);
         }
     }
