@@ -179,10 +179,10 @@
     margin: 20px 0 0 0;
     padding: 6px 16px;
     left: 0;
-    background-color: $translucent-black-1;
+    background-color: $dark-purple-2;
     @include transition(all, 300ms, ease, 5ms);
 
-    @media #{$grid-xxs, $grid-xs} {
+    @media #{$grid-xs} {
         flex-flow: column;
         text-align: left;
         align-items: flex-start;
