@@ -84,6 +84,15 @@ function NavBar() {
     // Function to change navbar colors based on path
     function getNavbarClass() {
       let navClass;
+      switch (optionPath()) {
+        case '/':
+          navClass = 'homeowners-nav';
+          break;
+        case '/E&S-Commercial-Package' || '/Commercial-Package':
+          navClass = 'commercial-nav';
+          break;
+        default: navClass = 'standard-nav';
+      }
       optionPath() === '/' ? navClass = 'homeowners-nav' : navClass = 'commercial-nav';
       return navClass;
   }

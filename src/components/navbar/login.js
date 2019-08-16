@@ -1,12 +1,12 @@
 import React from 'react';
 
-class LoginControl extends React.Component {
+export class LoginControl extends React.Component {
     constructor(props) {
       super(props);
       this.handleLoginClick = this.handleLoginClick.bind(this);
       this.handleLogoutClick = this.handleLogoutClick.bind(this);
-      this.openUserClick = this.openUserClick.bind(this);
-      this.closeUserClick = this.closeUserClick.bind(this);
+      this.openUser = this.openUser.bind(this);
+      this.closeUser = this.closeUser.bind(this);
       this.state = {isLoggedIn: false, isUserOpen: false};
     }
   
@@ -18,11 +18,11 @@ class LoginControl extends React.Component {
       this.setState({isLoggedIn: false, isUserOpen: false});
     }
 
-    openUserClick() {
+    openUser() {
         this.setState({isUserOpen: true});
     }
     
-    closeUserClick() {
+    closeUser() {
         this.setState({isUserOpen: false});
     }
   
@@ -39,7 +39,7 @@ class LoginControl extends React.Component {
       }
   
       if (isLoggedIn) {
-        button = <button className='user-icon' onClick={isUserOpen ? this.closeUserClick : this.openUserClick}>DC</button>;
+        button = <button className='user-icon' onMouseEnter={this.openUser} onMouseLeave={this.closeUser}>DC</button>;
       } else {
         button = <button className='login-button' onClick={this.handleLoginClick}>Log In</button>;
       }
@@ -51,9 +51,10 @@ class LoginControl extends React.Component {
               <li className='addresses'>Addresses</li>
           </ul>}
           {button}
-          <div className={`user-info ${userCard}`}>
-                <p className='logged-in-status'>Logged in as: <br /><span className='user-email'>darius@swyfft.com</span></p>
+          <div className={`user-info ${userCard}`} onMouseEnter={this.openUser} onMouseLeave={this.closeUser}>
+                <p className='logged-in-status'>Logged In<br /><span className='user-email'>darius@swyfft.com</span></p>
                 <button className='log-out-button' onClick={this.handleLogoutClick}>Log Out</button>
+                <div className='arrow-up'></div>
           </div>
           <menu className='hamburger'>
                 <div className='line'></div>

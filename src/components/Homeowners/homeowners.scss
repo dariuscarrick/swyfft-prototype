@@ -3,12 +3,30 @@
 .homeowners-container {
     background-color: $dark-green-3;
     height: 100vh;
-    padding-top: 25vh;
+    padding: 25vh 0 0 0;
+
+    @media #{$grid-xs, $grid-sm} {
+        padding: 10vh 0 0 0;
+    }
+
+    @media #{$grid-xs} {
+        padding: 5vh 0 0 0;
+    }
 }
 
 .shield {
     width: 85px;
     height: 95px;
+
+    @media #{$grid-xxs, $grid-xs, $grid-sm} {
+        width: 60px;
+        height: 67px;
+        margin: 0 0 16px 24px;
+    }
+
+    @media #{$grid-xxs, $grid-xs} {
+        margin: 0 0 16px 0;
+    }
 }
 
 .hero-text {
@@ -24,6 +42,11 @@
     }
     .second-line {
         color: $brand-green;
+    }
+
+    @media #{$grid-xxs, $grid-xs} {
+        font-size: 25px;
+        margin: 0 0 24px 0;
     }
 }
 
@@ -50,6 +73,10 @@
         color: $black;
         font-style: regular;
     }
+
+    @media #{$grid-xxs, $grid-xs} {
+        margin: 0;
+    }
 }
 
 .get-quote {
@@ -68,5 +95,13 @@
     &:hover {
         background-color: $white;
         color: $black;
+    }
+
+    @media #{$grid-sm} {
+        margin: 24px 0 0 24px;
+    }
+
+    @media #{$grid-xxs, $grid-xs} {
+        margin: 24px 0 0 0;
     }
 }
