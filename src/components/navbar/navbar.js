@@ -120,12 +120,6 @@ function NavBar() {
       return statesAvailable;
     }
 
-    function displayNone() {
-      let display;
-      display = 'display-none';
-      return display;
-    }
-
     // Function to display dynamic product details
     function productDetails(option) {
       let productDetail;
@@ -142,9 +136,7 @@ function NavBar() {
         default: productDetail = '';
       }
       return productDetail;
-    }
-
-    
+    }    
 
     return (
         <Container className={`navbar-container ${getNavbarClass()}`} fluid={true}>
@@ -163,9 +155,9 @@ function NavBar() {
                                       onClick={() => {handleListItemClick(index)}}
                                   >
                                       {option}
-                                      <div id='statesContainer' className={`homeowners-states es-commercial-states admitted-commercial-states ${displayNone()}`} onMouseLeave={() => {displayNone()}}>
+                                      <div id='statesContainer' className='homeowners-states es-commercial-states admitted-commercial-states'>
                                           <div className='product-detail'>{productDetails(option)}</div>
-                                          <div className='states'><span className='available-in'>Available in:</span>
+                                          <div className='states'>
                                             {getStates(option).map((state) => <div className='state-instance' key={state}>
                                               <StateSvg state={state.replace( /\s/g, '')} />
                                               <span>{state}</span>
