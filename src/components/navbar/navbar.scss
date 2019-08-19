@@ -181,7 +181,7 @@
     margin: 20px 0 0 0;
     padding: 6px 16px;
     left: 0;
-    background-color: $dark-purple-2;
+    background-color: rgba(0,0,0,.75);
     @include transition(all, 300ms, ease, 5ms);
 
     @media #{$grid-xs} {

@@ -120,6 +120,12 @@ function NavBar() {
       return statesAvailable;
     }
 
+    function displayNone() {
+      let display;
+      display = 'display-none';
+      return display;
+    }
+
     // Function to display dynamic product details
     function productDetails(option) {
       let productDetail;
@@ -157,7 +163,7 @@ function NavBar() {
                                       onClick={() => {handleListItemClick(index)}}
                                   >
                                       {option}
-                                      <div id='statesContainer' className='homeowners-states es-commercial-states admitted-commercial-states'>
+                                      <div id='statesContainer' className={`homeowners-states es-commercial-states admitted-commercial-states ${displayNone()}`} onMouseLeave={() => {displayNone()}}>
                                           <div className='product-detail'>{productDetails(option)}</div>
                                           <div className='states'><span className='available-in'>Available in:</span>
                                             {getStates(option).map((state) => <div className='state-instance' key={state}>
