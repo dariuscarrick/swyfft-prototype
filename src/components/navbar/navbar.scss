@@ -53,12 +53,14 @@
 
 .hamburger {
     cursor: pointer;
+    margin: 4px 0 0 0;
 
     & .line {
+
         height: 1.4px;
         background-color: $white;
         border-radius: 30px;
-        margin: 4px 0;
+        margin: 0 0 4px 0;
         width: 24px;
     }
 }
@@ -70,7 +72,7 @@
     border-radius: 4px;
     padding: 16px 24px;
     background-color: $light-gray-2;
-    box-shadow: -2px 2px 8px -3px rgba(0, 0, 0, .3);
+    box-shadow: $dark-box-shadow;
     text-align: center;
 }
 
@@ -333,7 +335,7 @@
     background-color: $brand-green;
 
     .product-link {
-        @include p-body-1($dark-green-2);
+        @include p-body-1($dark-green-1);
         @include hover-transition;
         line-height: 1;
         font-weight: 700;
@@ -376,7 +378,7 @@
             margin-right: 16px;
     
             &:hover {
-                color: $dark-green-2;
+                color: $dark-green-1;
                 cursor: pointer;
             }
         }

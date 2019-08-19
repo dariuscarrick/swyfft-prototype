@@ -3,8 +3,8 @@ import {Route} from 'react-router-dom';
 import './App.scss';
 import NavBar from '../navbar/navbar';
 import Homeowners from '../homeowners/homeowners';
-import ESCommercial from '../es-commercial/escommercial';
-import AdmittedCommercial from '../admitted-commercial/admitted-commercial';
+import ESCommercial from '../commercial/es-commercial/escommercial';
+import AdmittedCommercial from '../commercial/admitted-commercial/admitted-commercial';
 
 function App() {
   return (

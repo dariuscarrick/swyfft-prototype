@@ -160,7 +160,7 @@ function NavBar() {
                                       <div id='statesContainer' className='homeowners-states es-commercial-states admitted-commercial-states'>
                                           <div className='product-detail'>{productDetails(option)}</div>
                                           <div className='states'><span className='available-in'>Available in:</span>
-                                            {getStates(option).map((state) => <div className='state-instance'>
+                                            {getStates(option).map((state) => <div className='state-instance' key={state}>
                                               <StateSvg state={state.replace( /\s/g, '')} />
                                               <span>{state}</span>
                                             </div>)}

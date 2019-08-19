@@ -1,5 +1,5 @@
 import React from 'react';
-import './admitted-commercial.scss';
+import '../commercial.scss';
 
 export default function AdmittedCommercial() {
     return (

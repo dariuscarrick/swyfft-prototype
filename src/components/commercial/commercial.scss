@@ -1,0 +1,22 @@
+@import '../../assets/scss-variables/compiled-variables.scss';
+
+// Commercial Hero Container
+.commercial-hero {
+    min-height: 100vh;
+    padding: 56px 0 80px 0;
+    background-color: $brand-green;
+}
+
+// Hero Text Gradient
+.hero-text-gradient {
+    display: block;
+    @include h1-hero($white);
+
+    &:first-child {
+        color: $dark-green-1;
+    }
+
+    &:nth-child(2) {
+        color: $dark-green-2;
+    }
+}
