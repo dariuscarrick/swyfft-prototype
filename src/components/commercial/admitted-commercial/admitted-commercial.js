@@ -91,7 +91,7 @@ export default class AdmittedCommercial extends React.Component {
                                 placeholderText='$'                        
                             />
                         </Col>
-                        <Col xl={2} lg={2} md={2} md={3} sm={6} xs={6}>
+                        <Col xl={2} lg={2} md={3} sm={6} xs={6}>
                             <TextField
                                 onColor={true}
                                 labelText='Bus. Income Limit'
