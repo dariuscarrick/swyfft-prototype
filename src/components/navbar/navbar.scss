@@ -109,6 +109,10 @@
     &:hover {
         @include secondary-button($white, $light-green, $light-green);
     }
+
+    @media #{$grid-xxs} {
+        display: none;
+    } 
 }
 
 .user-email {
