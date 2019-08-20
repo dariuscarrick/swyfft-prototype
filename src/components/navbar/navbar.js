@@ -1,5 +1,5 @@
 import React from 'react';
-import {Redirect} from 'react-router-dom';
+import {Redirect, withRouter} from 'react-router-dom';
 import LoginControl from './login';
 import {ReactComponent as MultiLogo} from '../../assets/images/swyfft-wordmark-logo-multi.svg';
 import {ReactComponent as WhiteLogo} from '../../assets/images/white-wordmark-logo.svg';
@@ -13,7 +13,6 @@ import {ReactComponent as NewYork} from '../../assets/images/newyork.svg';
 import {ReactComponent as Texas} from '../../assets/images/texas.svg';
 import './navbar.scss';
 import {Container} from 'react-bootstrap';
-
 
 const options = [
     'Homeowners',
@@ -54,8 +53,7 @@ const StateSvg = props => {
 }
 
 // NavBar Component
-function NavBar() {
-
+const NavBar = props => {
   // Function to create the product list and handle selected state
   const [selectedIndex, setSelectedIndex] = React.useState(0);
 
@@ -68,7 +66,7 @@ function NavBar() {
     let path;
     switch (options[selectedIndex]) {
       case options[0]:
-        path = '/';
+        path = '/Homeowners';
         break;
       case options[1]:
         path = '/E&S-Commercial-Package';
@@ -76,7 +74,7 @@ function NavBar() {
       case options[2]:
         path = '/Commercial-Package';
         break;
-      default: path = '/';
+      default: path = '/Homeowners';
     }
     return path;
   }
@@ -84,16 +82,18 @@ function NavBar() {
     // Function to change navbar colors based on path
     function getNavbarClass() {
       let navClass;
-      switch (optionPath()) {
-        case '/':
+      switch (props.location.pathname) {
+        case '/Homeowners':
           navClass = 'homeowners-nav';
           break;
-        case '/E&S-Commercial-Package' || '/Commercial-Package':
+        case '/E&S-Commercial-Package':
+          navClass = 'commercial-nav';
+          break;
+        case '/Commercial-Package':
           navClass = 'commercial-nav';
           break;
         default: navClass = 'standard-nav';
       }
-      optionPath() === '/' ? navClass = 'homeowners-nav' : navClass = 'commercial-nav';
       return navClass;
   }
 
@@ -141,7 +141,7 @@ function NavBar() {
     return (
         <Container className={`navbar-container ${getNavbarClass()}`} fluid={true}>
             <nav className='navigation'>
-                  {getNavbarClass() === 'homeowners-nav' ? 
+                  {getNavbarClass() === 'homeowners-nav' || 'standard-nav' ? 
                     <MultiLogo alt='Swyfft Insurance'  /> :
                     <WhiteLogo alt='Swyfft Insurance'  /> 
                   }
@@ -174,4 +174,4 @@ function NavBar() {
     );
 }
 
-export default NavBar;
+export default withRouter(NavBar);

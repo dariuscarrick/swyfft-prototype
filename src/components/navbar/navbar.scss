@@ -67,6 +67,7 @@
 
 .user-info {
     position: absolute;
+    z-index: 1;
     top: 58px;
     right: 42px;
     border-radius: 4px;
@@ -101,15 +102,25 @@
     }
 }
 
+.new-quote-button {
+    @include secondary-button($white, $brand-green, $brand-green);
+    margin: 0 16px 0 0;
+
+    &:hover {
+        @include secondary-button($white, $light-green, $light-green);
+    }
+}
+
 .user-email {
     font-size: 16px;
     color: $brand-green;
 }
 
 .product-detail {
-    @include h3-body($white);
+    @include p-body-2($dark-gray-2);
+    font-weight: 700;
     letter-spacing: 0.5px;
-    padding: 0 24px 0 0;
+    padding: 0 16px 0 0;
     white-space: nowrap;
 
     @media #{$grid-xxs, $grid-xs} {
@@ -119,22 +130,11 @@
     }
 }
 
-.available-in {
-    @include p-body-3($medium-gray-2);
-    display: block;
-    line-height: 1;
-    margin: 1px 0 0 0;
-
-    @media #{$grid-xxs, $grid-xs} {
-        margin: 0 0 8px 0;
-    }
-}
-
 .states {
-    @include p-body-1($white);
+    @include p-body-2($dark-purple-2);
     letter-spacing: 0.5px;
     border-left: 1px solid $brand-green;
-    padding: 0 0 0 24px;
+    padding: 0 0 0 16px;
 
     @media #{$grid-xxs, $grid-xs} {
         padding: 12px 0;
@@ -167,7 +167,7 @@
     z-index: 1;
     margin: 12px 0 0 0;
     padding: 16px;
-    background-color: $dark-gray-2;
+    background-color: $light-gray-2;
     box-shadow: $dark-box-shadow;
     border-radius: 4px;
     @include transition(all, 300ms, ease, 5ms);

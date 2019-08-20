@@ -105,7 +105,7 @@
 }
 
 .Dropdown-menu {
-    @include p-body-1($dark-gray-2);
+    @include p-body-2($dark-gray-2);
     position: absolute;
     top: 76px;
     left: 7px;
@@ -131,7 +131,7 @@
         background: $transparent;
     }
 
-    &::-webkit-scrollbar-thumb:hover {
+    &::-webkit-scrollbar-thumb {
         background: #8fbf21; 
       }
     
