@@ -17,6 +17,7 @@ export class TextField extends React.Component {
              id='text-field'
              className={`input ${p.onColor ? 'on-color-input' : 'on-grayscale-input'} ${p.addLabelClass ? p.addLabelClass : ''}`}
              placeholder={`${p.placeholderText ? p.placeholderText : ''}`}
+             disabled={p.disabled}
         />
     </div>
         );

@@ -16,14 +16,14 @@ export default class ESCommercial extends React.Component {
                                 <span className='hero-text-gradient'>Just fill out this form:</span>
                             </h1>
                         </Col>
-                        <Col lg={8}>
+                        <Col xl={8} lg={8} md={12}>
                             <TextField
                                 onColor={true}
                                 labelText='Building Address'
                                 placeholderText='Enter Building Address'
                             />
                         </Col>
-                        <Col lg={4}>
+                        <Col xl={4} lg={4} md={4}>
                             <Select
                                 onColor={true}
                                 labelText='Occupancy'
@@ -37,37 +37,31 @@ export default class ESCommercial extends React.Component {
                                 ]}
                             />
                         </Col>
-                        <Col lg={2}>
+                        <Col xl={2} lg={2} md={2} sm={6} xs={6}>
                             <TextField
                                 onColor={true}
                                 labelText='Year Built'
                             />
                         </Col>
-                        <Col lg={1}>
+                        <Col xl={1} lg={2} md={2} sm={6} xs={6}>
                             <TextField
                                 onColor={true}
                                 labelText='# Buildings'
                             />
                         </Col>
-                        <Col lg={1}>
+                        <Col xl={1} lg={2} md={2} sm={6} xs={6}>
                             <TextField
                                 onColor={true}
                                 labelText='# Stories'
                             />
                         </Col>
-                        <Col lg={1}>
-                            <TextField
-                                onColor={true}
-                                labelText='# Units'
-                            />
-                        </Col>
-                        <Col lg={1}>
+                        <Col xl={2} lg={2} md={2} sm={6} xs={6}>
                             <TextField
                                 onColor={true}
                                 labelText='Sq. Footage'
                             />
                         </Col>
-                        <Col lg={2}>
+                        <Col xl={2} lg={2} md={3}>
                             <Select
                                 onColor={true}
                                 labelText='Swimming Pools'
@@ -75,7 +69,7 @@ export default class ESCommercial extends React.Component {
                                 options={['0','1','2','3','4']}                          
                             />
                         </Col>
-                        <Col lg={4}>
+                        <Col xl={4} lg={2} md={3}>
                             <Select
                                 onColor={true}
                                 labelText='Construction Type'
@@ -89,28 +83,28 @@ export default class ESCommercial extends React.Component {
                                 ]}
                             />
                         </Col>
-                        <Col lg={2}>
+                        <Col xl={2} lg={2} md={3} sm={6} xs={6}>
                             <TextField
                                 onColor={true}
                                 labelText='Building Value'
                                 placeholderText='$'                        
                             />
                         </Col>
-                        <Col lg={2}>
+                        <Col xl={2} lg={2} md={3} sm={6} xs={6}>
                             <TextField
                                 onColor={true}
                                 labelText='Bus. Personal Property'
                                 placeholderText='$'                        
                             />
                         </Col>
-                        <Col lg={2}>
+                        <Col xl={2} lg={2} md={2} md={3} sm={6} xs={6}>
                             <TextField
                                 onColor={true}
                                 labelText='Bus. Income Limit'
                                 placeholderText='$'                        
                             />
                         </Col>
-                        <Col lg={2}>
+                        <Col xl={2} lg={2} md={3} sm={6} xs={6}>
                             <Select
                                 onColor={true}
                                 labelText='General Liability'
@@ -118,21 +112,19 @@ export default class ESCommercial extends React.Component {
                                 options={['$1MM/$2MM','No Coverage']}
                             />
                         </Col>
-                        <Col lg={2}>
+                        <Col xl={2} lg={2} md={3} sm={6} xs={6}>
                             <TextField
                                 onColor={true}
                                 labelText='Target Premium'
                                 placeholderText='$'                        
                             />
                         </Col>
-                        <Col lg={2}>
+                        <Col xl={2} lg={2} md={3} sm={6} xs={6}>
                             <div className='ex-wind-checkbox'>
                                 <span className='checkbox'></span> Exclude Wind/Hail
                             </div>
                         </Col>
-                    </Row>
-                    <Row>
-                        <Col lg={{ span: 3, offset: 9 }}>
+                        <Col xl={{ span: 2, offset: 10 }} lg={{ span: 3, offset: 9}} md={{ span: 4, offset: 8}}>
                             <button className='get-quote-button'>Get Quote</button>
                         </Col>
                     </Row>

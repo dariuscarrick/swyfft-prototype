@@ -71,6 +71,9 @@
 
 .Dropdown-placeholder {
     color: $dark-gray-1;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .Dropdown-arrow-wrapper {
@@ -78,9 +81,9 @@
     width: 40px;
     height: 40px;
     border-radius: 0 30px 30px 0;
-    position: relative;
-    top: -40px;
-    right: -101%;
+    position: absolute;
+    top: 32px;
+    right: 6px;
     @include hover-transition;
 }
 

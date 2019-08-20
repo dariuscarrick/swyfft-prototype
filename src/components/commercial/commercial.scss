@@ -19,6 +19,10 @@
     &:nth-child(2) {
         color: $dark-green-2;
     }
+
+    @media #{$grid-xxs, $grid-xs, $grid-sm} {
+        font-size: 24px;
+    }
 }
 
 // Ex Wind Checkbox
