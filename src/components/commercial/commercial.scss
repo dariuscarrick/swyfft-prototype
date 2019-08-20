@@ -1,0 +1,57 @@
+@import '../../assets/scss-variables/compiled-variables.scss';
+
+// Commercial Hero Container
+.commercial-hero {
+    min-height: 100vh;
+    padding: 32px 0 80px 0;
+    background-color: $brand-green;
+}
+
+// Hero Text Gradient
+.hero-text-gradient {
+    display: block;
+    @include h1-hero($white);
+
+    &:first-child {
+        color: $dark-green-1;
+    }
+
+    &:nth-child(2) {
+        color: $dark-green-2;
+    }
+
+    @media #{$grid-xxs, $grid-xs, $grid-sm} {
+        font-size: 24px;
+    }
+}
+
+// Ex Wind Checkbox
+.ex-wind-checkbox {
+    @include p-body-2($white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0 0 0;
+
+    .checkbox {
+        height: 16px;
+        width: 16px;
+        background-color: $white;
+        border: 1px solid $medium-gray-1;
+        display: inline-block;
+        margin: 0 8px 0 0;
+    }
+}
+
+.get-quote-button {
+    @include primary-button($white, $black, $black);
+    height: 40px;
+    width: 100%;
+    font-size: 14px;
+    margin-top: 24px;
+
+    &:hover {
+        @include primary-button($white, $dark-gray-2, $dark-gray-2);
+        font-size: 14px;
+    }
+}

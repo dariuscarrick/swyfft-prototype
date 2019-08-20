@@ -22,3 +22,8 @@ time, mark, audio, video {
 button:focus, input:focus {
 	outline: none;
 }
+
+[class*='col-'] {
+	padding-right: 6px;
+	padding-left: 6px;
+}

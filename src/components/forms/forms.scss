@@ -1,0 +1,160 @@
+@import '../../assets/scss-variables/compiled-variables.scss';
+
+// General Input Styles
+.input-field {
+    @include p-body-2($black);
+    width: 100%;
+    margin: 8px 0 0 0;
+    cursor: pointer;
+}
+
+.input {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    vertical-align: middle;
+    background-color: $white;
+    border: 1px solid $medium-gray-1;
+    border-radius: 30px;
+    padding: 0 16px;
+
+    &::placeholder {
+        color: $dark-gray-1;
+    }
+
+    &:focus, &:hover {
+        border: 1px solid $dark-green-1;
+    }
+}
+
+// Text Field Styles
+
+.label {
+    margin: 0 0 4px 0;
+}
+
+.on-grayscale-label {
+    @include p-body-2($dark-gray-1);
+}
+
+.on-color-label {
+    @include p-body-2($white);
+}
+
+// Dropdown Styles
+.Dropdown-root {
+    width: 100%;
+    height: 40px;
+    line-height: 39px;
+    background-color: $white;
+    border: 1px solid $medium-gray-1;
+    border-radius: 30px;
+    padding: 0 40px 0 16px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    @include hover-transition;
+
+    .is-selected {
+        color: black;
+        overflow-x: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &:hover {
+        border: 1px solid $dark-green-1;
+    }
+
+    &:hover .Dropdown-arrow-wrapper {
+        background-color: $dark-green-1;
+    }
+}
+
+.Dropdown-placeholder {
+    color: $dark-gray-1;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.Dropdown-arrow-wrapper {
+    background-color: $medium-green;
+    width: 40px;
+    height: 40px;
+    border-radius: 0 30px 30px 0;
+    position: absolute;
+    top: 32px;
+    right: 6px;
+    @include hover-transition;
+}
+
+.Dropdown-arrow {
+    border-style: solid;
+    border-width: 1.4px 1.4px 0 0;
+    content: '';
+    color: $white;
+    display: inline-block;
+    height: 10px;
+    border-radius: 1px;
+    right: -14px;
+    position: relative;
+    top: 0.15em;
+    transform: rotate(-45deg);
+    width: 10px;
+    top: -3px;
+    transform: rotate(135deg);
+}
+
+.Dropdown-menu {
+    @include p-body-1($dark-gray-2);
+    position: absolute;
+    top: 76px;
+    left: 7px;
+    right: 5px;
+    z-index: 1;
+    background-color: $light-gray-2;
+    border: 1px solid $medium-gray-1;
+    border-radius: 8px;
+    box-shadow: $dark-box-shadow;
+    max-height: 300px;
+    overflow-y: auto;
+    text-overflow: unset;
+    white-space: normal;
+    @include transition(all, 300ms, ease, 5ms);
+
+    &::-webkit-scrollbar {
+        width: 8px !important;
+        border-radius: 10px !important;
+    }
+
+    &::-webkit-scrollbar-track {
+        border-radius: 10px !important;
+        background: $transparent;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: #8fbf21; 
+      }
+    
+    .is-selected {
+        color: $black;
+        background-color: $medium-gray-1;
+    }
+
+    .Dropdown-option {
+        padding: 12px;
+        @include hover-transition;
+
+        &:first-child {
+            border-radius: 8px 0 0 0;
+        }
+
+        &:last-child {
+            border-radius: 0 0 8px 0;
+        }
+
+        &:hover {
+            background-color: $medium-gray-1;
+            color: $black;
+        }
+    }
+}

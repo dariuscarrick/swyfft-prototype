@@ -1,15 +1,16 @@
 import React from 'react';
+import onClickOutside from "react-onclickoutside";
 
 export class LoginControl extends React.Component {
     constructor(props) {
       super(props);
       this.handleLoginClick = this.handleLoginClick.bind(this);
       this.handleLogoutClick = this.handleLogoutClick.bind(this);
-      this.openUser = this.openUser.bind(this);
-      this.closeUser = this.closeUser.bind(this);
+      this.handleOpenUserClick = this.handleOpenUserClick.bind(this);
+      this.handleCloseUserClick = this.handleCloseUserClick.bind(this);
       this.state = {isLoggedIn: false, isUserOpen: false};
     }
-  
+
     handleLoginClick() {
       this.setState({isLoggedIn: true});
     }
@@ -18,28 +19,26 @@ export class LoginControl extends React.Component {
       this.setState({isLoggedIn: false, isUserOpen: false});
     }
 
-    openUser() {
+    handleOpenUserClick() {
         this.setState({isUserOpen: true});
     }
     
-    closeUser() {
+    handleCloseUserClick() {
         this.setState({isUserOpen: false});
     }
+
+    handleClickOutside = evt => {
+      this.handleCloseUserClick();
+    };
   
     render() {
       const isLoggedIn = this.state.isLoggedIn;
       const isUserOpen = this.state.isUserOpen;
       let button;
-      let userCard;
 
-      if(isUserOpen) {
-          userCard = 'display';
-      } else {
-          userCard= 'display-none';
-      }
   
       if (isLoggedIn) {
-        button = <button className='user-icon' onMouseEnter={this.openUser} onMouseLeave={this.closeUser}>DC</button>;
+        button = <button className='user-icon' onClick={this.handleOpenUserClick}>DC</button>;
       } else {
         button = <button className='login-button' onClick={this.handleLoginClick}>Log In</button>;
       }
@@ -51,11 +50,11 @@ export class LoginControl extends React.Component {
               <li className='addresses'>Addresses</li>
           </ul>}
           {button}
-          <div className={`user-info ${userCard}`} onMouseEnter={this.openUser} onMouseLeave={this.closeUser}>
+          {isUserOpen && <div className={`user-info`}>
                 <p className='logged-in-status'>Logged In<br /><span className='user-email'>darius@swyfft.com</span></p>
                 <button className='log-out-button' onClick={this.handleLogoutClick}>Log Out</button>
                 <div className='arrow-up'></div>
-          </div>
+          </div>}
           <menu className='hamburger'>
                 <div className='line'></div>
                 <div className='line'></div>
@@ -66,4 +65,4 @@ export class LoginControl extends React.Component {
     }
   }
 
-  export default LoginControl;
+  export default onClickOutside(LoginControl);
