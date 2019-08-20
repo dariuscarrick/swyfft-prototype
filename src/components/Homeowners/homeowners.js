@@ -1,6 +1,7 @@
 import React from 'react';
 import './homeowners.scss';
 import {Container, Row, Col} from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 import {ReactComponent as Shield} from '../../assets/images/shield.svg';
 
 export default function Homeowners() {
@@ -20,7 +21,9 @@ export default function Homeowners() {
                         <input className='address-input' type='text' placeholder='Type your address' />
                     </Col>
                     <Col lg={3}>
-                        <button className='get-quote'>Get Quote</button>
+                        <Link to='/Homeowners/Quote'>
+                            <button className='get-quote'>Get Quote</button>
+                        </Link>
                     </Col>
                 </Row>
             </Container>

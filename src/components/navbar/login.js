@@ -1,4 +1,6 @@
 import React from 'react';
+import {Link, withRouter} from 'react-router-dom';
+import {compose} from 'recompose';
 import onClickOutside from "react-onclickoutside";
 
 export class LoginControl extends React.Component {
@@ -29,7 +31,37 @@ export class LoginControl extends React.Component {
 
     handleClickOutside = evt => {
       this.handleCloseUserClick();
-    };
+    }
+
+    getNavbarClass() {
+    let navClass;
+    switch (this.props.location.pathname) {
+      case '/Homeowners':
+        navClass = 'homeowners-nav';
+        break;
+      case '/E&S-Commercial-Package':
+        navClass = 'commercial-nav';
+        break;
+      case '/Commercial-Package':
+        navClass = 'commercial-nav';
+        break;
+      default: navClass = 'standard-nav';
+    }
+  return navClass;
+}
+
+getNewQuoteLink() {
+  const path = this.props.location.pathname;
+  let link;
+  if (path.includes('Home')) {
+    link = '/Homeowners';
+  } else if (path.includes('E&S')) {
+    link = '/E&S-Commercial-Package';
+  } else {
+    link = '/Commercial-Package';
+  } return link;
+  
+}
   
     render() {
       const isLoggedIn = this.state.isLoggedIn;
@@ -45,9 +77,15 @@ export class LoginControl extends React.Component {
   
       return (
         <div className='navigation-menu'>
-          {isLoggedIn && <ul className='logged-in-items'>
+          {this.getNavbarClass() !== 'standard-nav' ? isLoggedIn && <ul className='logged-in-items'>
               <li>History</li>
               <li className='addresses'>Addresses</li>
+          </ul> : isLoggedIn && <ul className='logged-in-items'>
+              <li>History</li>
+              <li className='addresses'>Addresses</li>
+              <Link to={this.getNewQuoteLink()}>
+                <button className='new-quote-button'>+ New Quote</button>
+              </Link>
           </ul>}
           {button}
           {isUserOpen && <div className={`user-info`}>
@@ -65,4 +103,7 @@ export class LoginControl extends React.Component {
     }
   }
 
-  export default onClickOutside(LoginControl);
+  export default compose(
+    withRouter,
+    onClickOutside
+  )(LoginControl);

@@ -1,5 +1,6 @@
 import React from 'react';
 import {Container, Row, Col} from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 import {TextField, Select} from '../../forms/forms';
 import '../commercial.scss';
 
@@ -119,7 +120,9 @@ export default class AdmittedCommercial extends React.Component {
                             </div>
                         </Col>
                         <Col xl={{ span: 2, offset: 10 }} lg={{ span: 3, offset: 9}} md={{ span: 4, offset: 8}}>
-                            <button className='get-quote-button'>Get Quote</button>
+                            <Link to='/Commercial-Package/Quote'>
+                                <button className='get-quote-button'>Get Quote</button>
+                            </Link>
                         </Col>
                     </Row>
                 </Container>
