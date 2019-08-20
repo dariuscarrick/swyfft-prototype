@@ -97,6 +97,17 @@ const NavBar = props => {
       return navClass;
   }
 
+  //Function to render different logos in the nav based on location
+  function getNavLogo() {
+   let logoType;
+   switch(getNavbarClass()) {
+     case 'commercial-nav':
+       logoType = 'white';
+       break;
+     default: logoType = 'multi'
+   } return logoType;
+  }
+
     // function to set class name of product link dynamically
     function setProductClassName(option, index) {
       return `product-link ${index === selectedIndex ? 'selected' : ''} ${option.replace('&', '').replace( /\s/g, '').toLowerCase()}`
@@ -141,7 +152,7 @@ const NavBar = props => {
     return (
         <Container className={`navbar-container ${getNavbarClass()}`} fluid={true}>
             <nav className='navigation'>
-                  {getNavbarClass() === 'homeowners-nav' || 'standard-nav' ? 
+                  {getNavLogo() === 'multi' ? 
                     <MultiLogo alt='Swyfft Insurance'  /> :
                     <WhiteLogo alt='Swyfft Insurance'  /> 
                   }
