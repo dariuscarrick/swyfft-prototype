@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route} from 'react-router-dom';
+import {Route, Redirect} from 'react-router-dom';
 import './App.scss';
 import NavBar from '../navbar/navbar';
 import Homeowners from '../homeowners/homeowners';
@@ -12,6 +12,7 @@ import AdmittedCommercialQuote from '../quote/admitted-commercial-quote';
 function App() {
   return (
     <div>
+      <Redirect exact from='/' to='/Homeowners' />
       <NavBar />
       <Route path='/Homeowners' component={Homeowners} exact={true}/>
       <Route path='/Homeowners/Quote' component={HomeownersQuote} exact={true} />
