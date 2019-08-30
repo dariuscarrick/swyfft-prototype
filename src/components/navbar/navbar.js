@@ -1,6 +1,11 @@
 import React from 'react';
-import {Redirect, withRouter} from 'react-router-dom';
-import LoginControl from './login';
+import {Link, withRouter} from 'react-router-dom';
+import {compose} from 'recompose';
+import onClickOutside from "react-onclickoutside";
+import {Container} from 'react-bootstrap';
+import './navbar.scss';
+
+// Image Components
 import {ReactComponent as MultiLogo} from '../../assets/images/swyfft-wordmark-logo-multi.svg';
 import {ReactComponent as WhiteLogo} from '../../assets/images/white-wordmark-logo.svg';
 import {ReactComponent as Alabama} from '../../assets/images/alabama.svg';
@@ -11,178 +16,222 @@ import {ReactComponent as Massachusetts} from '../../assets/images/massachusetts
 import {ReactComponent as NewJersey} from '../../assets/images/newjersey.svg';
 import {ReactComponent as NewYork} from '../../assets/images/newyork.svg';
 import {ReactComponent as Texas} from '../../assets/images/texas.svg';
-import './navbar.scss';
-import {Container} from 'react-bootstrap';
 
-const options = [
-    'Homeowners',
-    'E&S Commercial',
-    'Admitted Commercial',
-  ];
+class NavBar extends React.Component {
+    constructor(props) {
+        super(props);
+        this.handleLoginClick = this.handleLoginClick.bind(this);
+        this.handleLogoutClick = this.handleLogoutClick.bind(this);
+        this.handleOpenUserClick = this.handleOpenUserClick.bind(this);
+        this.handleCloseUserClick = this.handleCloseUserClick.bind(this);
+        this.handleShowStates = this.handleShowStates.bind(this);
+        this.handleHideStates = this.handleHideStates.bind(this);
+        this.setSelectedIndex = this.setSelectedIndex.bind(this);
 
-const StateSvg = props => {
-  let stateImage;
-  switch (props.state) {
-    case 'Alabama' : 
-      stateImage = <Alabama className='state-svg' />;
-      break;
-    case 'California' : 
-      stateImage = <California className='state-svg' />;
-      break;
-    case 'Florida' : 
-      stateImage = <Florida className='state-svg' />;
-      break;
-    case 'Illinois' : 
-      stateImage = <Illinois className='state-svg' />;
-      break;
-    case 'Massachusetts' : 
-      stateImage = <Massachusetts className='state-svg' />;
-      break;
-    case 'NewJersey' : 
-      stateImage = <NewJersey className='state-svg' />;
-      break;
-    case 'NewYork' : 
-      stateImage = <NewYork className='state-svg' />;
-      break;
-    case 'Texas' : 
-      stateImage = <Texas className='state-svg' />;
-      break;
-    default: stateImage = '';
-  }
-  return stateImage;
+        this.state = {
+          isLoggedIn: false, 
+          isUserOpen: false,
+          products: ['Homeowners', 'Commercial Package', 'E&S Commercial Package'],
+          showStates: false,
+          selectedIndex: [0],
+          stateList: []
+        };
+      }
+
+      // Login methods
+      handleLoginClick() {
+        this.setState({isLoggedIn: true});
+      }
+    
+      handleLogoutClick() {
+        this.setState({isLoggedIn: false, isUserOpen: false});
+      }
+  
+      handleOpenUserClick() {
+        this.setState({isUserOpen: true});
+      }
+      
+      handleCloseUserClick() {
+        this.setState({isUserOpen: false});
+      }
+  
+      handleClickOutside = evt => {
+        this.handleCloseUserClick();
+        this.handleHideStates();
+      }
+
+      setSelectedIndex(index) {
+        this.setState({selectedIndex: index});
+      }
+
+      handleShowStates(product, index) {
+        this.setSelectedIndex(index);
+        switch (product[this.state.selectedIndex]) {
+          case product[0]:
+              this.setState({
+                stateList: [
+                  'Alabama', 
+                  'California', 
+                  'Florida', 
+                  'Illinois', 
+                  'Massachusetts',
+                  'New Jersey', 
+                  'New York', 
+                  'Texas']
+              });
+              break;
+          case product[1]:
+              this.setState({
+                stateList: [
+                  'California', 
+                  'Illinois', 
+                  'Florida']
+              });
+              break;
+          case product[2]:
+              this.setState({
+                stateList: ['Florida']
+              });
+              break;
+          default: this.setState({
+            stateList: []
+          });
+        };
+        this.setState({showStates: true});
+      }
+
+      handleHideStates() {
+        this.setState({showStates: false});
+      }
+
+      render() {
+        const path = this.props.location.pathname;
+
+        const handleNavbarClass = () => {
+          let navbarClass;
+          switch(path) {
+            case '/Homeowners':
+              navbarClass = 'homeowners-nav';
+              break;
+            case '/Commercial-Package':
+              navbarClass = 'commercial-nav';
+              break;
+            case '/E&S-Commercial-Package':
+              navbarClass = 'commercial-nav';
+              break;
+            default: navbarClass = 'standard-nav';
+          }
+          return navbarClass;
+        }
+
+        const handleNewQuoteLink = () => {
+          let link;
+          if (path.includes('Home')) {
+            link = '/Homeowners';
+          } else if (path.includes('E&S')) {
+            link = '/E&S-Commercial-Package';
+          } else {
+            link = '/Commercial-Package';
+          } return link;
+        }
+
+        const StateSvg = props => {
+          let stateImage;
+          switch (props.state) {
+            case 'Alabama' : 
+              stateImage = <Alabama className='state-svg' />;
+              break;
+            case 'California' : 
+              stateImage = <California className='state-svg' />;
+              break;
+            case 'Florida' : 
+              stateImage = <Florida className='state-svg' />;
+              break;
+            case 'Illinois' : 
+              stateImage = <Illinois className='state-svg' />;
+              break;
+            case 'Massachusetts' : 
+              stateImage = <Massachusetts className='state-svg' />;
+              break;
+            case 'NewJersey' : 
+              stateImage = <NewJersey className='state-svg' />;
+              break;
+            case 'NewYork' : 
+              stateImage = <NewYork className='state-svg' />;
+              break;
+            case 'Texas' : 
+              stateImage = <Texas className='state-svg' />;
+              break;
+            default: stateImage = '';
+          }
+          return stateImage;
+        }
+
+          return (
+            <Container fluid={true} className={`navbar-container ${handleNavbarClass()}`}>
+                <nav className='navigation'>
+
+                  <Link to='/Homeowners'>
+                    {handleNavbarClass() === 'commercial-nav' ? <WhiteLogo alt='Swyfft Insurance'  /> : <MultiLogo alt='Swyfft Insurance'  />}
+                  </Link>
+
+                  <div className='product-select'>
+                    <div className='product-list'>
+                      {this.state.products.map((product, index) => (
+                          <div 
+                            className={`product-link ${path.includes('/' + product.split(' ').join('-')) ? 'selected' : ''}`} 
+                            id={product}
+                            key={index}
+                            onMouseEnter={() => this.handleShowStates(product, index)}
+                            onMouseOver={() => this.handleShowStates(product, index)}
+                            onMouseLeave={this.handleHideStates}>
+                              <Link to={'/' + product.split(' ').join('-')}>{product}</Link>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className='navigation-menu'>
+                    {handleNavbarClass() !== 'standard-nav' ? this.state.isLoggedIn && <ul className='logged-in-items'>
+                        <li>History</li>
+                        <li className='addresses'>Addresses</li>
+                    </ul> : this.state.isLoggedIn && <ul className='logged-in-items'>
+                        <li>History</li>
+                        <li className='addresses'>Addresses</li>
+                        <Link to={handleNewQuoteLink()}>
+                          <button className='new-quote-button'>+ New Quote</button>
+                        </Link>
+                    </ul>}
+
+                    {this.state.isLoggedIn ? <button className='user-icon' onClick={this.handleOpenUserClick}>DC</button> : <button className='login-button' onClick={this.handleLoginClick}>Log In</button>}
+
+                    {this.state.isUserOpen && <div className={`user-info`}>
+                          <p className='logged-in-status'>Logged In<br /><span className='user-email'>darius@swyfft.com</span></p>
+                          <button className='log-out-button' onClick={this.handleLogoutClick}>Log Out</button>
+                          <div className='arrow-up'></div>
+                    </div>}
+                    <menu className='hamburger'>
+                          <div className='line'></div>
+                          <div className='line'></div>
+                          <div className='line'></div>
+                    </menu>
+                  </div>
+                </nav>
+                <div id='statesContainer' className={`states-container ${this.state.showStates ? 'show-states' : ''}`}>
+                  <div className='product-detail'>Available In:</div>
+                    <div className='states'>
+                      {this.state.stateList.map((state, index) => <span className='state-instance' key={index}>
+                        <StateSvg state={state.replace( /\s/g, '')} />
+                        <span>{state}</span>
+                      </span>)}
+                    </div>
+                </div>
+            </Container>
+          );
+      }
 }
 
-// NavBar Component
-const NavBar = props => {
-  // Function to create the product list and handle selected state
-  const [selectedIndex, setSelectedIndex] = React.useState(0);
-
-  function handleListItemClick(index) {
-    setSelectedIndex(index);
-  }
-
-  // Function to retrieve and render the path based on the selection
- function optionPath() {
-    let path;
-    switch (options[selectedIndex]) {
-      case options[0]:
-        path = '/Homeowners';
-        break;
-      case options[1]:
-        path = '/E&S-Commercial-Package';
-        break;
-      case options[2]:
-        path = '/Commercial-Package';
-        break;
-      default: path = '/Homeowners';
-    }
-    return path;
-  }
-
-    // Function to change navbar colors based on path
-    function getNavbarClass() {
-      let navClass;
-      switch (props.location.pathname) {
-        case '/Homeowners':
-          navClass = 'homeowners-nav';
-          break;
-        case '/E&S-Commercial-Package':
-          navClass = 'commercial-nav';
-          break;
-        case '/Commercial-Package':
-          navClass = 'commercial-nav';
-          break;
-        default: navClass = 'standard-nav';
-      }
-      return navClass;
-  }
-
-  //Function to render different logos in the nav based on location
-  function getNavLogo() {
-   let logoType;
-   switch(getNavbarClass()) {
-     case 'commercial-nav':
-       logoType = 'white';
-       break;
-     default: logoType = 'multi'
-   } return logoType;
-  }
-
-    // function to set class name of product link dynamically
-    function setProductClassName(option, index) {
-      return `product-link ${index === selectedIndex ? 'selected' : ''} ${option.replace('&', '').replace( /\s/g, '').toLowerCase()}`
-    }
-
-    // Function to get the correct states to display on hover
-    function getStates(option) {
-      let statesAvailable;
-      switch (option) {
-        case 'Homeowners':
-          statesAvailable = ['Alabama', 'California', 'Florida', 'Illinois', 'Massachusetts','New Jersey', 'New York', 'Texas'];
-          break;
-        case 'E&S Commercial':
-          statesAvailable = ['Florida'];
-          break;
-        case 'Admitted Commercial':
-          statesAvailable = ['Illinois', 'Florida'];
-          break;
-        default: statesAvailable = '';
-      }
-      return statesAvailable;
-    }
-
-    // Function to display dynamic product details
-    function productDetails(option) {
-      let productDetail;
-      switch (option) {
-        case 'Homeowners' :
-            productDetail = 'Homeowners Insurance';
-          break;
-        case 'E&S Commercial' : 
-            productDetail = 'E&S Commercial Package Insurance';
-          break;
-        case 'Admitted Commercial':
-            productDetail = 'Admitted Commercial Package Insurance';
-          break;
-        default: productDetail = '';
-      }
-      return productDetail;
-    }    
-
-    return (
-        <Container className={`navbar-container ${getNavbarClass()}`} fluid={true}>
-            <nav className='navigation'>
-                  {getNavLogo() === 'multi' ? 
-                    <MultiLogo alt='Swyfft Insurance'  /> :
-                    <WhiteLogo alt='Swyfft Insurance'  /> 
-                  }
-                  <Redirect push to={optionPath()} />
-                      <div className='product-select'>
-                          <div className='product-list'>
-                              {options.map((option, index) => (
-                                  <div
-                                      className={setProductClassName(option, index)}
-                                      key={index}
-                                      onClick={() => {handleListItemClick(index)}}
-                                  >
-                                      {option}
-                                      <div id='statesContainer' className='homeowners-states es-commercial-states admitted-commercial-states'>
-                                          <div className='product-detail'>{productDetails(option)}</div>
-                                          <div className='states'>
-                                            {getStates(option).map((state) => <div className='state-instance' key={state}>
-                                              <StateSvg state={state.replace( /\s/g, '')} />
-                                              <span>{state}</span>
-                                            </div>)}
-                                          </div>
-                                      </div>
-                                  </div>
-                                  ))}
-                          </div>
-                      </div>
-                <LoginControl />
-            </nav>
-        </Container>
-    );
-}
-
-export default withRouter(NavBar);
+export default compose(
+  withRouter,
+  onClickOutside
+)(NavBar);
