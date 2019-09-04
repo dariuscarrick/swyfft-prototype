@@ -12,8 +12,8 @@ export default class AdmittedCommercial extends React.Component {
                     <Row>
                         <Col xs={12}>
                             <h1>
-                                <span className='hero-text-gradient'>Using proprietary data and analytics, Swyfft can help you</span>
-                                <span className='hero-text-gradient'>get commercial package insurance in under a minute.</span>
+                                <span className='hero-text-gradient'>Using proprietary data and analytics, Swyfft can help you </span>
+                                <span className='hero-text-gradient'>get commercial package insurance in under a minute. </span>
                                 <span className='hero-text-gradient'>Just fill out this form:</span>
                             </h1>
                         </Col>
