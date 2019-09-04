@@ -416,7 +416,6 @@
     margin: 4px 0 0 0;
 
     & .line {
-
         height: 2px;
         background-color: $white;
         border-radius: 30px;
@@ -424,6 +423,10 @@
         width: 24px;
         transform-origin: center;
         @include transition(all, 250ms, ease-out, 5ms);
+    }
+
+    &:hover .line {
+        background-color: $medium-gray-1;
     }
 }
 
@@ -434,16 +437,19 @@
             transform: rotate(45deg);
             position: fixed;
             top: 27px;
+            @include transition(all, 250ms, ease-out, 5ms);
         }
 
         & .line:nth-child(2) {
             opacity: 0;
+            @include transition(all, 250ms, ease-out, 5ms);
         }
 
         & .line:nth-child(3) {
             transform: rotate(-45deg);
             position: fixed;
             top: 27px;
+            @include transition(all, 250ms, ease-out, 5ms);
         }
     }
 
