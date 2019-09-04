@@ -8,6 +8,7 @@ import './navbar.scss';
 // Image Components
 import {ReactComponent as MultiLogo} from '../../assets/images/swyfft-wordmark-logo-multi.svg';
 import {ReactComponent as WhiteLogo} from '../../assets/images/white-wordmark-logo.svg';
+import {ReactComponent as ShieldLogo} from '../../assets/images/shield.svg';
 import {ReactComponent as Alabama} from '../../assets/images/alabama.svg';
 import {ReactComponent as California} from '../../assets/images/california.svg';
 import {ReactComponent as Florida} from '../../assets/images/florida.svg';
@@ -27,6 +28,8 @@ class NavBar extends React.Component {
         this.handleShowStates = this.handleShowStates.bind(this);
         this.handleHideStates = this.handleHideStates.bind(this);
         this.setSelectedIndex = this.setSelectedIndex.bind(this);
+        this.handleOpenModal = this.handleOpenModal.bind(this);
+        this.handleCloseModal = this.handleCloseModal.bind(this);
 
         this.state = {
           isLoggedIn: false, 
@@ -34,17 +37,18 @@ class NavBar extends React.Component {
           products: ['Homeowners', 'Commercial Package', 'E&S Commercial Package'],
           showStates: false,
           selectedIndex: [0],
-          stateList: []
+          stateList: [],
+          modalOpen: false
         };
       }
 
       // Login methods
       handleLoginClick() {
-        this.setState({isLoggedIn: true});
+        this.setState({isLoggedIn: true, modalOpen: false});
       }
     
       handleLogoutClick() {
-        this.setState({isLoggedIn: false, isUserOpen: false});
+        this.setState({isLoggedIn: false, isUserOpen: false, modalOpen: false});
       }
   
       handleOpenUserClick() {
@@ -58,6 +62,7 @@ class NavBar extends React.Component {
       handleClickOutside = evt => {
         this.handleCloseUserClick();
         this.handleHideStates();
+        this.handleCloseModal();
       }
 
       setSelectedIndex(index) {
@@ -102,6 +107,14 @@ class NavBar extends React.Component {
 
       handleHideStates() {
         this.setState({showStates: false});
+      }
+
+      handleOpenModal()  {
+        this.setState({modalOpen: true});
+      }
+
+      handleCloseModal() {
+        this.setState({modalOpen: false});
       }
 
       render() {
@@ -203,20 +216,24 @@ class NavBar extends React.Component {
                         </Link>
                     </ul>}
 
-                    {this.state.isLoggedIn ? <button className='user-icon' onClick={this.handleOpenUserClick}>DC</button> : <button className='login-button' onClick={this.handleLoginClick}>Log In</button>}
+                    {this.state.isLoggedIn ? <button className='user-icon' onClick={this.handleOpenUserClick}>DC</button> : this.state.modalOpen ? null : <button className='login-button' onClick={this.handleLoginClick}>Log In</button>}
 
                     {this.state.isUserOpen && <div className={`user-info`}>
                           <p className='logged-in-status'>Logged In<br /><span className='user-email'>darius@swyfft.com</span></p>
                           <button className='log-out-button' onClick={this.handleLogoutClick}>Log Out</button>
                           <div className='arrow-up'></div>
                     </div>}
-                    <menu className='hamburger'>
+                    <menu 
+                    className={`hamburger ${this.state.modalOpen ? 'hamburger-close' : ''}`}
+                    onClick={this.state.modalOpen ? this.handleCloseModal : this.handleOpenModal}
+                    >
                           <div className='line'></div>
                           <div className='line'></div>
                           <div className='line'></div>
                     </menu>
                   </div>
                 </nav>
+
                 <div id='statesContainer' className={`states-container ${this.state.showStates ? 'show-states' : ''}`}>
                   <div className='product-detail'>Available In:</div>
                     <div className='states'>
@@ -226,6 +243,43 @@ class NavBar extends React.Component {
                       </span>)}
                     </div>
                 </div>
+
+                <div id='hamburger-menu' className={`hamburger-menu ${this.state.modalOpen ? 'modal-open' : ''}`}>
+                    <ShieldLogo className='hamburger-shield-logo' />
+                    {this.state.isLoggedIn ? <button className='login-button' onClick={this.handleLogoutClick}>Log Out</button> : <button className='login-button' onClick={this.handleLoginClick}>Log In</button>}
+                    <ul>
+                      {this.state.isLoggedIn ? <div>
+                        <li>
+                        History
+                      </li>
+                      <li>
+                        Addresses
+                      </li>
+                      <li>
+                        Agent Resources
+                      </li>
+                      </div> : null}
+                      <li>
+                        Make a Payment
+                      </li>
+                      <li>
+                        Our Company
+                      </li>
+                      <li>
+                        Contact Us
+                      </li>
+                      <li>
+                        FAQs
+                      </li>
+                      <li>
+                        In the Press
+                      </li>
+                      <li>
+                        Claims
+                      </li>
+                    </ul>
+                </div>
+                
             </Container>
           );
       }
