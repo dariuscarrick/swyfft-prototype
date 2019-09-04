@@ -439,11 +439,12 @@
         margin: 0 0 4px 0;
         width: 24px;
         transform-origin: center;
-        @include transition(all, 250ms, ease-out, 5ms);
+        @include transition(opacity, 200ms, ease, 5ms);
+        @include transition(transform, 250ms, ease-out, 5ms);
     }
 
     &:hover .line {
-        background-color: $medium-gray-1;
+        opacity: 0.5;
     }
 }
 
@@ -482,36 +483,36 @@
     right: 0;
     padding: 32px 0 80px 0;
     @include transition(all, 250ms, ease-out, 5ms);
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
+    
+
+    .hamburger-contents {
+        width: 260px;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        @include transition(all, 0ms, ease, 0ms);
+
+        @media #{$grid-xxs} {
+            width: 400px;
+        }
 
     .hamburger-shield-logo {
-        opacity: 0;
         margin: 0 0 24px 0;
-        @include transition(opacity, 100ms, ease, 0ms);
     }
 
     .login-button {
-        opacity: 0;
         margin: 0 0 24px 0;
-        @include transition(opacity, 100ms, ease, 0ms);
     }
 
     .new-quote-button {
-        opacity: 0;
         margin: 0 0 16px 0;
-        @include transition(opacity, 100ms, ease, 0ms);
     }
 
     .logout-button {
-        opacity: 0;
         margin: 16px 0 0 0;
-        @include transition(opacity, 100ms, ease, 0ms);
     }
 
     & li {
-        opacity: 0;
         @include p-body-1($dark-gray-1);
         cursor: pointer;
         margin: 0 0 16px;
@@ -523,8 +524,7 @@
             color: $white;
         }
     }
-
-
+    }
 }
 
 .modal-open {
@@ -534,25 +534,5 @@
 
     @media #{$grid-xxs} {
         width: 100%;
-    }
-
-    .hamburger-shield-logo {
-        opacity: 1;
-    }
-
-    .login-button  {
-        opacity: 1;
-    }
-
-    .logout-button {
-        opacity: 1;
-    }
-
-    .new-quote-button {
-        opacity: 1;
-    }
-
-    & li {
-        opacity: 1;
     }
 }

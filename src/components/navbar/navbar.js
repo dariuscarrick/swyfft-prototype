@@ -245,6 +245,7 @@ class NavBar extends React.Component {
                 </div>
 
                 <div id='hamburger-menu' className={`hamburger-menu ${this.state.modalOpen ? 'modal-open' : ''}`}>
+                    <div className='hamburger-contents'>
                     <ShieldLogo className='hamburger-shield-logo' />
                     {!this.state.isLoggedIn && <button className='login-button' onClick={this.handleLoginClick}>Log In</button>}
                     {handleNavbarClass() === 'standard-nav' && this.state.isLoggedIn ? <Link to={handleNewQuoteLink()}>
@@ -282,6 +283,7 @@ class NavBar extends React.Component {
                       </li>
                     </ul>
                     {this.state.isLoggedIn && <button className='logout-button' onClick={this.handleLogoutClick}>Log Out</button>}
+                    </div>
                 </div>
                 
             </Container>
