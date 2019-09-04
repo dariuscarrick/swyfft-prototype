@@ -246,7 +246,10 @@ class NavBar extends React.Component {
 
                 <div id='hamburger-menu' className={`hamburger-menu ${this.state.modalOpen ? 'modal-open' : ''}`}>
                     <ShieldLogo className='hamburger-shield-logo' />
-                    {this.state.isLoggedIn ? <button className='login-button' onClick={this.handleLogoutClick}>Log Out</button> : <button className='login-button' onClick={this.handleLoginClick}>Log In</button>}
+                    {!this.state.isLoggedIn && <button className='login-button' onClick={this.handleLoginClick}>Log In</button>}
+                    {handleNavbarClass() === 'standard-nav' && this.state.isLoggedIn ? <Link to={handleNewQuoteLink()}>
+                          <button className='new-quote-button' onClick={this.handleCloseModal}>+ New Quote</button>
+                        </Link> : null}
                     <ul>
                       {this.state.isLoggedIn ? <div>
                         <li>
@@ -278,6 +281,7 @@ class NavBar extends React.Component {
                         Claims
                       </li>
                     </ul>
+                    {this.state.isLoggedIn && <button className='login-button log-out' onClick={this.handleLogoutClick}>Log Out</button>}
                 </div>
                 
             </Container>

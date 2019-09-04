@@ -481,6 +481,16 @@
         @include transition(opacity, 100ms, ease, 0ms);
     }
 
+    .new-quote-button {
+        opacity: 0;
+        margin: 0 0 16px 0;
+        @include transition(opacity, 100ms, ease, 0ms);
+    }
+
+    .log-out {
+        margin: 16px 0 0 0;
+    }
+
     & li {
         opacity: 0;
         @include p-body-1($dark-gray-1);
@@ -512,6 +522,10 @@
     }
 
     .login-button  {
+        opacity: 1;
+    }
+
+    .new-quote-button {
         opacity: 1;
     }
 
