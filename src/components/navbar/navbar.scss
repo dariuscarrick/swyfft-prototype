@@ -51,6 +51,16 @@
     }
 }
 
+.logout-button {
+    @include primary-button($white, $transparent, $white);
+    margin: 16px 0 0 0;
+    min-width: 108px;
+
+    &:hover {
+        @include primary-button($dark-green-1, $white, $white);
+    }
+}
+
 .user-info {
     position: absolute;
     z-index: 1;
@@ -80,7 +90,7 @@
     margin: 0 0 12px 0;
 }
 
-.log-out-button {
+.user-info-logout-button {
     @include primary-button($dark-purple-2, $transparent, $transparent);
 
     &:hover {
@@ -163,14 +173,22 @@
     flex-flow: row;
     position: absolute;
     z-index: 1;
-    padding: 10px 16px;
+    padding: 10px 16px 10px 108px;
     box-shadow: $dark-box-shadow;
     @include transition(all, 200ms, ease, 5ms);
+
+    @media #{$grid-xs} {
+        padding: 10px 16px 10px 40px;
+    }
 
     @media #{$grid-xxs, $grid-xs} {
         flex-flow: column;
         text-align: left;
         align-items: flex-start;
+    }
+
+    @media #{$grid-xxs} {
+        padding: 10px 12px;
     }
 }
 
@@ -487,8 +505,9 @@
         @include transition(opacity, 100ms, ease, 0ms);
     }
 
-    .log-out {
-        margin: 16px 0 0 0;
+    .logout-button {
+        opacity: 0;
+        @include transition(all, 0ms, linear, 100ms);
     }
 
     & li {
@@ -522,6 +541,10 @@
     }
 
     .login-button  {
+        opacity: 1;
+    }
+
+    .logout-button {
         opacity: 1;
     }
 

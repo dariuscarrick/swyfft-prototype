@@ -220,7 +220,7 @@ class NavBar extends React.Component {
 
                     {this.state.isUserOpen && <div className={`user-info`}>
                           <p className='logged-in-status'>Logged In<br /><span className='user-email'>darius@swyfft.com</span></p>
-                          <button className='log-out-button' onClick={this.handleLogoutClick}>Log Out</button>
+                          <button className='user-info-logout-button' onClick={this.handleLogoutClick}>Log Out</button>
                           <div className='arrow-up'></div>
                     </div>}
                     <menu 
@@ -281,7 +281,7 @@ class NavBar extends React.Component {
                         Claims
                       </li>
                     </ul>
-                    {this.state.isLoggedIn && <button className='login-button log-out' onClick={this.handleLogoutClick}>Log Out</button>}
+                    {this.state.isLoggedIn && <button className='logout-button' onClick={this.handleLogoutClick}>Log Out</button>}
                 </div>
                 
             </Container>
