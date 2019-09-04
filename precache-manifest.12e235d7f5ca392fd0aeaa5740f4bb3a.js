@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7e687639745b60f71abe45508ee1d3fe",
+    "revision": "83e32acb7eff370187a9f0548201bfe7",
     "url": "/swyfft-prototype/index.html"
   },
   {
-    "revision": "f588b214ad661ed4fbe9",
-    "url": "/swyfft-prototype/static/css/main.b5a3fc43.chunk.css"
+    "revision": "41062401d9f334b0c810",
+    "url": "/swyfft-prototype/static/css/main.e2fe73c8.chunk.css"
   },
   {
     "revision": "6be42b610fa4268d3b7d",
     "url": "/swyfft-prototype/static/js/2.8c7015d6.chunk.js"
   },
   {
-    "revision": "f588b214ad661ed4fbe9",
-    "url": "/swyfft-prototype/static/js/main.7ae35c44.chunk.js"
+    "revision": "41062401d9f334b0c810",
+    "url": "/swyfft-prototype/static/js/main.bd12f7e5.chunk.js"
   },
   {
     "revision": "fdf1ed0a63bcbf6fd616",
