@@ -51,20 +51,6 @@
     }
 }
 
-.hamburger {
-    cursor: pointer;
-    margin: 4px 0 0 0;
-
-    & .line {
-
-        height: 2px;
-        background-color: $white;
-        border-radius: 30px;
-        margin: 0 0 4px 0;
-        width: 24px;
-    }
-}
-
 .user-info {
     position: absolute;
     z-index: 1;
@@ -105,9 +91,11 @@
 .new-quote-button {
     @include secondary-button($white, $brand-green, $brand-green);
     margin: 0 16px 0 0;
+    padding: 6px 16px;
 
     &:hover {
         @include secondary-button($white, $light-green, $light-green);
+        padding: 6px 16px;
     }
 
     @media #{$grid-xxs} {
@@ -412,11 +400,116 @@
     align-items: center;
 
     @media #{$grid-xs} {
-        justify-content: space-between;
+        justify-content: space-around;
     }
 
     @media #{$grid-xxs} {
         flex-flow: column nowrap;
         align-items: flex-start;
+    }
+}
+
+// Hamburger Menu
+.hamburger {
+    z-index: 999;
+    cursor: pointer;
+    margin: 4px 0 0 0;
+
+    & .line {
+
+        height: 2px;
+        background-color: $white;
+        border-radius: 30px;
+        margin: 0 0 4px 0;
+        width: 24px;
+        transform-origin: center;
+        @include transition(all, 250ms, ease-out, 5ms);
+    }
+}
+
+.hamburger-close {
+        @include transition(all, 250ms, ease-in, 5ms);
+
+        & .line:first-child {
+            transform: rotate(45deg);
+            position: fixed;
+            top: 27px;
+        }
+
+        & .line:nth-child(2) {
+            opacity: 0;
+        }
+
+        & .line:nth-child(3) {
+            transform: rotate(-45deg);
+            position: fixed;
+            top: 27px;
+        }
+    }
+
+.hamburger-menu {
+    min-height: 110%;
+    width: 0%;
+    visibility: hidden;
+    background-color: $translucent-deep-purple;
+    z-index: 100;
+    text-align: left;
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 32px 0 80px 0;
+    @include transition(all, 250ms, ease-out, 5ms);
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    .hamburger-shield-logo {
+        opacity: 0;
+        margin: 0 0 24px 0;
+        @include transition(opacity, 100ms, ease, 0ms);
+    }
+
+    .login-button {
+        opacity: 0;
+        margin: 0 0 24px 0;
+        @include transition(opacity, 100ms, ease, 0ms);
+    }
+
+    & li {
+        opacity: 0;
+        @include p-body-1($dark-gray-1);
+        cursor: pointer;
+        margin: 0 0 16px;
+        list-style: none;
+        @include transition(opacity, 100ms, ease, 0ms);
+        @include transition(color, 250ms, ease, 5ms);
+
+        &:hover {
+            color: $white;
+        }
+    }
+
+
+}
+
+.modal-open {
+    width: 260px;
+    visibility: visible;
+    @include transition(all, 250ms, ease-in, 5ms);
+
+    @media #{$grid-xxs} {
+        width: 100%;
+    }
+
+    .hamburger-shield-logo {
+        opacity: 1;
+    }
+
+    .login-button  {
+        opacity: 1;
+    }
+
+    & li {
+        opacity: 1;
     }
 }
