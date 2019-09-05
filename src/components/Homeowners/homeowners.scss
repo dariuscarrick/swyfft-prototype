@@ -1,24 +1,7 @@
 @import '../../assets/scss-variables/compiled-variables.scss';
 
 .homeowners-container {
-    background-color: $dark-green-3;
-    height: 100vh;
-    padding: 15vh 0;
-
-    @media #{$grid-xs} {
-        padding: 15vh 16px;
-    }
-
-    @media #{$grid-xxs} {
-        padding: 25vh 10px;
-    }
-
-    @media #{$grid-xxxs} {
-        padding: 24vh 10px;
-    }
-    @media #{$grid-xxxxs} {
-        padding: 28vh 10px;
-    }
+    @include main-container($dark-green-3);
 }
 
 .shield {
