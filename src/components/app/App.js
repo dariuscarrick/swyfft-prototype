@@ -15,7 +15,7 @@ class App extends React.Component {
     const path = this.props.location.pathname;
     return (
       <div>
-        <Redirect exact from='/' to={path} />
+        <Redirect exact from='/' to={path === '/' ? '/Homeowners' : path} />
         <NavBar />
         <Route path='/Homeowners' component={Homeowners} exact={true}/>
         <Route path='/Homeowners/Quote' component={HomeownersQuote} exact={true} />
