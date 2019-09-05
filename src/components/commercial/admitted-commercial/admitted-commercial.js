@@ -1,7 +1,7 @@
 import React from 'react';
 import {Container, Row, Col} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
-import {TextField, Select} from '../../forms/forms';
+import {TextField, Select} from '../../component-assets/forms/forms';
 import '../commercial.scss';
 
 export default class AdmittedCommercial extends React.Component {

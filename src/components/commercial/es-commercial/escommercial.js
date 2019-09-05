@@ -1,6 +1,6 @@
 import React from 'react';
 import {Container, Row, Col} from 'react-bootstrap';
-import {TextField, Select} from '../../forms/forms';
+import {TextField, Select} from '../../component-assets/forms/forms';
 import {Link} from 'react-router-dom';
 import '../commercial.scss';
 

@@ -14,7 +14,7 @@ export default function Homeowners() {
                     </Col>
                     <Col lg={11}>
                         <h1 className='hero-text'>
-                            <span className='first-line'>Unlike other brands that make you fill out endless forms, Swyfft uses unique data sources and proprietary analytics so you can</span> <span className='second-line'>Get a homeowner insurance quote in seconds.</span> Just type your address:
+                            <span className='first-line'>Unlike other brands that make you fill out endless forms, Swyfft uses unique data sources and proprietary analytics so you can</span> <span className='second-line'>get a homeowner insurance quote in seconds.</span> Just type your address:
                         </h1>
                     </Col>
                 </Row>

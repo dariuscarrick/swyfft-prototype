@@ -3,7 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
 import onClickOutside from "react-onclickoutside";
 import { Container } from 'react-bootstrap';
-import { AboveGridXxs, GridXxs } from '../media-queries/media-queries';
+import { AboveGridXxs, GridXxs } from '../component-assets/media-queries/media-queries';
 import './navbar.scss';
 
 // Image Components

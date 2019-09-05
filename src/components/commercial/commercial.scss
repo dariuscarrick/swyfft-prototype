@@ -3,15 +3,22 @@
 // Commercial Hero Container
 .commercial-hero {
     min-height: 100vh;
-    padding: 32px 0 80px 0;
+    padding: 15vh 0;
     background-color: $brand-green;
 
-    @media #{$grid-sm} {
-        padding: 32px 12px 80px 12px;
+    @media #{$grid-xs} {
+        padding: 15vh 16px;
     }
 
-    @media #{$grid-xxs, $grid-xs, $grid-sm} {
-        padding: 24px 12px 80px 12px;
+    @media #{$grid-xxs} {
+        padding: 25vh 10px;
+    }
+
+    @media #{$grid-xxxs} {
+        padding: 24vh 10px;
+    }
+    @media #{$grid-xxxxs} {
+        padding: 28vh 10px;
     }
 
     .container {
