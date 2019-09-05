@@ -132,10 +132,14 @@
 
 .click-outside {
     position: absolute;
-    width: 30%;
+    width: 28%;
     height: 200px;
     top: 10%;
     right: 0;
+
+    @media #{$grid-xxs} {
+        width: 21%;
+    }
 }
 
 .product-detail {
@@ -285,6 +289,8 @@
             cursor: pointer;
             margin: 0 0 0 12px;
             height: 18px;
+            @include transition(transform, 200ms, ease, 10ms);
+            @include transition(margin, 200ms, ease-out, 10ms);
 
             & g {
                 fill: $dark-gray-1;
@@ -292,9 +298,11 @@
         }
 
         .product-location-icon-active {
-            margin: 0 0 0 6px;
+            margin: 0 0 0 8px;
             height: 18px;
-            @include transition(margin, 200ms, ease-in, 100ms);
+            transform: rotate(90deg);
+            @include transition(transform, 200ms, ease, 10ms);
+            @include transition(margin, 200ms, ease-in, 10ms);
 
             & g {
                 fill: $white;
@@ -393,6 +401,8 @@
             cursor: pointer;
             margin: 0 0 0 12px;
             height: 18px;
+            @include transition(transform, 200ms, ease, 10ms);
+            @include transition(margin, 200ms, ease-out, 10ms);
 
             & g {
                 fill: $dark-green-1;
@@ -400,9 +410,11 @@
         }
 
         .product-location-icon-active {
-            margin: 0 0 0 6px;
+            margin: 0 0 0 8px;
             height: 18px;
-            @include transition(margin, 200ms, ease-in, 100ms);
+            transform: rotate(90deg);
+            @include transition(transform, 200ms, ease, 10ms);
+            @include transition(margin, 200ms, ease-in, 10ms);
 
             & g {
                 fill: $white;
@@ -491,6 +503,8 @@
         .product-location-icon {
             margin: 0 0 0 12px;
             height: 18px;
+            @include transition(transform, 200ms, ease, 10ms);
+            @include transition(margin, 200ms, ease-out, 10ms);
 
             & g {
                 fill: $dark-green-1;
@@ -498,9 +512,11 @@
         }
 
         .product-location-icon-active {
-            margin: 0 0 0 6px;
+            margin: 0 0 0 8px;
             height: 18px;
-            @include transition(margin, 200ms, ease-in, 100ms);
+            transform: rotate(90deg);
+            @include transition(transform, 200ms, ease, 10ms);
+            @include transition(margin, 200ms, ease-in, 10ms);
 
             & g {
                 fill: $white;
@@ -652,7 +668,7 @@
             color: $white;
         }
     }
-    }
+  }
 }
 
 .modal-open {

@@ -19,7 +19,7 @@ export default function Homeowners() {
                     </Col>
                 </Row>
                 <Row>
-                    <Col lg={{span: 8, offset: 1}}>
+                    <Col lg={{span: 8, offset: 1}} md={9}>
                         <input className='address-input' type='text' placeholder='Type your address' />
                     </Col>
                     <Col lg={3}>
