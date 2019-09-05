@@ -656,9 +656,17 @@
 }
 
 .modal-open {
-    width: 260px;
+    width: 25%;
     visibility: visible;
     @include transition(all, 250ms, ease-in, 5ms);
+
+    @media #{$grid-sm} {
+        width: 30%;
+    }
+
+    @media #{$grid-xs} {
+        width: 40%; 
+    }
 
     @media #{$grid-xxs} {
         width: 100%;
