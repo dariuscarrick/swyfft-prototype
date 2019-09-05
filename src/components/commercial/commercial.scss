@@ -3,8 +3,22 @@
 // Commercial Hero Container
 .commercial-hero {
     min-height: 100vh;
-    padding: 56px 0 80px 0;
+    padding: 32px 0 80px 0;
     background-color: $brand-green;
+
+    @media #{$grid-sm} {
+        padding: 32px 12px 80px 12px;
+    }
+
+    @media #{$grid-xxs, $grid-xs, $grid-sm} {
+        padding: 24px 12px 80px 12px;
+    }
+
+    .container {
+        @media #{$grid-xxs, $grid-xs, $grid-sm} {
+            max-width: none;
+        }
+    }
 }
 
 // Hero Text Gradient
@@ -20,8 +34,13 @@
         color: $dark-green-2;
     }
 
-    @media #{$grid-xxs, $grid-xs, $grid-sm} {
+    @media #{$grid-sm} {
+        font-size: 27px;
+    }
+
+    @media #{$grid-xxs, $grid-xs} {
         font-size: 24px;
+        display: inline;
     }
 }
 

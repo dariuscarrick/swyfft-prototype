@@ -90,10 +90,10 @@
 }
 
 .user-info-logout-button {
-    @include primary-button($dark-purple-2, $transparent, $transparent);
+    @include primary-button($dark-gray-2, $transparent, $dark-gray-2);
 
     &:hover {
-        @include primary-button($brand-green, $transparent, $brand-green);
+        @include primary-button($white, $brand-green, $brand-green);
     }
 }
 
@@ -109,12 +109,31 @@
 
     @media #{$grid-xxs} {
         display: none;
-    } 
-}
+        }
+    }
+
+    .new-quote-button-hamburger {
+        @include secondary-button($white, $brand-green, $brand-green);
+        margin: 0 0 16px 0;
+        padding: 6px 16px;
+    
+        &:hover {
+            @include secondary-button($white, $light-green, $light-green);
+            padding: 6px 16px;
+        }
+    }
 
 .user-email {
     font-size: 16px;
     color: $brand-green;
+}
+
+.click-outside {
+    position: absolute;
+    width: 30%;
+    height: 200px;
+    top: 10%;
+    right: 0;
 }
 
 .product-detail {
@@ -123,6 +142,8 @@
     letter-spacing: 0.5px;
     padding: 0 16px 0 0;
     white-space: nowrap;
+    display: flex;
+    align-items: center;
 
     @media #{$grid-xxs, $grid-xs} {
         padding: 0 0 8px 0;
@@ -134,7 +155,7 @@
 .states {
     @include p-body-2($white);
     letter-spacing: 0.5px;
-    border-left: 1px solid $brand-green;
+    border-left: 0.5px solid $white;
     padding: 0 0 0 16px;
     display: flex;
     flex-flow: row wrap;
@@ -144,7 +165,7 @@
     @media #{$grid-xxs, $grid-xs} {
         padding: 8px 0 0 0;
         border-left: none;
-        border-top: 1px solid $brand-green;
+        border-top: 0.5px solid $white;
         width: 100%;
     }
 }
@@ -152,7 +173,7 @@
 .state-svg {
     height: 18px;
     width: 18px;
-    margin: 0 8px 0 0;
+    margin: 0 8px 0 4px;
 }
 
 .state-instance {
@@ -174,7 +195,7 @@
     z-index: 1;
     padding: 10px 16px 10px 108px;
     box-shadow: $dark-box-shadow;
-    @include transition(all, 200ms, ease, 5ms);
+    @include transition(all, 300ms, ease, 100ms);
 
     @media #{$grid-xs} {
         padding: 10px 16px 10px 40px;
@@ -188,6 +209,16 @@
 
     @media #{$grid-xxs} {
         padding: 10px 12px;
+    }
+
+    .states-container-location-icon {
+        height: 20px;
+        display: inline-block;
+        margin: 0 8px 0 0;
+
+        & g {
+            fill: $brand-green;
+        }
     }
 }
 
@@ -229,12 +260,43 @@
             }
         }
 
+        @media #{$grid-xxs} {
+            font-size: 18px;
+            line-height: 1.3;
+        }
+
         &:hover {
             color: $white;
         }
 
         &:active {
             color: $white;
+        }
+    }
+
+    .mobile-product-instance {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        .product-location-icon {
+            cursor: pointer;
+            margin: 0 0 0 12px;
+            height: 18px;
+
+            & g {
+                fill: $dark-gray-1;
+            }
+        }
+
+        .product-location-icon-active {
+            margin: 0 0 0 6px;
+            height: 18px;
+            @include transition(margin, 200ms, ease-in, 100ms);
+
+            & g {
+                fill: $white;
+            }
         }
     }
 
@@ -293,6 +355,11 @@
             }
         }
 
+        @media #{$grid-xxs} {
+            font-size: 18px;
+            line-height: 1.3;
+        }
+
         &:hover {
             color: $white;
         }
@@ -308,6 +375,32 @@
 
         &:hover {
             @include user-icon-button($white, $brand-green, $brand-green);
+        }
+    }
+
+    .mobile-product-instance {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        .product-location-icon {
+            cursor: pointer;
+            margin: 0 0 0 12px;
+            height: 18px;
+
+            & g {
+                fill: $dark-green-1;
+            }
+        }
+
+        .product-location-icon-active {
+            margin: 0 0 0 6px;
+            height: 18px;
+            @include transition(margin, 200ms, ease-in, 100ms);
+
+            & g {
+                fill: $white;
+            }
         }
     }
 
@@ -357,6 +450,11 @@
             }
         }
 
+        @media #{$grid-xxs} {
+            font-size: 18px;
+            line-height: 1.3;
+        }
+
         &:hover {
             color: $white;
         }
@@ -372,6 +470,31 @@
 
         &:hover {
             @include user-icon-button($dark-green-1, $white, $white);
+        }
+    }
+
+    .mobile-product-instance {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        .product-location-icon {
+            margin: 0 0 0 12px;
+            height: 18px;
+
+            & g {
+                fill: $dark-green-1;
+            }
+        }
+
+        .product-location-icon-active {
+            margin: 0 0 0 6px;
+            height: 18px;
+            @include transition(margin, 200ms, ease-in, 100ms);
+
+            & g {
+                fill: $white;
+            }
         }
     }
 
@@ -439,11 +562,8 @@
         margin: 0 0 4px 0;
         width: 24px;
         transform-origin: center;
-        @include transition(all, 250ms, ease-out, 5ms);
-    }
-
-    &:hover .line {
-        background-color: $medium-gray-1;
+        @include transition(background-color, 200ms, ease, 5ms);
+        @include transition(transform, 250ms, ease-out, 5ms);
     }
 }
 
@@ -482,36 +602,36 @@
     right: 0;
     padding: 32px 0 80px 0;
     @include transition(all, 250ms, ease-out, 5ms);
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
+    
+
+    .hamburger-contents {
+        width: 260px;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        @include transition(all, 0ms, ease, 0ms);
+
+        @media #{$grid-xxs} {
+            width: 400px;
+        }
 
     .hamburger-shield-logo {
-        opacity: 0;
         margin: 0 0 24px 0;
-        @include transition(opacity, 100ms, ease, 0ms);
     }
 
     .login-button {
-        opacity: 0;
         margin: 0 0 24px 0;
-        @include transition(opacity, 100ms, ease, 0ms);
     }
 
     .new-quote-button {
-        opacity: 0;
         margin: 0 0 16px 0;
-        @include transition(opacity, 100ms, ease, 0ms);
     }
 
     .logout-button {
-        opacity: 0;
         margin: 16px 0 0 0;
-        @include transition(opacity, 100ms, ease, 0ms);
     }
 
     & li {
-        opacity: 0;
         @include p-body-1($dark-gray-1);
         cursor: pointer;
         margin: 0 0 16px;
@@ -523,8 +643,7 @@
             color: $white;
         }
     }
-
-
+    }
 }
 
 .modal-open {
@@ -533,26 +652,6 @@
     @include transition(all, 250ms, ease-in, 5ms);
 
     @media #{$grid-xxs} {
-        width: 100%;
-    }
-
-    .hamburger-shield-logo {
-        opacity: 1;
-    }
-
-    .login-button  {
-        opacity: 1;
-    }
-
-    .logout-button {
-        opacity: 1;
-    }
-
-    .new-quote-button {
-        opacity: 1;
-    }
-
-    & li {
-        opacity: 1;
+        width: 400px;
     }
 }

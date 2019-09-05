@@ -1,14 +1,16 @@
 import React from 'react';
-import {Link, withRouter} from 'react-router-dom';
-import {compose} from 'recompose';
+import { Link, withRouter } from 'react-router-dom';
+import { compose } from 'recompose';
 import onClickOutside from "react-onclickoutside";
-import {Container} from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
+import { AboveGridXxs, GridXxs } from '../media-queries/media-queries';
 import './navbar.scss';
 
 // Image Components
 import {ReactComponent as MultiLogo} from '../../assets/images/swyfft-wordmark-logo-multi.svg';
 import {ReactComponent as WhiteLogo} from '../../assets/images/white-wordmark-logo.svg';
 import {ReactComponent as ShieldLogo} from '../../assets/images/shield.svg';
+import {ReactComponent as LocationIcon} from '../../assets/images/location.svg';
 import {ReactComponent as Alabama} from '../../assets/images/alabama.svg';
 import {ReactComponent as California} from '../../assets/images/california.svg';
 import {ReactComponent as Florida} from '../../assets/images/florida.svg';
@@ -37,6 +39,7 @@ class NavBar extends React.Component {
           products: ['Homeowners', 'Commercial Package', 'E&S Commercial Package'],
           showStates: false,
           selectedIndex: [0],
+          locationIconActive: '',
           stateList: [],
           modalOpen: false
         };
@@ -82,7 +85,8 @@ class NavBar extends React.Component {
                   'Massachusetts',
                   'New Jersey', 
                   'New York', 
-                  'Texas']
+                  'Texas'],
+                locationIconActive: product 
               });
               break;
           case product[1]:
@@ -90,12 +94,14 @@ class NavBar extends React.Component {
                 stateList: [
                   'California', 
                   'Illinois', 
-                  'Florida']
+                  'Florida'],
+                  locationIconActive: product 
               });
               break;
           case product[2]:
               this.setState({
-                stateList: ['Florida']
+                stateList: ['Florida'],
+                locationIconActive: product 
               });
               break;
           default: this.setState({
@@ -184,25 +190,55 @@ class NavBar extends React.Component {
             <Container fluid={true} className={`navbar-container ${handleNavbarClass()}`}>
                 <nav className='navigation'>
 
+                  <GridXxs>
+                    <div className='click-outside' onClick={this.handleClickOutside}></div>
+                  </GridXxs>
+
                   <Link to='/Homeowners'>
                     {handleNavbarClass() === 'commercial-nav' ? <WhiteLogo alt='Swyfft Insurance'  /> : <MultiLogo alt='Swyfft Insurance'  />}
                   </Link>
 
-                  <div className='product-select'>
-                    <div className='product-list'>
-                      {this.state.products.map((product, index) => (
-                          <div 
-                            className={`product-link ${path.includes('/' + product.split(' ').join('-')) ? 'selected' : ''}`} 
-                            id={product}
-                            key={index}
-                            onMouseEnter={() => this.handleShowStates(product, index)}
-                            onMouseOver={() => this.handleShowStates(product, index)}
-                            onMouseLeave={this.handleHideStates}>
-                              <Link to={'/' + product.split(' ').join('-')}>{product}</Link>
-                        </div>
-                      ))}
+                  <AboveGridXxs>
+                    <div className='product-select'>
+                      <div className='product-list'>
+                          {this.state.products.map((product, index) => (
+                              <div 
+                                className={`product-link ${path.includes('/' + product.split(' ').join('-')) ? 'selected' : ''}`} 
+                                id={product}
+                                key={index}
+                                onMouseEnter={() => this.handleShowStates(product, index)}
+                                onMouseOver={() => this.handleShowStates(product, index)}
+                                onMouseLeave={this.handleHideStates}>
+                                  <Link to={'/' + product.split(' ').join('-')} onClick={this.handleClickOutside}>{product}</Link>
+                            </div>
+                          ))}
+                      </div>
                     </div>
-                  </div>
+                  </AboveGridXxs>
+
+                  <GridXxs>
+                    <div className='product-select'>
+                      <div className='product-list'>
+                          {this.state.products.map((product, index) => (
+                              <div className='mobile-product-instance' key={index}>
+                                <div 
+                                  className={`product-link ${path.includes('/' + product.split(' ').join('-')) ? 'selected' : ''}`} 
+                                  id={product}
+                                  key={index}>
+                                  <Link to={'/' + product.split(' ').join('-')} onClick={this.handleClickOutside}>{product}</Link>
+                                </div>
+                                <LocationIcon
+                                  className={`product-location-icon${this.state.showStates && this.state.locationIconActive === product ? '-active' : '' }`}
+                                  onTouchStart={() => this.handleShowStates(product, index)}
+                                  onTouchEnd={() => this.handleShowStates(product, index)}
+                                  onClick={() => this.handleShowStates(product, index)}
+                                  onMouseDown={() => this.handleShowStates(product, index)}
+                                  />
+                              </div>
+                          ))}
+                      </div>
+                    </div>
+                  </GridXxs>
 
                   <div className='navigation-menu'>
                     {handleNavbarClass() !== 'standard-nav' ? this.state.isLoggedIn && <ul className='logged-in-items'>
@@ -235,7 +271,7 @@ class NavBar extends React.Component {
                 </nav>
 
                 <div id='statesContainer' className={`states-container ${this.state.showStates ? 'show-states' : ''}`}>
-                  <div className='product-detail'>Available In:</div>
+                  <div className='product-detail'><LocationIcon className='states-container-location-icon' /> Available In:</div>
                     <div className='states'>
                       {this.state.stateList.map((state, index) => <span className='state-instance' key={index}>
                         <StateSvg state={state.replace( /\s/g, '')} />
@@ -245,10 +281,11 @@ class NavBar extends React.Component {
                 </div>
 
                 <div id='hamburger-menu' className={`hamburger-menu ${this.state.modalOpen ? 'modal-open' : ''}`}>
+                    <div className='hamburger-contents'>
                     <ShieldLogo className='hamburger-shield-logo' />
                     {!this.state.isLoggedIn && <button className='login-button' onClick={this.handleLoginClick}>Log In</button>}
                     {handleNavbarClass() === 'standard-nav' && this.state.isLoggedIn ? <Link to={handleNewQuoteLink()}>
-                          <button className='new-quote-button' onClick={this.handleCloseModal}>+ New Quote</button>
+                          <button className='new-quote-button-hamburger' onClick={this.handleCloseModal}>+ New Quote</button>
                         </Link> : null}
                     <ul>
                       {this.state.isLoggedIn ? <div>
@@ -282,6 +319,7 @@ class NavBar extends React.Component {
                       </li>
                     </ul>
                     {this.state.isLoggedIn && <button className='logout-button' onClick={this.handleLogoutClick}>Log Out</button>}
+                    </div>
                 </div>
                 
             </Container>
