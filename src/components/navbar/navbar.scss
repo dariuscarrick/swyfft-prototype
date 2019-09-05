@@ -586,9 +586,7 @@
 
 .hide-mobile-products {
     @media #{$grid-xs} {
-        padding: 0;
-        opacity: 0;
-        height: 0;
+        display: none;
     }
 }
 
