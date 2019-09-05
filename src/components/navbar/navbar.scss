@@ -4,6 +4,8 @@
 .navbar-container {
     background-color: $black;
     padding: 0;
+    position: fixed;
+    z-index: 10;
 }
 
 .navigation {
@@ -326,6 +328,10 @@
 // Homeowners Product Navigation
 .homeowners-nav {
     background-color: $dark-green-3;
+    
+    @media #{$grid-xxs} {
+        border-bottom: 0.5px solid $dark-green-2;
+    }
 
     .product-link {
         @media #{$grid-xxs} {
@@ -421,6 +427,10 @@
 // Commercial Product Navigation
 .commercial-nav {
     background-color: $brand-green;
+    
+    @media #{$grid-xxs} {
+        border-bottom: 0.5px solid $medium-green;
+    }
 
     .product-link {
         @media #{$grid-xxs} {
@@ -602,18 +612,17 @@
     right: 0;
     padding: 32px 0 80px 0;
     @include transition(all, 250ms, ease-out, 5ms);
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
     
 
     .hamburger-contents {
-        width: 260px;
+        visibility: hidden;
         display: flex;
         flex-flow: column nowrap;
         align-items: center;
-        @include transition(all, 0ms, ease, 0ms);
-
-        @media #{$grid-xxs} {
-            width: 400px;
-        }
+        @include transition(visibility, 50ms, ease, 0ms);
 
     .hamburger-shield-logo {
         margin: 0 0 24px 0;
@@ -652,6 +661,11 @@
     @include transition(all, 250ms, ease-in, 5ms);
 
     @media #{$grid-xxs} {
-        width: 400px;
+        width: 100%;
     }
+}
+
+.modal-open .hamburger-contents {
+    visibility: visible;
+    @include transition(visibility, 50ms, ease, 0ms);
 }
