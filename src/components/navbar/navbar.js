@@ -66,7 +66,6 @@ class NavBar extends React.Component {
           prevScrollpos: currentScrollPos,
           visible
         });
-        this.handleClickOutside();
       };
 
       handleLoginClick() {
