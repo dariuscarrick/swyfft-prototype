@@ -32,6 +32,7 @@ class NavBar extends React.Component {
         this.setSelectedIndex = this.setSelectedIndex.bind(this);
         this.handleOpenModal = this.handleOpenModal.bind(this);
         this.handleCloseModal = this.handleCloseModal.bind(this);
+        this.handleScroll = this.handleScroll.bind(this);
 
         this.state = {
           isLoggedIn: false, 
@@ -41,11 +42,33 @@ class NavBar extends React.Component {
           selectedIndex: [0],
           locationIconActive: '',
           stateList: [],
-          modalOpen: false
+          modalOpen: false,
+          prevScrollpos: window.pageYOffset,
+          visible: true
         };
       }
 
-      // Login methods
+      componentDidMount() {
+        window.addEventListener("scroll", this.handleScroll);
+      }
+
+      componentWillUnmount() {
+        window.removeEventListener("scroll", this.handleScroll);
+      }
+
+      handleScroll() {
+        const { prevScrollpos } = this.state;
+    
+        const currentScrollPos = window.pageYOffset;
+        const visible = prevScrollpos > currentScrollPos;
+    
+        this.setState({
+          prevScrollpos: currentScrollPos,
+          visible
+        });
+        this.handleClickOutside();
+      };
+
       handleLoginClick() {
         this.setState({isLoggedIn: true, modalOpen: false});
       }
@@ -217,7 +240,7 @@ class NavBar extends React.Component {
                   </AboveGridXs>
 
                   <GridXs>
-                    <div className='product-select'>
+                    <div className={`product-select ${this.state.visible ? '' : 'hide-mobile-products'}`}>
                       <div className='product-list'>
                           {this.state.products.map((product, index) => (
                               <div className='mobile-product-instance' key={index}>
