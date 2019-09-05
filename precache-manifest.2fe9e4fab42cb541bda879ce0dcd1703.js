@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2069bfdf255966537f0d0bf085e53c42",
+    "revision": "9da23a943fff536d0cd97e1aa737bd08",
     "url": "/swyfft-prototype/index.html"
   },
   {
-    "revision": "4f140bbef01af5219b42",
-    "url": "/swyfft-prototype/static/css/main.6fa7ea79.chunk.css"
+    "revision": "e215ed2fa904f814db95",
+    "url": "/swyfft-prototype/static/css/main.d2b943e0.chunk.css"
   },
   {
-    "revision": "6be42b610fa4268d3b7d",
-    "url": "/swyfft-prototype/static/js/2.8c7015d6.chunk.js"
+    "revision": "95e4089e438ee5ca014d",
+    "url": "/swyfft-prototype/static/js/2.07cf2603.chunk.js"
   },
   {
-    "revision": "4f140bbef01af5219b42",
-    "url": "/swyfft-prototype/static/js/main.bd12f7e5.chunk.js"
+    "revision": "e215ed2fa904f814db95",
+    "url": "/swyfft-prototype/static/js/main.9a645d4c.chunk.js"
   },
   {
     "revision": "fdf1ed0a63bcbf6fd616",
@@ -34,6 +34,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "75618d1b32e020bed67b97822b875fcf",
     "url": "/swyfft-prototype/static/media/illinois.75618d1b.svg"
+  },
+  {
+    "revision": "ed052c1d1c61f5e72170157d6f51cb96",
+    "url": "/swyfft-prototype/static/media/location.ed052c1d.svg"
   },
   {
     "revision": "8b1a71425ba9ac575d8517c81a571750",
