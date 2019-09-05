@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { Link, Redirect, withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
 import onClickOutside from "react-onclickoutside";
 import { Container } from 'react-bootstrap';
@@ -198,7 +198,6 @@ class NavBar extends React.Component {
           return (
             <Container fluid={true} className={`navbar-container ${handleNavbarClass()}`}>
                 <nav className='navigation'>
-
                   <GridXxs>
                     <div className='click-outside' onClick={this.handleClickOutside}></div>
                   </GridXxs>
