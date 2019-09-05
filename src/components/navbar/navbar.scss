@@ -359,7 +359,10 @@
 // Homeowners Product Navigation
 .homeowners-nav {
     background-color: $dark-green-3;
-    box-shadow: $dark-box-shadow;
+    
+    @media #{$grid-xs} {
+        box-shadow: $dark-box-shadow;
+    }
 
     .product-link {
         @media #{$grid-xxs} {
@@ -459,7 +462,10 @@
 // Commercial Product Navigation
 .commercial-nav {
     background-color: $brand-green;
-    box-shadow: $dark-green-box-shadow;
+    
+    @media #{$grid-xs} {
+        box-shadow: $dark-green-box-shadow;
+    }
 
     .product-link {
         @media #{$grid-xxs} {
