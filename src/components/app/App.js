@@ -12,7 +12,7 @@ import AdmittedCommercialQuote from '../quote/admitted-commercial-quote';
 function App() {
   return (
     <div>
-      <Redirect exact from='/swyfft-prototype' to='/Homeowners' />
+      <Redirect exact from='/' to='/Homeowners' />
       <NavBar />
       <Route path='/Homeowners' component={Homeowners} exact={true}/>
       <Route path='/Homeowners/Quote' component={HomeownersQuote} exact={true} />
