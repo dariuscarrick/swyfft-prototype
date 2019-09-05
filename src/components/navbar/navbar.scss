@@ -585,9 +585,11 @@
 }
 
 .hide-mobile-products {
-    padding: 0;
-    opacity: 0;
-    height: 0;
+    @media #{$grid-xs} {
+        padding: 0;
+        opacity: 0;
+        height: 0;
+    }
 }
 
 // The Desktop Product Select List
