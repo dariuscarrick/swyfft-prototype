@@ -3,7 +3,8 @@ import { Link, withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
 import onClickOutside from "react-onclickoutside";
 import { Container } from 'react-bootstrap';
-import { AboveGridXs, GridXxs, GridXs } from '../component-assets/media-queries/media-queries';
+import { GridXxs } from '../component-assets/media-queries/media-queries';
+import { isBrowser, isMobile } from 'react-device-detect';
 import './navbar.scss';
 
 // Image Components
@@ -206,8 +207,7 @@ class NavBar extends React.Component {
                     {handleNavbarClass() === 'commercial-nav' ? <WhiteLogo alt='Swyfft Insurance'  /> : <MultiLogo alt='Swyfft Insurance'  />}
                   </Link>
 
-                  <AboveGridXs>
-                    <div className='product-select'>
+                    {isBrowser ? <div className={`product-select ${this.state.isTop ? '' : 'hide-mobile-products'}`}>
                       <div className='product-list'>
                           {this.state.products.map((product, index) => (
                               <div 
@@ -221,11 +221,9 @@ class NavBar extends React.Component {
                             </div>
                           ))}
                       </div>
-                    </div>
-                  </AboveGridXs>
+                    </div> : null}
 
-                  <GridXs>
-                    <div className={`product-select ${this.state.isTop ? '' : 'hide-mobile-products'}`}>
+                    {isMobile ? <div className={`product-select ${this.state.isTop ? '' : 'hide-mobile-products'}`}>
                       <div className='product-list'>
                           {this.state.products.map((product, index) => (
                               <div className='mobile-product-instance' key={index}>
@@ -245,8 +243,7 @@ class NavBar extends React.Component {
                               </div>
                           ))}
                       </div>
-                    </div>
-                  </GridXs>
+                    </div> : null}
 
                   <div className='navigation-menu'>
                     {handleNavbarClass() !== 'standard-nav' ? this.state.isLoggedIn && <ul className='logged-in-items'>
@@ -286,12 +283,12 @@ class NavBar extends React.Component {
                         <span>{state}</span>
                       </span>)}
                     </div>
-                    <GridXs>
-                      <div className='close-states-button' onClick={this.handleClickOutside}>
+                    
+                      {isMobile ? <div className='close-states-button' onClick={this.handleClickOutside}>
                           <div className='close-line'></div>
                           <div className='close-line'></div>
-                      </div>
-                    </GridXs>
+                      </div> : null}
+
                 </div>
 
                 <div id='hamburger-menu' className={`hamburger-menu ${this.state.modalOpen ? 'modal-open' : ''}`}>
