@@ -103,13 +103,14 @@
     @include secondary-button($white, $brand-green, $brand-green);
     margin: 0 16px 0 0;
     padding: 6px 16px;
+    white-space: nowrap;
 
     &:hover {
         @include secondary-button($white, $light-green, $light-green);
         padding: 6px 16px;
     }
 
-    @media #{$grid-xxs} {
+    @media #{$grid-xs, $grid-sm} {
         display: none;
         }
     }
@@ -133,8 +134,8 @@
 .click-outside {
     position: absolute;
     width: 28%;
-    height: 200px;
-    top: 10%;
+    height: 80px;
+    top: 34%;
     right: 0;
 
     @media #{$grid-xxs} {
@@ -257,6 +258,7 @@
 // Standard Product Navigation
 .standard-nav {
     background-color: $dark-purple-2;
+    box-shadow: $dark-box-shadow;
 
     .product-link {
         @media #{$grid-xxs} {
@@ -357,10 +359,7 @@
 // Homeowners Product Navigation
 .homeowners-nav {
     background-color: $dark-green-3;
-    
-    @media #{$grid-xxs} {
-        border-bottom: 0.5px solid $dark-green-2;
-    }
+    box-shadow: $dark-box-shadow;
 
     .product-link {
         @media #{$grid-xxs} {
@@ -460,10 +459,7 @@
 // Commercial Product Navigation
 .commercial-nav {
     background-color: $brand-green;
-    
-    @media #{$grid-xxs} {
-        border-bottom: 0.5px solid $medium-green;
-    }
+    box-shadow: $dark-green-box-shadow;
 
     .product-link {
         @media #{$grid-xxs} {
@@ -564,6 +560,7 @@
 // Product Selection
 .product-select {
     margin: 0 auto 0 0;
+    @include transition(all, 250ms, ease, 10ms);
 
     & .button {
         padding: 0;
@@ -579,6 +576,12 @@
         width: 100%;
         margin: 0;
     }
+}
+
+.hide-mobile-products {
+    padding: 0;
+    opacity: 0;
+    height: 0;
 }
 
 // The Desktop Product Select List
