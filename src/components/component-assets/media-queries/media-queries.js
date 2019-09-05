@@ -26,7 +26,7 @@ export const GridXxs = ({ children }) => {
   return isGridXxs ? children : null
 }
 
-export const AboveGridXxs = ({ children }) => {
-  const isAboveGridXxs = useMediaQuery({ minWidth: 576 })
-  return isAboveGridXxs ? children : null
+export const AboveGridXs = ({ children }) => {
+  const isAboveGridXs = useMediaQuery({ minWidth: 768 })
+  return isAboveGridXs ? children : null
 }

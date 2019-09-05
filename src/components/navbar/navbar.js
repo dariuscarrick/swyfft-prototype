@@ -3,7 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
 import onClickOutside from "react-onclickoutside";
 import { Container } from 'react-bootstrap';
-import { AboveGridXxs, GridXxs } from '../component-assets/media-queries/media-queries';
+import { AboveGridXs, GridXxs, GridXs } from '../component-assets/media-queries/media-queries';
 import './navbar.scss';
 
 // Image Components
@@ -198,7 +198,7 @@ class NavBar extends React.Component {
                     {handleNavbarClass() === 'commercial-nav' ? <WhiteLogo alt='Swyfft Insurance'  /> : <MultiLogo alt='Swyfft Insurance'  />}
                   </Link>
 
-                  <AboveGridXxs>
+                  <AboveGridXs>
                     <div className='product-select'>
                       <div className='product-list'>
                           {this.state.products.map((product, index) => (
@@ -214,9 +214,9 @@ class NavBar extends React.Component {
                           ))}
                       </div>
                     </div>
-                  </AboveGridXxs>
+                  </AboveGridXs>
 
-                  <GridXxs>
+                  <GridXs>
                     <div className='product-select'>
                       <div className='product-list'>
                           {this.state.products.map((product, index) => (
@@ -238,7 +238,7 @@ class NavBar extends React.Component {
                           ))}
                       </div>
                     </div>
-                  </GridXxs>
+                  </GridXs>
 
                   <div className='navigation-menu'>
                     {handleNavbarClass() !== 'standard-nav' ? this.state.isLoggedIn && <ul className='logged-in-items'>
@@ -278,6 +278,12 @@ class NavBar extends React.Component {
                         <span>{state}</span>
                       </span>)}
                     </div>
+                    <GridXs>
+                      <div className='close-states-button' onClick={this.handleClickOutside}>
+                          <div className='close-line'></div>
+                          <div className='close-line'></div>
+                      </div>
+                    </GridXs>
                 </div>
 
                 <div id='hamburger-menu' className={`hamburger-menu ${this.state.modalOpen ? 'modal-open' : ''}`}>
