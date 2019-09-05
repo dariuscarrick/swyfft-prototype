@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Redirect, withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
 import onClickOutside from "react-onclickoutside";
 import { Container } from 'react-bootstrap';
