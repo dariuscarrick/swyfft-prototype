@@ -43,7 +43,7 @@ class NavBar extends React.Component {
           locationIconActive: '',
           stateList: [],
           modalOpen: false,
-          prevScrollpos: window.pageYOffset,
+          prevScrollpos: 0,
           visible: true
         };
       }
@@ -52,7 +52,7 @@ class NavBar extends React.Component {
         window.addEventListener("scroll", this.handleScroll);
       }
 
-      componentDidUnmount() {
+      componentWillUnmount() {
         window.removeEventListener("scroll", this.handleScroll);
       }
 
