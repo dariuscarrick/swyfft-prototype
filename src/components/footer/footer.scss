@@ -1,0 +1,94 @@
+@import '../../assets/scss-variables/compiled-variables.scss';
+
+.footer {
+    background-color: $medium-gray-1;
+    padding: 56px 0 80px 0;
+
+    .shield-logo {
+        text-align: right;
+    }
+
+    .footer-links-col {
+        display: flex;
+        justify-content: center;
+    }
+
+    .footer-link-lists-container {
+        @include flex-display;
+        @include flex-flow($values: (row nowrap));
+        @include justify-content;
+        @include align-items($value: flex-start);
+    }
+
+    .footer-link-list {
+        margin-left: 72px;
+
+        li {
+            &:first-child {
+                @include h2-body($dark-gray-2);
+
+                &:hover {
+                    color: $dark-gray-2;
+                    cursor: unset;
+                }
+            }
+
+            @include p-body-1($dark-gray-2);
+            list-style: none;
+            margin-bottom: 16px;
+
+            &:hover {
+                cursor: pointer;
+                color: $dark-gray-1;
+            }
+        }
+    }
+
+    .social-media-links {
+        @include flex-display;
+        @include flex-flow($values: (row nowrap));
+        @include justify-content($value: center);
+        @include align-items($value: center);
+
+        li {
+            list-style: none;
+            margin-left: 16px;
+
+            &:first-child {
+                margin-left: 0;
+            }
+            
+            a {
+                width: 32px;
+                height: 32px;
+                border-radius: 100%;
+                background-color: $medium-gray-2;
+                justify-content: center;
+                display: flex;
+                align-items: center;
+                @include hover-transition;
+
+                &:hover {
+                    background-color: $medium-gray-3;
+                }
+            }
+        }
+    }
+
+    .copyright-line {
+        @include p-body-2($dark-gray-1);
+        margin: 72px 0 0 0;
+        text-align: center;
+
+        a {
+            color: $dark-gray-1;
+            text-decoration: underline;
+            @include hover-transition;
+
+            &:hover {
+                color: $medium-gray-3;
+                text-decoration: none;
+            }
+        }
+    }
+}

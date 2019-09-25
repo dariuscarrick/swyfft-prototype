@@ -2,6 +2,7 @@ import React from 'react';
 import {Route, Redirect, withRouter} from 'react-router-dom';
 import './App.scss';
 import NavBar from '../navbar/navbar';
+import Footer from '../footer/footer';
 import Homeowners from '../homeowners/homeowners';
 import HomeownersQuote from '../quote/homeowners-quote';
 import ESCommercial from '../commercial/es-commercial/escommercial';
@@ -23,6 +24,7 @@ class App extends React.Component {
         <Route path='/E&S-Commercial-Package/Quote' component={ESCommercialQuote} exact={true}/>
         <Route path='/Commercial-Package' component={AdmittedCommercial} exact={true} />
         <Route path='/Commercial-Package/Quote' component={AdmittedCommercialQuote} exact={true} />
+        <Footer />
     </div>
     );
   }
