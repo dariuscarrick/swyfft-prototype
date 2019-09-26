@@ -4,13 +4,9 @@
     background-color: $medium-gray-1;
     padding: 56px 0 80px 0;
 
-    .shield-logo {
-        text-align: right;
-    }
-
     .footer-links-col {
-        display: flex;
-        justify-content: center;
+        @include flex-display;
+        @include justify-content($value: center);
     }
 
     .footer-link-lists-container {
@@ -63,9 +59,9 @@
                 height: 32px;
                 border-radius: 100%;
                 background-color: $medium-gray-2;
-                justify-content: center;
-                display: flex;
-                align-items: center;
+                @include flex-display;
+                @include justify-content($value: center);
+                @include align-items($value: center);
                 @include hover-transition;
 
                 &:hover {
@@ -75,9 +71,25 @@
         }
     }
 
+    .accolades-container {
+        @include flex-display;
+        @include flex-flow($values: (row nowrap));
+        @include justify-content($value: center);
+        @include align-items($value: center);
+        margin: 72px 0 0 0;
+
+        svg {
+            margin: 0 32px;
+
+            &:first-child {
+                padding: 0 0 16px 0;
+            }
+        }
+    }
+
     .copyright-line {
         @include p-body-2($dark-gray-1);
-        margin: 72px 0 0 0;
+        margin: 40px 0 0 0;
         text-align: center;
 
         a {

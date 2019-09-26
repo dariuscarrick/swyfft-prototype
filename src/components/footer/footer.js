@@ -1,10 +1,14 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
+import Moment from 'react-moment';
 import './footer.scss';
 import {ReactComponent as Shield} from '../../assets/images/shield.svg';
 import {ReactComponent as Facebook} from '../../assets/images/facebook.svg';
 import {ReactComponent as LinkedIn} from '../../assets/images/linkedin.svg';
 import {ReactComponent as Twitter} from '../../assets/images/twitter.svg';
+import {ReactComponent as BBB} from '../../assets/images/bbb.svg';
+import {ReactComponent as AMBest} from '../../assets/images/am-best.svg';
+import {ReactComponent as TrustedChoice} from '../../assets/images/trusted-choice.svg';
 
 class Footer extends React.Component {
     render() {
@@ -12,11 +16,9 @@ class Footer extends React.Component {
             <footer className='footer'>
                 <Container fluid={true}>
                     <Row>
-                        <Col lg={1} className='shield-logo'>
-                            <Shield />
-                        </Col>
-                        <Col lg={10} className='footer-links-col'>
+                        <Col lg={12} className='footer-links-col'>
                             <div className='footer-link-lists-container'>
+                                <Shield />
                                 <ul className='footer-link-list'>
                                     <li>Swyfft</li>
                                     <li>About</li>
@@ -36,12 +38,12 @@ class Footer extends React.Component {
                                     <li>Contact Us</li>
                                     <li>New Agent Signup</li>
                                     <li>Email Cutsomer Support</li>
-                                    <li>1.855.479.9338</li>
+                                    <li>855.479.9338</li>
                                 </ul>
                                 <ul className='footer-link-list'>
                                     <li>Claims</li>
                                     <li>Report a Claim</li>
-                                    <li>1.855.479.9338</li>
+                                    <li>877.799.3389</li>
                                 </ul>
                                 <ul className='footer-link-list'>
                                     <li>Follow Us</li>
@@ -55,8 +57,15 @@ class Footer extends React.Component {
                         </Col>
                     </Row>
                     <Row>
+                        <Col xs={12} className='accolades-container'>
+                            <TrustedChoice />
+                            <AMBest />
+                            <BBB />
+                        </Col>
+                    </Row>
+                    <Row>
                         <Col xs={12}>
-                            <p className='copyright-line'>© 2019 Swyfft® , LLC. All Rights Reserved. <a href='#'>Terms</a> • <a href='#'>Privacy Policy</a></p>
+                            <p className='copyright-line'>© <Moment format='YYYY' /> Swyfft® , LLC. All Rights Reserved. <a href='swyfft.com'>Terms</a> • <a href='swyfft.com'>Privacy Policy</a></p>
                         </Col>
                     </Row>
                 </Container>
