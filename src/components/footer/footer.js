@@ -1,15 +1,11 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import {GridLg, GridSm } from '../component-assets/media-queries/media-queries';
 import Moment from 'react-moment';
 import './footer.scss';
 import {ReactComponent as Shield} from '../../assets/images/shield.svg';
 import {ReactComponent as Facebook} from '../../assets/images/facebook.svg';
 import {ReactComponent as LinkedIn} from '../../assets/images/linkedin.svg';
 import {ReactComponent as Twitter} from '../../assets/images/twitter.svg';
-import {ReactComponent as BBB} from '../../assets/images/bbb.svg';
-import {ReactComponent as AMBest} from '../../assets/images/am-best.svg';
-import {ReactComponent as TrustedChoice} from '../../assets/images/trusted-choice.svg';
 
 class Footer extends React.Component {
     render() {
