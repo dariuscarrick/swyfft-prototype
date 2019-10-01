@@ -4,9 +4,24 @@
     background-color: $medium-gray-1;
     padding: 56px 0 80px 0;
 
+    .shield-logo {
+        @include flex-basis($value: 10%);
+
+        @media #{$grid-xs, $grid-sm} {
+            @include flex-basis($value: 100%);
+            max-height: 56px;
+            margin: 0 0 32px 0;
+        }
+    }
+
     .footer-links-col {
         @include flex-display;
         @include justify-content($value: center);
+
+        @media #{$grid-sm} {
+            @include justify-content($value: flex-start);
+            margin: 0 0 32px 0;
+        }
     }
 
     .footer-link-lists-container {
@@ -14,10 +29,49 @@
         @include flex-flow($values: (row nowrap));
         @include justify-content;
         @include align-items($value: flex-start);
+
+        @media #{$grid-xs, $grid-sm} {
+            @include flex-flow($values: (row wrap));
+            @include justify-content($value: center);
+        }
+
+        @media #{$grid-xxs} {
+            @include flex-flow($values: (column nowrap));
+            @include justify-content($value: center);
+            @include align-items($value: center);
+        }
     }
 
     .footer-link-list {
-        margin-left: 72px;
+        margin: 0 0 0 56px;
+        @include flex-basis($value: 20%);
+
+        @media #{$grid-md} {
+            margin: 0 0 0 56px;
+        }
+
+        @media #{$grid-sm} {
+            margin: 40px;
+            @include flex-basis($value: 25%);
+
+            &:last-child {
+                @include flex-basis($value: 60%);
+            }
+        }
+
+        @media #{$grid-xs} {
+            margin: 24px;
+            @include flex-basis($value: 35%);
+
+            &:last-child {
+                @include flex-basis($value: 78%)
+            }
+        }
+
+        @media #{$grid-xxs} {
+            margin: 0 0 24px 0;
+            text-align: center;
+        }
 
         li {
             &:first-child {
@@ -32,6 +86,7 @@
             @include p-body-1($dark-gray-2);
             list-style: none;
             margin-bottom: 16px;
+            white-space: nowrap;
 
             &:hover {
                 cursor: pointer;
@@ -43,7 +98,7 @@
     .social-media-links {
         @include flex-display;
         @include flex-flow($values: (row nowrap));
-        @include justify-content($value: center);
+        @include justify-content($value: flex-start);
         @include align-items($value: center);
 
         li {
@@ -78,8 +133,17 @@
         @include align-items($value: center);
         margin: 72px 0 0 0;
 
+        @media #{$grid-xs, $grid-sm} {
+            margin: 56px 0 0 0;
+        }
+
         svg {
             margin: 0 32px;
+            opacity: 0.8;
+
+            @media #{$grid-xs} {
+                margin: 0 16px;
+            }
 
             &:first-child {
                 padding: 0 0 16px 0;

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
+import {GridLg, GridSm } from '../component-assets/media-queries/media-queries';
 import Moment from 'react-moment';
 import './footer.scss';
 import {ReactComponent as Shield} from '../../assets/images/shield.svg';
@@ -18,7 +19,7 @@ class Footer extends React.Component {
                     <Row>
                         <Col lg={12} className='footer-links-col'>
                             <div className='footer-link-lists-container'>
-                                <Shield />
+                                <Shield className='shield-logo' />
                                 <ul className='footer-link-list'>
                                     <li>Swyfft</li>
                                     <li>About</li>
@@ -56,13 +57,13 @@ class Footer extends React.Component {
                             </div>
                         </Col>
                     </Row>
-                    <Row>
+                    {/* <Row>
                         <Col xs={12} className='accolades-container'>
                             <TrustedChoice />
                             <AMBest />
                             <BBB />
                         </Col>
-                    </Row>
+                    </Row> */}
                     <Row>
                         <Col xs={12}>
                             <p className='copyright-line'>© <Moment format='YYYY' /> Swyfft® , LLC. All Rights Reserved. <a href='swyfft.com'>Terms</a> • <a href='swyfft.com'>Privacy Policy</a></p>
