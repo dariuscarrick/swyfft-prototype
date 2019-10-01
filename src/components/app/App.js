@@ -9,6 +9,7 @@ import ESCommercial from '../commercial/es-commercial/escommercial';
 import ESCommercialQuote from '../quote/es-commercial-quote';
 import AdmittedCommercial from '../commercial/admitted-commercial/admitted-commercial';
 import AdmittedCommercialQuote from '../quote/admitted-commercial-quote';
+import Careers from '../careers/careers';
 
 class App extends React.Component {
 
@@ -24,6 +25,7 @@ class App extends React.Component {
         <Route path='/E&S-Commercial-Package/Quote' component={ESCommercialQuote} exact={true}/>
         <Route path='/Commercial-Package' component={AdmittedCommercial} exact={true} />
         <Route path='/Commercial-Package/Quote' component={AdmittedCommercialQuote} exact={true} />
+        <Route path='/Careers' component={Careers} exact={true} />
         <Footer />
     </div>
     );

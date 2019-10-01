@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 import Moment from 'react-moment';
 import './footer.scss';
@@ -19,7 +20,7 @@ class Footer extends React.Component {
                                 <ul className='footer-link-list'>
                                     <li>Swyfft</li>
                                     <li>About</li>
-                                    <li>Careers</li>
+                                    <li><Link to='/Careers'>Careers</Link></li>
                                     <li>In the Press</li>
                                     <li>FAQs</li>
                                 </ul>
