@@ -1,23 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0242e37356f1f998c5831e22c25d18f0",
+    "revision": "020a169659b5bd50cae53ae149e83f8c",
     "url": "/swyfft-prototype/index.html"
   },
   {
-    "revision": "cfca2ec3af104ca107b6",
-    "url": "/swyfft-prototype/static/css/main.345cd78d.chunk.css"
+    "revision": "4ed951711f2d09b117ba",
+    "url": "/swyfft-prototype/static/css/main.e7045025.chunk.css"
   },
   {
-    "revision": "7badf6665fe402e25ac6",
-    "url": "/swyfft-prototype/static/js/2.d0098140.chunk.js"
+    "revision": "bd5a7da2861aacdf8428",
+    "url": "/swyfft-prototype/static/js/2.5d1e3127.chunk.js"
   },
   {
-    "revision": "cfca2ec3af104ca107b6",
-    "url": "/swyfft-prototype/static/js/main.24f6631d.chunk.js"
+    "revision": "4ed951711f2d09b117ba",
+    "url": "/swyfft-prototype/static/js/main.7cd7ee08.chunk.js"
   },
   {
     "revision": "fdf1ed0a63bcbf6fd616",
     "url": "/swyfft-prototype/static/js/runtime~main.e940f1db.js"
+  },
+  {
+    "revision": "0cd9dfff528c9ef0de6b55722ca303f4",
+    "url": "/swyfft-prototype/static/media/401k.0cd9dfff.svg"
   },
   {
     "revision": "c18a955324456083175fca75a60f630c",
@@ -28,12 +32,28 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/swyfft-prototype/static/media/california.f2634ef2.svg"
   },
   {
+    "revision": "3d8d9fc409355cba7608482cc9001ab6",
+    "url": "/swyfft-prototype/static/media/careers-illustration.3d8d9fc4.svg"
+  },
+  {
+    "revision": "93c940d8ad17c64874f9438a8ad98b01",
+    "url": "/swyfft-prototype/static/media/compensation.93c940d8.svg"
+  },
+  {
+    "revision": "b53d1c3ee67c6433378fb187749512e8",
+    "url": "/swyfft-prototype/static/media/employee-map.b53d1c3e.svg"
+  },
+  {
     "revision": "e3e191e4fa6e5bccc62ae96f6f8b8aed",
     "url": "/swyfft-prototype/static/media/facebook.e3e191e4.svg"
   },
   {
     "revision": "235c95bbb87cf2db6e0d84b7c7c04fcf",
     "url": "/swyfft-prototype/static/media/florida.235c95bb.svg"
+  },
+  {
+    "revision": "ee98dc65b06aefe3430cbbc99c648a9d",
+    "url": "/swyfft-prototype/static/media/health-coverage.ee98dc65.svg"
   },
   {
     "revision": "75618d1b32e020bed67b97822b875fcf",
@@ -58,6 +78,22 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "1bef81e04abd8d3e8ddab6b35dd87b54",
     "url": "/swyfft-prototype/static/media/newyork.1bef81e0.svg"
+  },
+  {
+    "revision": "9f5992d5bc48a16b27c17d4208872951",
+    "url": "/swyfft-prototype/static/media/pet-insurance.9f5992d5.svg"
+  },
+  {
+    "revision": "aa6df60130f86369c2f911ea4eeb7303",
+    "url": "/swyfft-prototype/static/media/pto.aa6df601.svg"
+  },
+  {
+    "revision": "92dc2b11358f1179bb93a29b24d4f7a2",
+    "url": "/swyfft-prototype/static/media/remote-work.92dc2b11.svg"
+  },
+  {
+    "revision": "f9c6eb25ea2349e80fba541ead79f65e",
+    "url": "/swyfft-prototype/static/media/resume.f9c6eb25.svg"
   },
   {
     "revision": "6c5d25bf1cfb1b1e9210597505a597dc",

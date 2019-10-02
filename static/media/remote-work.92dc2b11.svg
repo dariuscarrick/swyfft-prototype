@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="89px" height="64px" viewBox="0 0 89 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>Group 18</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#EEEEF6" offset="0%"></stop>
+            <stop stop-color="#D9D9E9" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#EEEEF6" offset="0%"></stop>
+            <stop stop-color="#D9D9E9" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-3">
+            <stop stop-color="#EEEEF6" offset="0%"></stop>
+            <stop stop-color="#D9D9E9" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-4">
+            <stop stop-color="#EEEEF6" offset="0%"></stop>
+            <stop stop-color="#D9D9E9" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-5">
+            <stop stop-color="#EEEEF6" offset="0%"></stop>
+            <stop stop-color="#D9D9E9" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-Name" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+        <g id="Group-18" transform="translate(1.000000, 1.000000)" stroke="#C5C5D4" stroke-width="2">
+            <g id="Group-17">
+                <g id="Group-15" transform="translate(0.000000, 0.106383)">
+                    <rect id="Rectangle" fill="url(#linearGradient-1)" x="0" y="26.5531915" width="52.2222222" height="4.42553191" rx="2"></rect>
+                    <path d="M8,0 L44.2222222,0 C45.8790765,-3.04359188e-16 47.2222222,1.34314575 47.2222222,3 L47.2222222,26.5531915 L47.2222222,26.5531915 L5,26.5531915 L5,3 C5,1.34314575 6.34314575,3.04359188e-16 8,0 Z" id="Rectangle" fill="url(#linearGradient-2)"></path>
+                </g>
+                <g id="Group-16" transform="translate(64.777778, 10.000000)">
+                    <path d="M0,36.5106383 L22.2222222,36.5106383 L22.2222222,40.8888889 C22.2222222,47.0253861 17.2476083,52 11.1111111,52 C4.97461389,52 7.51504168e-16,47.0253861 0,40.8888889 L0,36.5106383 L0,36.5106383 Z" id="Rectangle" fill="url(#linearGradient-3)"></path>
+                    <path d="M11.1111111,40.9361702 C17.3384466,40.9361702 22.312504,38.7071198 22.2209791,35.9574468 C22.1294543,33.2077738 17.155397,30.9787234 11.1111111,30.9787234 C5.06682523,30.9787234 0.0927678799,33.2077738 0.001243076,35.9574468 C-0.0902817279,38.7071198 4.88377562,40.9361702 11.1111111,40.9361702 Z" id="Oval" fill="url(#linearGradient-4)"></path>
+                    <path d="M-3.29314421,14.5665722 C-1.52966626,12.2219543 0.188162585,11.0496454 1.86034233,11.0496454 C4.75649426,11.0496454 6.38770686,17.7163121 10.1060829,17.7163121 C12.3934,17.7163121 14.1964945,16.6663988 15.5153664,14.5665722" id="Line" fill="url(#linearGradient-5)" transform="translate(6.111111, 14.382979) rotate(-270.000000) translate(-6.111111, -14.382979) "></path>
+                    <path d="M8.92907801,10.1410403 C10.692556,7.79642243 12.4103848,6.62411348 14.0825646,6.62411348 C16.9787165,6.62411348 18.6099291,13.2907801 22.3283051,13.2907801 C24.6156222,13.2907801 26.4187168,12.2408669 27.7375887,10.1410403" id="Line" fill="url(#linearGradient-5)" transform="translate(18.333333, 9.957447) rotate(-270.000000) translate(-18.333333, -9.957447) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
