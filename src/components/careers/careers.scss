@@ -1,1 +1,107 @@
 @import '../../assets/scss-variables/compiled-variables.scss';
+
+.careers-hero {
+    @include hero-container($white);
+    text-align: center;
+
+    h1 {
+        @include h1-hero($black);
+        margin: 16px 0;
+
+        @media #{$grid-xxs} {
+            @include h2-hero($black);
+        }
+    }
+
+    h3 {
+        @include h2-body($dark-gray-2);
+        text-align: left;
+        font-weight: 400;
+        line-height: 1.3;
+        margin: 0 0 16px 0;
+    }
+
+    @media #{$grid-xxs} {
+        padding: 180px 24px;
+    }
+}
+
+.careers-job-listings {
+    margin: -194px 0 0 0;
+    padding: 156px 0 56px 0;
+    background-color: $light-gray-2;
+
+    h2 {
+        @include h2-hero($dark-purple-2);
+        margin-left: 16px;
+    }
+
+    @media #{$grid-xxs} {
+        margin: -220px 0 0 0;
+        padding: 72px 24px 56px 24px;
+    }
+}
+
+.BambooHR-ATS-board {
+    h2 {
+        display: none;
+    }
+}
+
+.BambooHR-ATS-Jobs-List {
+    @include flex-display;
+    @include flex-flow($values: row wrap);
+    list-style: none;
+
+    li {
+        @include flex-display;
+        @include flex-flow($values: column nowrap);
+        margin: 16px;
+        border-radius: 4px;
+        border: dotted $light-purple-2;
+        background-color: $white;
+        border-width: 2px 0 2px 0;
+        padding: 12px;
+        list-style: none;
+        width: 45%;
+
+        @media #{$grid-xs} {
+            width: 100%;
+            margin: 16px 0 0 0;
+        }
+    }
+}
+
+.BambooHR-ATS-Department-Header {
+    display: none;
+}
+
+.BambooHR-ATS-Department-Item {
+    list-style: none;
+
+    a {
+        @include h3-body($brand-green);
+        margin: 0 0 8px 0;
+
+        &:hover {
+            text-decoration: none;
+            color: $light-green;
+        }
+    }
+}
+
+.BambooHR-ATS-Location {
+    @include p-body-2($medium-blue-1);
+}
+
+.careers-illustration {
+    @media #{$grid-xs, $grid-sm} {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.benefits {
+    background-color: $white;
+    padding: 40px 0;
+}

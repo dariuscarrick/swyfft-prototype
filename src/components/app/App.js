@@ -1,5 +1,6 @@
 import React from 'react';
 import {Route, Redirect, withRouter} from 'react-router-dom';
+import ScrollToTop from '../../components/component-assets/scrolling/scroll-top-top';
 import './App.scss';
 import NavBar from '../navbar/navbar';
 import Footer from '../footer/footer';
@@ -17,16 +18,18 @@ class App extends React.Component {
     const path = this.props.location.pathname;
     return (
       <div>
-        <Redirect exact from='/' to={path === '/' ? '/Homeowners' : path} />
-        <NavBar />
-        <Route path='/Homeowners' component={Homeowners} exact={true}/>
-        <Route path='/Homeowners/Quote' component={HomeownersQuote} exact={true} />
-        <Route path='/E&S-Commercial-Package' component={ESCommercial} exact={true}/>
-        <Route path='/E&S-Commercial-Package/Quote' component={ESCommercialQuote} exact={true}/>
-        <Route path='/Commercial-Package' component={AdmittedCommercial} exact={true} />
-        <Route path='/Commercial-Package/Quote' component={AdmittedCommercialQuote} exact={true} />
-        <Route path='/Careers' component={Careers} exact={true} />
-        <Footer />
+        <ScrollToTop>
+          <Redirect exact from='/' to={path === '/' ? '/Homeowners' : path} />
+          <NavBar />
+          <Route path='/Homeowners' component={Homeowners} exact={true}/>
+          <Route path='/Homeowners/Quote' component={HomeownersQuote} exact={true} />
+          <Route path='/E&S-Commercial-Package' component={ESCommercial} exact={true}/>
+          <Route path='/E&S-Commercial-Package/Quote' component={ESCommercialQuote} exact={true}/>
+          <Route path='/Commercial-Package' component={AdmittedCommercial} exact={true} />
+          <Route path='/Commercial-Package/Quote' component={AdmittedCommercialQuote} exact={true} />
+          <Route path='/Careers' component={Careers} exact={true} />
+          <Footer />
+        </ScrollToTop>
     </div>
     );
   }
