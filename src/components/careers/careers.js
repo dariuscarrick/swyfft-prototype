@@ -93,7 +93,7 @@ export default class Careers extends React.Component {
                                 <aside class='open-app-actions'>
                                     <h2>Don't See Your Role?</h2>
                                     <p>Send us your resume and we’ll save it for when the perfect position comes up.</p>
-                                    <a className='apply-button'>Apply Now</a>
+                                    <button className='apply-button'>Apply Now</button>
                                 </aside>
                             </Col>
                         </Row>
@@ -162,7 +162,7 @@ export default class Careers extends React.Component {
                 <section id='employee-locations'>
                     <Container className='locations' fluid={true}>
                         <Row>
-                            <Col sm={{span: 10, offset: 1}} md={{span: 8, offset: 2}} lg={{span: 6, offset: 3}} className='employee-location-container'>
+                            <Col sm={{span: 10, offset: 1}} md={{span: 8, offset: 2}} className='employee-location-container'>
                                 <div className='employee-location-text'>
                                     <h2>Where We Work</h2>
                                     <p>We bring in a wide range of talented individuals from various locations to help us make insurance better.</p>
