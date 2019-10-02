@@ -4,6 +4,13 @@ import './careers.scss';
 import {ReactComponent as ShieldLogo} from '../../assets/images/shield.svg';
 import {ReactComponent as CareersIllustration} from '../../assets/images/careers-illustration.svg';
 import {ReactComponent as Resume} from '../../assets/images/resume.svg';
+import {ReactComponent as Health} from '../../assets/images/health-coverage.svg';
+import {ReactComponent as Retirement} from '../../assets/images/401k.svg';
+import {ReactComponent as PTO} from '../../assets/images/pto.svg';
+import {ReactComponent as PetInsurance} from '../../assets/images/pet-insurance.svg';
+import {ReactComponent as Compensation} from '../../assets/images/compensation.svg';
+import {ReactComponent as RemoteWork} from '../../assets/images/remote-work.svg';
+import {ReactComponent as EmployeeMap} from '../../assets/images/employee-map.svg';
 
 export default class Careers extends React.Component {
 
@@ -25,7 +32,7 @@ export default class Careers extends React.Component {
                         </Row>
                         <Row>
                             <Col sm={{span: 10, offset: 1}} lg={{span: 6, offset: 3}}>
-                                <h2>Through a mix of big data, human ingenuity and imagination that never stops, our team is transforming the way people experience insurance. We’re looking for like-minded, self-motivated innovators to join us as we challenge the old way of doing business.</h2>
+                                <h2>Through a mix of big data, human ingenuity and imagination, our team is transforming the way people experience insurance. We’re looking for like-minded, self-motivated innovators to join us as we challenge the old way of doing business.</h2>
                             </Col>
                         </Row>
                         <CareersIllustration className='careers-illustration' alt='Careers at Swyfft Insurance' />
@@ -97,6 +104,71 @@ export default class Careers extends React.Component {
                         <Row>
                             <Col sm={{span: 10, offset: 1}} lg={{span: 8, offset: 2}}>
                                 <h2>Benefits & Perks</h2>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col sm={{span: 10, offset: 1}} lg={{span: 8, offset: 2}} className='benefits-container'>
+                                <article className='benefit-container'>
+                                    <Health />
+                                    <div className='benefit-text'>
+                                        <h3>Health Coverage</h3>
+                                        <p>Keeping our employees and families healthy is important to us. We offer a choice of two medical plans and cover a generous portion of the cost.</p>
+                                    </div>
+                                </article>
+
+                                <article className='benefit-container'>
+                                    <Retirement />
+                                    <div className='benefit-text'>
+                                        <h3>Retirement Plan</h3>
+                                        <p>Our 401(k) offering is tough to beat. We offer a generous company match with immediate vesting and no per paycheck limits on how much you contribute.</p>
+                                    </div>
+                                </article>
+
+                                <article className='benefit-container'>
+                                    <PTO />
+                                    <div className='benefit-text'>
+                                        <h3>Paid Time Off</h3>
+                                        <p>We understand that work life balance is important, so we provide a generous PTO policy, eleven paid holidays and a "choose your own adventure" day.</p>  
+                                    </div>                                    
+                                </article>
+
+                                <article className='benefit-container'>
+                                    <PetInsurance />
+                                    <div className='benefit-text'>
+                                        <h3>Pet Insurance</h3>
+                                        <p>We know that your fur babies are important family members too, so we offer discounted rates on pet insurance.</p>
+                                    </div>
+                                </article>
+
+                                <article className='benefit-container'>
+                                    <Compensation />
+                                    <div className='benefit-text'>
+                                        <h3>Competitive Compensation</h3>
+                                        <p>We’re proud to offer our employees salaries that compete with leading companies in our industry.</p>
+                                    </div>
+                                </article>
+
+                                <article className='benefit-container'>
+                                    <RemoteWork />
+                                    <div className='benefit-text'>
+                                        <h3>Remote Work Options</h3>
+                                        <p>One third of our company works remotely. Depending on what your job is a remote work options might be available. </p>
+                                    </div>
+                                </article>
+                            </Col>
+                        </Row>
+                    </Container>
+                </section>
+                <section id='employee-locations'>
+                    <Container className='locations' fluid={true}>
+                        <Row>
+                            <Col sm={{span: 10, offset: 1}} md={{span: 8, offset: 2}} lg={{span: 6, offset: 3}} className='employee-location-container'>
+                                <div className='employee-location-text'>
+                                    <h2>Where We Work</h2>
+                                    <p>We bring in a wide range of talented individuals from various locations to help us make insurance better.</p>
+                                    <div className='map-legend'><span></span> <p>Swyfft employee states</p></div>
+                                </div>
+                                <EmployeeMap />
                             </Col>
                         </Row>
                     </Container>

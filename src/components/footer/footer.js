@@ -35,7 +35,7 @@ class Footer extends React.Component {
                                     <li>Contact</li>
                                     <li>Contact Us</li>
                                     <li>New Agent Signup</li>
-                                    <li>Email Cutsomer Support</li>
+                                    <li>Email Customer Support</li>
                                     <li>855.479.9338</li>
                                 </ul>
                                 <ul className='footer-link-list'>
