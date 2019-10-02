@@ -1,0 +1,293 @@
+@import '../../assets/scss-variables/compiled-variables.scss';
+
+.careers-hero {
+    @include hero-container($white);
+    text-align: center;
+
+    h1 {
+        @include h1-hero($black);
+        margin: 0 0 16px 0;
+
+        @media #{$grid-xxs} {
+            @include h2-hero($black);
+        }
+    }
+
+    h2 {
+        @include h2-body($dark-gray-2);
+        font-weight: 400;
+        line-height: 1.3;
+        margin: 0 0 16px 0;
+    }
+
+    h3 {
+        @include h3-body($dark-gray-1);
+        margin: 24px 0 4px 0;
+    }
+
+    @media #{$grid-xxs} {
+        padding: 180px 24px;
+    }
+}
+
+.careers-job-listings {
+    margin: -194px 0 0 0;
+    padding: 156px 0 32px 0;
+    background-color: $light-gray-2;
+
+    h2 {
+        @include h2-hero($dark-purple-2);
+        margin: 0 0 16px 16px;
+    }
+
+    @media #{$grid-xxs} {
+        margin: -220px 0 0 0;
+        padding: 72px 24px 32px 24px;
+    }
+}
+
+.BambooHR-ATS-board {
+    h2 {
+        display: none;
+    }
+}
+
+.BambooHR-ATS-Jobs-List {
+    @include flex-display;
+    @include flex-flow($values: row wrap);
+    list-style: none;
+
+    li {
+        @include flex-display;
+        @include flex-flow($values: column nowrap);
+        margin: 16px;
+        border: dotted $light-purple-2;
+        background-color: $white;
+        border-width: 2px 0 2px 0;
+        padding: 12px;
+        list-style: none;
+        width: 45%;
+
+        @media #{$grid-xs} {
+            width: 100%;
+            margin: 16px 0 0 0;
+        }
+    }
+}
+
+.BambooHR-ATS-Department-Header {
+    display: none;
+}
+
+.BambooHR-ATS-Department-Item {
+    list-style: none;
+
+    a {
+        @include h3-body($brand-green);
+        margin: 0 0 8px 0;
+
+        &:hover {
+            text-decoration: none;
+            color: $light-green;
+        }
+    }
+}
+
+.BambooHR-ATS-Location {
+    @include p-body-2($medium-blue-1);
+}
+
+.careers-illustration {
+    @media #{$grid-xs, $grid-sm} {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.careers-open-application {
+    background-color: $light-gray-2;
+
+    .open-app-container {
+        @include flex-display;
+        @include justify-content($value: center);
+        @include align-items($value: flex-start);
+        padding: 32px 0 56px 0;
+        border-top: 2px dotted #e4e4e4;
+
+        svg {
+            margin: 0 56px 0 0;
+        }
+
+        @media #{$grid-xxs} {
+            @include flex-flow($values: column wrap-reverse);
+            @include align-items($value: center);
+
+            svg {
+                margin: 0 0 32px 0;
+            }
+        }
+
+        .open-app-actions {
+            @include flex-display;
+            @include flex-flow($values: column nowrap);
+            @include align-items($value: flex-start);
+
+            @media #{$grid-xxs} {
+                @include align-items($value: center);
+            }
+
+            h2 {
+                @include h2-hero($dark-gray-2);
+            }
+
+            p {
+                @include p-body-1($dark-gray-2);
+                margin: 16px 0 24px 0;
+                width: 296px;
+            }
+
+            .apply-button {
+                @include secondary-button($white, $brand-green, $brand-green);
+                padding: 8px 32px;
+                white-space: nowrap;
+
+                &:hover {
+                    @include secondary-button($white, $light-green, $light-green);
+                    padding: 8px 32px;
+                }
+            }
+        }
+    }
+}
+
+.benefits {
+    background-color: $white;
+    padding: 40px 0;
+
+    @media #{$grid-xxs} {
+        padding: 40px 24px;
+    }
+
+    h2 {
+        @include h2-hero($dark-purple-2);
+        margin: 0 0 16px 16px;
+    }
+
+    .benefits-container {
+        @include flex-display;
+        @include flex-flow($values: row wrap);
+        @include align-items($value: center);
+
+        .benefit-container {
+            @include flex-display;
+            @include align-items($value: flex-start);
+            width: 50%;
+            padding: 16px;
+
+            @media #{$grid-xs} {
+                width: 100%;
+            }
+
+            @media #{$grid-xxs} {
+                @include flex-flow($values: column nowrap);
+                @include align-items($value: center);
+            }
+
+            svg {
+                width: 25%;
+                margin: 0 8px 0 0;
+
+                @media #{$grid-xxs} {
+                    margin: 0 0 24px 0;
+                }
+            }
+    
+            .benefit-text {
+                @include flex-display;
+                @include flex-flow($values: column nowrap);
+                @include align-items($value: flex-start);
+                width: 75%;
+
+                h3 {
+                    @include h2-body($dark-purple-2);
+                    margin: 0 0 4px 0;
+                }
+
+                p {
+                    @include p-body-1($dark-gray-2);
+                }
+            }
+        }
+    }
+}
+
+.locations {
+    background-color: $light-gray-2;
+    padding: 40px 0;
+
+    @media #{$grid-xxs} {
+        padding: 40px 24px;
+    }
+
+    .employee-location-container {
+        @include flex-display;
+        @include flex-flow($values: row wrap);
+        @include align-items($value: center);
+        padding: 0 16px;
+
+        @media #{$grid-xxs} {
+            @include flex-flow($values: column nowrap);
+        }
+
+        svg {
+            width: 40%;
+            margin: 0 0 0 40px;
+
+            @media #{$grid-xxs} {
+                width: 100%;
+                margin: 40px 0 0 0;
+            }
+        }
+    
+        .employee-location-text {
+            @include flex-display;
+            @include flex-flow($values: column nowrap);
+            @include align-items($value: flex-start);
+            width: 50%;
+
+            @media #{$grid-xxs} {
+                @include align-items($value: center);
+                width: 100%;
+                text-align: center;
+            }
+    
+            h2 {
+                @include h2-hero($dark-gray-2);
+            }
+    
+            p {
+                @include p-body-1($dark-gray-2);
+                margin: 8px 0 16px 0;
+            }
+        }
+    
+        .map-legend {
+            @include inline-flex-display;
+            @include align-items($value: center);
+
+            p {
+                @include h2-body($dark-gray-2);
+                margin: 0;
+            }
+    
+            span {
+                background-color: $brand-green;
+                width: 16px;
+                height: 16px;
+                margin: 0 16px 0 0;
+                border-radius: 2px;
+            }
+        }
+    }
+}
+

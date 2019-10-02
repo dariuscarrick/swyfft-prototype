@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="78px" height="71px" viewBox="0 0 78 71" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#EEEEF6" offset="0%"></stop>
+            <stop stop-color="#D9D9E9" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#EEEEF6" offset="0%"></stop>
+            <stop stop-color="#D9D9E9" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-Name" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+        <g id="1.1-PageName-LG" transform="translate(-421.000000, -1902.000000)" stroke="#C5C5D4">
+            <g id="Group-2" transform="translate(399.000000, 1884.000000)">
+                <g id="Group" transform="translate(24.000000, 20.000000)">
+                    <path d="M23.5,2.27373675e-13 C24.6045695,2.27170769e-13 25.5,0.8954305 25.5,2 L25.5,13.5 L37,13.5 C38.1045695,13.5 39,14.3954305 39,15.5 L39,23.5 C39,24.6045695 38.1045695,25.5 37,25.5 L25.5,25.5 L25.5,37 C25.5,38.1045695 24.6045695,39 23.5,39 L15.5,39 C14.3954305,39 13.5,38.1045695 13.5,37 L13.5,25.5 L2,25.5 C0.8954305,25.5 0,24.6045695 0,23.5 L0,15.5 C0,14.3954305 0.8954305,13.5 2,13.5 L13.5,13.5 L13.5,2 C13.5,0.8954305 14.3954305,2.27576582e-13 15.5,2.27373675e-13 L23.5,2.27373675e-13 Z" id="Combined-Shape" stroke-width="3" fill="url(#linearGradient-1)"></path>
+                    <path d="M41,45.4957025 C45.2191808,39.1652342 49.3291446,36 53.3298914,36 C60.2590332,36 64.1617647,54 73.0581055,54 C78.5305894,54 82.8445542,51.1652342 86,45.4957025" id="Line" stroke-width="3" fill="url(#linearGradient-2)" transform="translate(63.500000, 45.000000) rotate(-90.000000) translate(-63.500000, -45.000000) "></path>
+                    <circle id="Oval" stroke-width="1.5" fill="url(#linearGradient-1)" cx="56.5" cy="28.5" r="2.5"></circle>
+                    <circle id="Oval" stroke-width="1.5" fill="url(#linearGradient-1)" cx="72.5" cy="60.5" r="2.5"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

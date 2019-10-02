@@ -314,8 +314,12 @@ class NavBar extends React.Component {
                         Make a Payment
                       </li>
                       <li>
-                        Our Company
+                        About
                       </li>
+                      {!this.state.isLoggedIn ? 
+                      <li>
+                        <Link to='/Careers' onClick={this.handleClickOutside}>Careers</Link>
+                      </li> : null}
                       <li>
                         Contact Us
                       </li>
