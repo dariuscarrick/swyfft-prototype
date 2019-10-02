@@ -27,3 +27,7 @@ button:focus, input:focus {
 	padding-right: 6px;
 	padding-left: 6px;
 }
+
+body {
+	overflow-x: hidden;
+}

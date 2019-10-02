@@ -1,10 +1,33 @@
 @mixin main-container($background-color) {
     background-color: $background-color;
     min-height: 100vh;
-    padding: 120px 0;
+    padding: 96px 0;
 
     @media #{$grid-sm} {
-        padding: 120px 24px;
+        padding: 96px 24px;
+    }
+
+    @media #{$grid-xs} {
+        padding: 120px 16px;
+    }
+
+    @media #{$grid-xxs} {
+        padding: 180px 12px;
+    }
+
+    .container {
+        @media #{$grid-xxs, $grid-xs, $grid-sm} {
+            max-width: none;
+        }
+    }
+}
+
+@mixin hero-container($background-color) {
+    background-color: $background-color;
+    padding: 96px 0;
+
+    @media #{$grid-sm} {
+        padding: 96px 24px;
     }
 
     @media #{$grid-xs} {

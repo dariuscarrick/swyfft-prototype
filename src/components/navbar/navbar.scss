@@ -687,7 +687,7 @@
         margin: 16px 0 0 0;
     }
 
-    & li {
+    & li, a {
         @include p-body-1($dark-gray-1);
         cursor: pointer;
         margin: 0 0 16px;
@@ -697,6 +697,7 @@
 
         &:hover {
             color: $white;
+            text-decoration: none;
         }
     }
   }
