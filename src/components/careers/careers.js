@@ -47,8 +47,10 @@ export default class Careers extends React.Component {
                         </Row>
                         <Row>
                             <Col sm={{span: 10, offset: 1}} lg={{span: 8, offset: 2}}>
-                                <div class="BambooHR-ATS-board">
-                                    <h2>Open Positions</h2>
+                                <div id='BambooHR-ATS'></div>
+                                {/* TODO: Remove once script is verified
+
+                                    <div class="BambooHR-ATS-board">
                                     <ul class="BambooHR-ATS-Department-List">
                                         <li id="bhrDepartmentID_18439" class="BambooHR-ATS-Department-Item">
                                             <div id="department_18439"class="BambooHR-ATS-Department-Header">Customer Support</div>
@@ -80,7 +82,7 @@ export default class Careers extends React.Component {
                                             </ul>
                                         </li>
                                     </ul>
-                                </div>
+                                </div> */}
                             </Col>
                         </Row>
                     </Container>
