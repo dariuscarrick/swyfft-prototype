@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c369b2a4dc969bb90c8f8b200e07ddc2",
+    "revision": "d02e9781293d57e038e939346a93f6bd",
     "url": "/swyfft-prototype/index.html"
   },
   {
-    "revision": "fe132cab6924106fe9b7",
-    "url": "/swyfft-prototype/static/css/main.9855e6cd.chunk.css"
+    "revision": "1f31f92b982be130b2c8",
+    "url": "/swyfft-prototype/static/css/main.8a79307e.chunk.css"
   },
   {
-    "revision": "a133daeff315168a7142",
-    "url": "/swyfft-prototype/static/js/2.46a0424a.chunk.js"
+    "revision": "918de2635f39d36b2f0d",
+    "url": "/swyfft-prototype/static/js/2.ca0647bc.chunk.js"
   },
   {
-    "revision": "fe132cab6924106fe9b7",
-    "url": "/swyfft-prototype/static/js/main.acf85bf8.chunk.js"
+    "revision": "1f31f92b982be130b2c8",
+    "url": "/swyfft-prototype/static/js/main.b6da0e8f.chunk.js"
   },
   {
     "revision": "fdf1ed0a63bcbf6fd616",
@@ -30,6 +30,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "f2634ef226858a3751237c3ffbc366ee",
     "url": "/swyfft-prototype/static/media/california.f2634ef2.svg"
+  },
+  {
+    "revision": "e29fee34226ab01024c6e2c6c96841ee",
+    "url": "/swyfft-prototype/static/media/careers-illustration-mobile.e29fee34.png"
   },
   {
     "revision": "29eb3c80c7f2cf4e7fd0457d25ac34ae",
@@ -90,10 +94,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "92dc2b11358f1179bb93a29b24d4f7a2",
     "url": "/swyfft-prototype/static/media/remote-work.92dc2b11.svg"
-  },
-  {
-    "revision": "f9c6eb25ea2349e80fba541ead79f65e",
-    "url": "/swyfft-prototype/static/media/resume.f9c6eb25.svg"
   },
   {
     "revision": "6c5d25bf1cfb1b1e9210597505a597dc",
