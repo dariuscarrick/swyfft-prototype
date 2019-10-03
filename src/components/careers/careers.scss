@@ -47,9 +47,24 @@
 }
 
 .BambooHR-ATS-board {
+    padding: 0 16px;
+
     h2 {
         display: none;
     }
+
+    p {
+        @include h2-body($dark-gray-1);
+        line-height: 1.5;
+        
+        br {
+            display: none;
+        }
+    }
+}
+
+#BambooHR-Footer {
+    display: none;
 }
 
 .BambooHR-ATS-Jobs-List {
@@ -111,7 +126,7 @@
         @include flex-display;
         @include justify-content($value: center);
         @include align-items($value: flex-start);
-        padding: 32px 0 56px 0;
+        padding: 32px 0 64px 0;
         border-top: 2px dotted #e4e4e4;
 
         svg {
@@ -162,7 +177,7 @@
 
 .benefits {
     background-color: $white;
-    padding: 40px 0;
+    padding: 64px 0;
 
     @media #{$grid-xxs} {
         padding: 40px 24px;
@@ -223,7 +238,7 @@
 
 .locations {
     background-color: $light-gray-2;
-    padding: 40px 0;
+    padding: 64px 0;
 
     @media #{$grid-xxs} {
         padding: 40px 24px;
