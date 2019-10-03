@@ -6,7 +6,7 @@ import './careers.scss';
 import {ReactComponent as ShieldLogo} from '../../assets/images/shield.svg';
 import CareersIllustration from '../../assets/images/careers-illustration.png';
 import CareersIllustrationMobile from '../../assets/images/careers-illustration-mobile.png';
-import {ReactComponent as Resume} from '../../assets/images/resume.svg';
+// import {ReactComponent as Resume} from '../../assets/images/resume.svg';
 import {ReactComponent as Health} from '../../assets/images/health-coverage.svg';
 import {ReactComponent as Retirement} from '../../assets/images/401k.svg';
 import {ReactComponent as PTO} from '../../assets/images/pto.svg';
