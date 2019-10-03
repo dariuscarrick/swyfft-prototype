@@ -91,7 +91,8 @@
 }
 
 .BambooHR-ATS-Department-Header {
-    display: none;
+    @include h2-body($dark-gray-1);
+    margin: 16px 0 0 0;
 }
 
 .BambooHR-ATS-Department-Item {
@@ -237,7 +238,7 @@
 }
 
 .locations {
-    background-color: $light-gray-2;
+    background-color: $white;
     padding: 64px 0;
 
     @media #{$grid-xxs} {
@@ -248,7 +249,9 @@
         @include flex-display;
         @include flex-flow($values: row wrap);
         @include align-items($value: center);
-        padding: 0 16px;
+        padding: 16px 24px;
+        border: 2px dotted #e4e4e4;
+        background-color: #fafbfc;
 
         @media #{$grid-xxs} {
             @include flex-flow($values: column nowrap);

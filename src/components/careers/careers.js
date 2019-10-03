@@ -1,5 +1,6 @@
 import React from 'react';
 import {Container, Row, Col} from 'react-bootstrap';
+import { Helmet } from 'react-helmet';
 import './careers.scss';
 import {ReactComponent as ShieldLogo} from '../../assets/images/shield.svg';
 import {ReactComponent as CareersIllustration} from '../../assets/images/careers-illustration.svg';
@@ -15,8 +16,12 @@ import {ReactComponent as EmployeeMap} from '../../assets/images/employee-map.sv
 export default class Careers extends React.Component {
 
     render() {
+
         return (
             <main>
+                <Helmet >
+                    <script src='https://swyfft.bamboohr.com/js/jobs2.php' type='text/javascript'></script>                    
+                </Helmet>      
                 <section id='swyfft-come-work-with-us'>
                     <Container fluid={true} className='careers-hero'>
                         <Row>
@@ -48,6 +53,7 @@ export default class Careers extends React.Component {
                         <Row>
                             <Col sm={{span: 10, offset: 1}} lg={{span: 8, offset: 2}}>
                                 <div id='BambooHR-ATS'></div>
+                                
                                 {/* TODO: Remove once script is verified
 
                                     <div class="BambooHR-ATS-board">
