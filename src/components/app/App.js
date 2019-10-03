@@ -16,19 +16,18 @@ class App extends React.Component {
 
   render() {
     const path = this.props.location.pathname;
-
     return (
       <div>
         <ScrollToTop>
-          <NavBar />
           <Redirect exact from='/' to={path === '/' ? '/Homeowners' : path} />
-            <Route path='/Homeowners' component={Homeowners} exact={true}/>
-            <Route path='/Homeowners/Quote' component={HomeownersQuote} exact={true} />
-            <Route path='/E&S-Commercial-Package' component={ESCommercial} exact={true}/>
-            <Route path='/E&S-Commercial-Package/Quote' component={ESCommercialQuote} exact={true}/>
-            <Route path='/Commercial-Package' component={AdmittedCommercial} exact={true} />
-            <Route path='/Commercial-Package/Quote' component={AdmittedCommercialQuote} exact={true} />
-            <Route path='/Careers' component={() => <Careers />} exact={true} />
+          <NavBar />
+          <Route path='/Homeowners' component={Homeowners} exact={true}/>
+          <Route path='/Homeowners/Quote' component={HomeownersQuote} exact={true} />
+          <Route path='/E&S-Commercial-Package' component={ESCommercial} exact={true}/>
+          <Route path='/E&S-Commercial-Package/Quote' component={ESCommercialQuote} exact={true}/>
+          <Route path='/Commercial-Package' component={AdmittedCommercial} exact={true} />
+          <Route path='/Commercial-Package/Quote' component={AdmittedCommercialQuote} exact={true} />
+          <Route path='/Careers' component={Careers} exact={true} />
           <Footer />
         </ScrollToTop>
     </div>

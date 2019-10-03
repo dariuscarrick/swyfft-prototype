@@ -1,9 +1,9 @@
 import React from 'react';
+import {Helmet} from 'react-helmet';
 import {Container, Row, Col} from 'react-bootstrap';
-import { Helmet } from 'react-helmet';
 import './careers.scss';
 import {ReactComponent as ShieldLogo} from '../../assets/images/shield.svg';
-import {ReactComponent as CareersIllustration} from '../../assets/images/careers-illustration.svg';
+import CareersIllustration from '../../assets/images/careers-illustration.png';
 import {ReactComponent as Resume} from '../../assets/images/resume.svg';
 import {ReactComponent as Health} from '../../assets/images/health-coverage.svg';
 import {ReactComponent as Retirement} from '../../assets/images/401k.svg';
@@ -19,9 +19,9 @@ export default class Careers extends React.Component {
 
         return (
             <main>
-                <Helmet >
-                    <script src='https://swyfft.bamboohr.com/js/jobs2.php' type='text/javascript'></script>                    
-                </Helmet>      
+                <Helmet>
+                    <script src='https://swyfft.bamboohr.com/js/jobs2.php' type='text/javascript'></script>
+                </Helmet>
                 <section id='swyfft-come-work-with-us'>
                     <Container fluid={true} className='careers-hero'>
                         <Row>
@@ -40,7 +40,7 @@ export default class Careers extends React.Component {
                                 <h2>Through a mix of big data, human ingenuity and imagination, our team is transforming the way people experience insurance. We’re looking for like-minded, self-motivated innovators to join us as we challenge the old way of doing business.</h2>
                             </Col>
                         </Row>
-                        <CareersIllustration className='careers-illustration' alt='Careers at Swyfft Insurance' />
+                        <img className='careers-illustration' alt='Careers at Swyfft Insurance' src={CareersIllustration} />
                     </Container>
                 </section>
                 <section id='swyfft-job-listings'>
@@ -98,7 +98,7 @@ export default class Careers extends React.Component {
                         <Row>
                             <Col sm={{span: 10, offset: 1}} lg={{span: 8, offset: 2}} className='open-app-container'>
                                 <Resume />
-                                <aside class='open-app-actions'>
+                                <aside className='open-app-actions'>
                                     <h2>Don't See Your Role?</h2>
                                     <p>Send us your resume and we’ll save it for when the perfect position comes up.</p>
                                     <button className='apply-button'>Apply Now</button>
