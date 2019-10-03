@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7abd4964e1807ed28d2c0e7312bb385a",
+    "revision": "c369b2a4dc969bb90c8f8b200e07ddc2",
     "url": "/swyfft-prototype/index.html"
   },
   {
-    "revision": "3622a4f92ec5901f352b",
-    "url": "/swyfft-prototype/static/css/main.9b7a9adf.chunk.css"
+    "revision": "fe132cab6924106fe9b7",
+    "url": "/swyfft-prototype/static/css/main.9855e6cd.chunk.css"
   },
   {
-    "revision": "bd5a7da2861aacdf8428",
-    "url": "/swyfft-prototype/static/js/2.5d1e3127.chunk.js"
+    "revision": "a133daeff315168a7142",
+    "url": "/swyfft-prototype/static/js/2.46a0424a.chunk.js"
   },
   {
-    "revision": "3622a4f92ec5901f352b",
-    "url": "/swyfft-prototype/static/js/main.fb0bca5d.chunk.js"
+    "revision": "fe132cab6924106fe9b7",
+    "url": "/swyfft-prototype/static/js/main.acf85bf8.chunk.js"
   },
   {
     "revision": "fdf1ed0a63bcbf6fd616",
@@ -32,8 +32,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/swyfft-prototype/static/media/california.f2634ef2.svg"
   },
   {
-    "revision": "3d8d9fc409355cba7608482cc9001ab6",
-    "url": "/swyfft-prototype/static/media/careers-illustration.3d8d9fc4.svg"
+    "revision": "29eb3c80c7f2cf4e7fd0457d25ac34ae",
+    "url": "/swyfft-prototype/static/media/careers-illustration.29eb3c80.png"
   },
   {
     "revision": "93c940d8ad17c64874f9438a8ad98b01",
