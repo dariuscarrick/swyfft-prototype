@@ -1,9 +1,11 @@
 import React from 'react';
 import {Helmet} from 'react-helmet';
 import {Container, Row, Col} from 'react-bootstrap';
+import {AboveGridXs, GridXs} from '../component-assets/media-queries/media-queries';
 import './careers.scss';
 import {ReactComponent as ShieldLogo} from '../../assets/images/shield.svg';
 import CareersIllustration from '../../assets/images/careers-illustration.png';
+import CareersIllustrationMobile from '../../assets/images/careers-illustration-mobile.png';
 import {ReactComponent as Resume} from '../../assets/images/resume.svg';
 import {ReactComponent as Health} from '../../assets/images/health-coverage.svg';
 import {ReactComponent as Retirement} from '../../assets/images/401k.svg';
@@ -40,7 +42,12 @@ export default class Careers extends React.Component {
                                 <h2>Through a mix of big data, human ingenuity and imagination, our team is transforming the way people experience insurance. We’re looking for like-minded, self-motivated innovators to join us as we challenge the old way of doing business.</h2>
                             </Col>
                         </Row>
-                        <img className='careers-illustration' alt='Careers at Swyfft Insurance' src={CareersIllustration} />
+                        <AboveGridXs>
+                            <img className='careers-illustration' alt='Careers at Swyfft Insurance' src={CareersIllustration} />
+                        </AboveGridXs>
+                        <GridXs>
+                            <img className='careers-illustration' alt='Careers at Swyfft Insurance' src={CareersIllustrationMobile} />
+                        </GridXs>
                     </Container>
                 </section>
                 <section id='swyfft-job-listings'>
@@ -93,6 +100,7 @@ export default class Careers extends React.Component {
                         </Row>
                     </Container>
                 </section>
+                {/* TODO - remove when verified
                 <section id='open-application' className='careers-open-application'>
                     <Container fluid={true}>
                         <Row>
@@ -106,7 +114,7 @@ export default class Careers extends React.Component {
                             </Col>
                         </Row>
                     </Container>
-                </section>
+                </section> */}
                 <section id='swyfft-benefits'>
                     <Container className='benefits' fluid={true}>
                         <Row>
