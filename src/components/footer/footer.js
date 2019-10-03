@@ -20,7 +20,7 @@ class Footer extends React.Component {
                                 <ul className='footer-link-list'>
                                     <li>Swyfft</li>
                                     <li>About</li>
-                                    <li><Link to='/Careers'>Careers</Link></li>
+                                    <li><div onClick={() => window.location.reload()}><Link to='/Careers'>Careers</Link></div></li>
                                     <li>In the Press</li>
                                     <li>FAQs</li>
                                 </ul>

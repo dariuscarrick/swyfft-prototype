@@ -318,7 +318,7 @@ class NavBar extends React.Component {
                       </li>
                       {!this.state.isLoggedIn ? 
                       <li>
-                        <Link to='/Careers' onClick={this.handleClickOutside}>Careers</Link>
+                        <div onClick={() => window.location.reload()}><Link to='/Careers' onClick={this.handleClickOutside}>Careers</Link></div>
                       </li> : null}
                       <li>
                         Contact Us
