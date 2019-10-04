@@ -72,7 +72,7 @@ export default class Careers extends React.Component {
                                 <aside className='open-app-actions'>
                                     <h2>Don't See Your Role?</h2>
                                     <p>Send us your resume and we’ll save it for when the perfect position comes up.</p>
-                                    <a href='mailto:careers@swyfft.com?subject=I want to work at Swyfft&body=My resume is attached.' className='apply-button'>Send Your Resume</a>
+                                    <a href='mailto:careers@swyfft.com?subject=I want to work at Swyfft&body=(Please attach your resume and tell us a bit about what you do. Thanks!)' className='apply-button'>Send Your Resume</a>
                                 </aside>
                             </Col>
                         </Row>
