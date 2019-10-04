@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d02e9781293d57e038e939346a93f6bd",
+    "revision": "f0d6cdc76cb6af894d865ffc070a32e8",
     "url": "/swyfft-prototype/index.html"
   },
   {
-    "revision": "1f31f92b982be130b2c8",
-    "url": "/swyfft-prototype/static/css/main.8a79307e.chunk.css"
+    "revision": "c87c46896dee35fe1e32",
+    "url": "/swyfft-prototype/static/css/main.19e68a06.chunk.css"
   },
   {
     "revision": "918de2635f39d36b2f0d",
     "url": "/swyfft-prototype/static/js/2.ca0647bc.chunk.js"
   },
   {
-    "revision": "1f31f92b982be130b2c8",
-    "url": "/swyfft-prototype/static/js/main.b6da0e8f.chunk.js"
+    "revision": "c87c46896dee35fe1e32",
+    "url": "/swyfft-prototype/static/js/main.fe7b10a4.chunk.js"
   },
   {
     "revision": "fdf1ed0a63bcbf6fd616",
@@ -94,6 +94,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "92dc2b11358f1179bb93a29b24d4f7a2",
     "url": "/swyfft-prototype/static/media/remote-work.92dc2b11.svg"
+  },
+  {
+    "revision": "f9c6eb25ea2349e80fba541ead79f65e",
+    "url": "/swyfft-prototype/static/media/resume.f9c6eb25.svg"
   },
   {
     "revision": "6c5d25bf1cfb1b1e9210597505a597dc",
