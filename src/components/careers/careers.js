@@ -6,7 +6,7 @@ import './careers.scss';
 import {ReactComponent as ShieldLogo} from '../../assets/images/shield.svg';
 import CareersIllustration from '../../assets/images/careers-illustration.png';
 import CareersIllustrationMobile from '../../assets/images/careers-illustration-mobile.png';
-// import {ReactComponent as Resume} from '../../assets/images/resume.svg';
+import {ReactComponent as Resume} from '../../assets/images/resume.svg';
 import {ReactComponent as Health} from '../../assets/images/health-coverage.svg';
 import {ReactComponent as Retirement} from '../../assets/images/401k.svg';
 import {ReactComponent as PTO} from '../../assets/images/pto.svg';
@@ -60,47 +60,10 @@ export default class Careers extends React.Component {
                         <Row>
                             <Col sm={{span: 10, offset: 1}} lg={{span: 8, offset: 2}}>
                                 <div id='BambooHR-ATS'></div>
-                                
-                                {/* TODO: Remove once script is verified
-
-                                    <div class="BambooHR-ATS-board">
-                                    <ul class="BambooHR-ATS-Department-List">
-                                        <li id="bhrDepartmentID_18439" class="BambooHR-ATS-Department-Item">
-                                            <div id="department_18439"class="BambooHR-ATS-Department-Header">Customer Support</div>
-                                            <ul class="BambooHR-ATS-Jobs-List">
-                                                <li id="bhrPositionID_28" class="BambooHR-ATS-Jobs-Item">
-                                                    <a href="//swyfft.bamboohr.com/jobs/view.php?id=28">Customer Service Supervisor</a>
-                                                    <span class="BambooHR-ATS-Location">Jacksonville, Florida</span>
-                                                </li>
-                                                <li id="bhrPositionID_28" class="BambooHR-ATS-Jobs-Item">
-                                                    <a href="//swyfft.bamboohr.com/jobs/view.php?id=28">Lead Poetry Analyst</a>
-                                                    <span class="BambooHR-ATS-Location">Jacksonville, Florida</span>
-                                                </li>
-                                                <li id="bhrPositionID_28" class="BambooHR-ATS-Jobs-Item">
-                                                    <a href="//swyfft.bamboohr.com/jobs/view.php?id=28">Bilbo Baggins Look-alike</a>
-                                                    <span class="BambooHR-ATS-Location">Morristown, New Jersey</span>
-                                                </li>
-                                                <li id="bhrPositionID_28" class="BambooHR-ATS-Jobs-Item">
-                                                    <a href="//swyfft.bamboohr.com/jobs/view.php?id=28">Senior iOS Developer</a>
-                                                    <span class="BambooHR-ATS-Location">Redmond, WA</span>
-                                                </li>
-                                                <li id="bhrPositionID_28" class="BambooHR-ATS-Jobs-Item">
-                                                    <a href="//swyfft.bamboohr.com/jobs/view.php?id=28">Junior Software Developer</a>
-                                                    <span class="BambooHR-ATS-Location">Redmond, WA</span>
-                                                </li>
-                                                <li id="bhrPositionID_28" class="BambooHR-ATS-Jobs-Item">
-                                                    <a href="//swyfft.bamboohr.com/jobs/view.php?id=28">Claims Manager</a>
-                                                    <span class="BambooHR-ATS-Location">Morristown, NJ</span>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </div> */}
                             </Col>
                         </Row>
                     </Container>
                 </section>
-                {/* TODO - remove when verified
                 <section id='open-application' className='careers-open-application'>
                     <Container fluid={true}>
                         <Row>
@@ -109,12 +72,12 @@ export default class Careers extends React.Component {
                                 <aside className='open-app-actions'>
                                     <h2>Don't See Your Role?</h2>
                                     <p>Send us your resume and we’ll save it for when the perfect position comes up.</p>
-                                    <button className='apply-button'>Apply Now</button>
+                                    <a href='mailto:careers@swyfft.com?subject=I want to work at Swyfft&body=My resume is attached.' className='apply-button'>Send Your Resume</a>
                                 </aside>
                             </Col>
                         </Row>
                     </Container>
-                </section> */}
+                </section>
                 <section id='swyfft-benefits'>
                     <Container className='benefits' fluid={true}>
                         <Row>
@@ -144,7 +107,7 @@ export default class Careers extends React.Component {
                                     <PTO />
                                     <div className='benefit-text'>
                                         <h3>Paid Time Off</h3>
-                                        <p>We understand that work life balance is important, so we provide a generous PTO policy, eleven paid holidays and a "choose your own adventure" day.</p>  
+                                        <p>We understand that work life balance is important, so we provide a generous PTO policy with eleven paid holidays and a "choose your own adventure" day.</p>  
                                     </div>                                    
                                 </article>
 
@@ -168,7 +131,7 @@ export default class Careers extends React.Component {
                                     <RemoteWork />
                                     <div className='benefit-text'>
                                         <h3>Remote Work Options</h3>
-                                        <p>One third of our company works remotely. Depending on what your job is a remote work options might be available. </p>
+                                        <p>One third of our company works remotely. Depending on what your job is a remote work option might be available.</p>
                                     </div>
                                 </article>
                             </Col>

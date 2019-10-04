@@ -182,6 +182,7 @@
                 &:hover {
                     @include secondary-button($white, $light-green, $light-green);
                     padding: 8px 32px;
+                    text-decoration: none;
                 }
             }
         }
