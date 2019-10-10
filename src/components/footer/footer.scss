@@ -4,14 +4,8 @@
     background-color: $light-gray-2;
     padding: 56px 0 80px 0;
 
-    .shield-logo {
-        @include flex-basis($value: 10%);
-
-        @media #{$grid-xs, $grid-sm} {
-            @include flex-basis($value: 100%);
-            max-height: 56px;
-            margin: 0 0 32px 0;
-        }
+    @media #{$grid-sm} {
+        padding: 24px 0 80px 0;
     }
 
     .footer-links-col {
@@ -51,11 +45,11 @@
         }
 
         @media #{$grid-sm} {
-            margin: 40px;
-            @include flex-basis($value: 25%);
+            margin: 24px;
+            @include flex-basis($value: 35%);
 
             &:last-child {
-                @include flex-basis($value: 60%);
+                @include flex-basis($value: 76%);
             }
         }
 
@@ -130,34 +124,47 @@
         }
     }
 
-    .accolades-container {
+    .logo-rating-container {
         @include flex-display;
-        @include flex-flow($values: (row nowrap));
+        @include flex-flow($values: row nowrap);
         @include justify-content($value: center);
         @include align-items($value: center);
-        margin: 72px 0 0 0;
+        margin: 40px 0 0 0;
 
         @media #{$grid-xs, $grid-sm} {
-            margin: 56px 0 0 0;
+            margin: 0;
         }
 
-        svg {
-            margin: 0 32px;
-            opacity: 0.8;
+        .shield-logo {
+            max-height: 40px;
+            margin: 0 16px 0 0;
+        }
 
-            @media #{$grid-xs} {
-                margin: 0 16px;
+        .rating-badge {
+            @include flex-display;
+            @include justify-content($value: flex-start);
+            @include align-items($value: center);
+            
+            border-left: 1px ridge $brand-green;
+            padding: 0 0 0 16px;
+    
+            .am-best-rating {
+                @include h1-hero($dark-gray-2);
+                line-height: 0.9;
+                margin: 0 8px 0 0;
             }
-
-            &:first-child {
-                padding: 0 0 16px 0;
+    
+            .am-best-tag {
+                @include p-body-2($dark-gray-2);
+                line-height: 1.1;
+                font-weight: 700;
             }
         }
     }
 
     .copyright-line {
         @include p-body-2($dark-gray-1);
-        margin: 40px 0 0 0;
+        margin: 24px 0 0 0;
         text-align: center;
 
         a {
