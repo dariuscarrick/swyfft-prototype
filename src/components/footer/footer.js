@@ -16,7 +16,6 @@ class Footer extends React.Component {
                     <Row>
                         <Col lg={12} className='footer-links-col'>
                             <div className='footer-link-lists-container'>
-                                <Shield className='shield-logo' />
                                 <ul className='footer-link-list'>
                                     <li>Swyfft</li>
                                     <li>About</li>
@@ -54,13 +53,18 @@ class Footer extends React.Component {
                             </div>
                         </Col>
                     </Row>
-                    {/* <Row>
-                        <Col xs={12} className='accolades-container'>
-                            <TrustedChoice />
-                            <AMBest />
-                            <BBB />
+                    <Row>
+                        <Col xs={12} className='logo-rating-container'>
+                            <Shield className='shield-logo' />
+                            <div className='rating-badge'>
+                                <h2 className='am-best-rating'>A-</h2>
+                                <div>
+                                    <p className='am-best-tag'>Excellent</p>
+                                    <p className='am-best-tag'>Rated by AM Best</p>
+                                </div>
+                            </div>
                         </Col>
-                    </Row> */}
+                    </Row>
                     <Row>
                         <Col xs={12}>
                             <p className='copyright-line'>© <Moment format='YYYY' /> Swyfft® , LLC. All Rights Reserved. <a href='swyfft.com'>Terms</a> • <a href='swyfft.com'>Privacy Policy</a></p>
