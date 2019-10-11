@@ -129,7 +129,7 @@
 
     .logo-rating-container {
         @include flex-display;
-        @include flex-flow($values: row nowrap);
+        @include flex-flow($values: column nowrap);
         @include justify-content($value: center);
         @include align-items($value: center);
         margin: 40px 0 0 0;
@@ -144,9 +144,7 @@
         }
 
         .rating-badge {
-            
-            border-left: 1px ridge $medium-gray-2;
-            padding: 0 0 0 16px;
+            padding: 16px 0 0 0;
     
             .am-best-rating {
                 @include h2-hero($dark-gray-2);

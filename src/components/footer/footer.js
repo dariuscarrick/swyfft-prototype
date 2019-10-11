@@ -57,8 +57,7 @@ class Footer extends React.Component {
                         <Col xs={12} className='logo-rating-container'>
                             <Shield className='shield-logo' />
                             <div className='rating-badge'>
-                                <h2 className='am-best-rating'>A- Excellent</h2>
-                                <p className='am-best-tag'>Rated by AM Best</p>
+                                <p className='am-best-tag'>Coverage through Swyfft is rated A- Excellent by A.M. Best Company</p>
                             </div>
                         </Col>
                     </Row>
