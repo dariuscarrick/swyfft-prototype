@@ -1,19 +1,20 @@
-// Translucent Colors
-$transparent: transparent;
-$translucent-dark-purple: rgba(27, 24, 33, .95);
-
-// Grayscale Colors
+// 01 - Grayscale Colors
 $white: #ffffff;
+$true-white: $white !important; //used only for highlight and modal bkg
 $light-gray-1: #fafbfc;
 $light-gray-2: #f2f4f5;
+$light-gray-3: #e8eaeb;
 $medium-gray-1: #e4e4e4;
 $medium-gray-2: #cccccc;
 $medium-gray-3: #abaab2;
+$medium-gray-4: #b1b1b1;
+$medium-gray-5: #abaab2;
 $dark-gray-1: #979899;
 $dark-gray-2: #555555;
 $black: #000000;
+$true-black: $black !important;
 
-// Primary Brand Colors
+// 02 - Primary Brand Colors
 $light-green: #adcc66;
 $brand-green: #8fbf21;
 $medium-green: #7ea81d;
@@ -21,19 +22,27 @@ $dark-green-1: #638601;
 $dark-green-2: #4e6b0b;
 $dark-green-3: #273803;
 
-// Secondary Brand Colors
+// 03 - Secondary Brand Colors
 $light-purple-1: #eeedf2;
 $light-purple-2: #d9d9e9;
 $medium-purple-1: #c5c8d7;
 $medium-purple-2: #8489a3;
+$medium-purple-3: #686571;
 $dark-purple-1: #302c3c;
 $dark-purple-2: #1B1821;
 
-// UI Status Colors
+// 04 - UI Status Colors
 $light-red: #f0717f;
 $light-yellow: #ffc42e;
+$swyfft-candy-stripe: repeating-linear-gradient( 45deg, $brand-green, $brand-green 5px, #b6d966 5px, #b6d966 10px );
+$swyfft-green-disabled: #749D17;
+$swyfft-green-active: lighten($brand-green, 45%);
 
-// Shadows
+// 06 - Translucent Colors
+$transparent: transparent;
+$translucent-dark-purple: rgba(27, 24, 33, .95);
+
+// 07 - Shadows
 $light-box-shadow: -2px 2px 5px -3px $medium-gray-2;
 $dark-box-shadow: -2px 2px 5px -3px rgba(0, 0, 0, .5);
 $dark-green-box-shadow: -2px 2px 4px -3px $dark-green-1;

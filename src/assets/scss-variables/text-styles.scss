@@ -1,130 +1,208 @@
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,900&display=swap');
 
-// Jumbo Font Styles
+// * 01 - COMMON TYPOGRAPHY VARIABLES *
+
+// A - Font family variables
+$lato-font-family: "Lato", sans-serif;
+
+// B - Font size variables
+$font-large-4: 60px;
+$font-large-3: 56px;
+$font-large-2: 42px;
+$font-large-1: 40px;
+$font-medium-3: 32px;
+$font-medium-2: 24px;
+$font-medium-1: 18px;
+$font-small-3: 16px;
+$font-small-2: 14px;
+$font-small-1: 12px;
+
+// C - Font weight variables
+$font-weight-black: 900;
+$font-weight-bold: 700;
+$font-weight-regular: 400;
+$font-weight-light: 300;
+
+// C - Line height variables
+$line-height-large-3: 2;
+$line-height-large-2: 1.5;
+$line-height-large-1: 1.43;
+$line-height-medium-4: 1.38;
+$line-height-medium-3: 1.3;
+$line-height-medium-2: 1.25;
+$line-height-medium-1: 1.17;
+$line-height-small-2: 1.14;
+$line-height-small-1: 1.11;
+$line-height-base: 1;
+
+// D - Letter spacing variables
+$letter-spacing-extra-large: 4px;
+$letter-spacing-large: 3px;
+$letter-spacing-medium: 0.5px;
+$letter-spacing-small-2: 0.4px;
+$letter-spacing-small-1: 0.3px;
+
+
+// * 02 - COMMERCIAL TYPOGRAPHY MIXINS *
+
+// A - Jumbo Headings
 @mixin h1-jumbo($color) {
-    font-family: 'Lato', sans-serif;
-    font-size: 56px;
-    font-weight: 900;
+    font-family: $lato-font-family;
+    font-size: $font-large-4;
+    font-weight: $font-weight-black;
     font-style: normal;
     font-stretch: normal;
-    line-height: 1;
-    letter-spacing: 0.3px;
+    line-height: $line-height-base;
+    letter-spacing: $letter-spacing-small-1;
     color: $color;
+    text-transform: unset;
+
+    @media #{$grid-xs, $grid-sm} {
+        font-size: $font-medium-2;
+    }
 }
 
 @mixin h2-jumbo($color) {
-    font-family: 'Lato', sans-serif;
-    font-size: 40px;
-    font-weight: 900;
+    font-family: $lato-font-family;
+    font-size: $font-large-1;
+    font-weight: $font-weight-black;
     font-style: normal;
     font-stretch: normal;
-    line-height: 1.2;
-    letter-spacing: 0.3px;
+    line-height: $line-height-medium-1;
+    letter-spacing: $letter-spacing-small-1;
     color: $color;
+    text-transform: unset;
 }
 
-// Hero Font Styles
+// B - Hero Headings
 @mixin h1-hero($color) {
-    font-family: 'Lato', sans-serif;
-    font-size: 32px;
-    font-weight: 900;
+    font-family: $lato-font-family;
+    font-size: $font-medium-3;
+    font-weight: $font-weight-black;
     font-style: normal;
     font-stretch: normal;
-    line-height: 1.1;
-    letter-spacing: 0.3px;
+    line-height: $line-height-small-2;
+    letter-spacing: $letter-spacing-small-1;
     color: $color;
+    text-transform: unset;
+
+    @media #{$grid-xs, $grid-sm} {
+        font-size: $font-medium-2;
+    }
 }
 
 @mixin h2-hero($color) {
-    font-family: 'Lato', sans-serif;
-    font-size: 24px;
-    font-weight: 900;
+    font-family: $lato-font-family;
+    font-size: $font-medium-2;
+    font-weight: $font-weight-black;
     font-style: normal;
     font-stretch: normal;
-    line-height: 1.2;
-    letter-spacing: 0.3px;
+    line-height: $line-height-medium-1;
+    letter-spacing: $letter-spacing-small-1;
     color: $color;
+    text-transform: unset;
 }
 
-// Body Font Styles
+// C - Body Headings
 @mixin h1-body($color) {
-    font-family: 'Lato', sans-serif;
-    font-size: 24px;
-    font-weight: 400;
+    font-family: $lato-font-family;
+    font-size: $font-medium-2;
+    font-weight: $font-weight-regular;
     font-style: normal;
     font-stretch: normal;
-    line-height: 1.2;
-    letter-spacing: 0.3px;
+    line-height: $line-height-medium-1;
+    letter-spacing: $letter-spacing-small-1;
     color: $color;
+    text-transform: unset;
 }
 
 @mixin h2-body($color) {
-    font-family: 'Lato', sans-serif;
-    font-size: 18px;
-    font-weight: 900;
+    font-family: $lato-font-family;
+    font-size: $font-medium-1;
+    font-weight: $font-weight-bold;
     font-style: normal;
     font-stretch: normal;
-    line-height: 1.2;
-    letter-spacing: 0.3px;
+    line-height: $line-height-small-1;
+    letter-spacing: $letter-spacing-small-1;
     color: $color;
+    text-transform: unset;
 }
 
 @mixin h3-body($color) {
-    font-family: 'Lato', sans-serif;
-    font-size: 16px;
-    font-weight: 900;
+    font-family: $lato-font-family;
+    font-size: $font-small-3;
+    font-weight: $font-weight-black;
     font-style: normal;
     font-stretch: normal;
-    line-height: 1.2;
-    letter-spacing: 0.3px;
+    line-height: $line-height-medium-2;
+    letter-spacing: $letter-spacing-small-1;
     color: $color;
+    text-transform: unset;
 }
 
 @mixin h4-body($color) {
-    font-family: 'Lato', sans-serif;
-    font-size: 14px;
-    font-weight: 900;
+    font-family: $lato-font-family;
+    font-size: $font-small-3;
+    font-weight: $font-weight-bold;
     font-style: normal;
     font-stretch: normal;
-    line-height: 1.2;
-    letter-spacing: 0.6px;
+    line-height: $line-height-small-2;
+    letter-spacing: $letter-spacing-medium;
     color: $color;
+    text-transform: unset;
 }
 
-@mixin p-body-1($color) {
-    font-family: 'Lato', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
+@mixin h5-body($color) {
+    font-family: $lato-font-family;
+    font-size: $font-small-2;
+    font-weight: $font-weight-black;
     font-style: normal;
     font-stretch: normal;
-    line-height: 1.4;
-    letter-spacing: 0.3px;
+    line-height: $line-height-small-2;
+    letter-spacing: $letter-spacing-medium;
     color: $color;
+    text-transform: unset;
+}
+
+// D - Body Copy
+@mixin p-body-1($color) {
+    font-family: $lato-font-family;
+    font-size: $font-small-3;
+    font-weight: $font-weight-regular;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: $line-height-medium-4;
+    letter-spacing: $letter-spacing-small-1;
+    color: $color;
+    text-transform: unset;
 }
 
 @mixin p-body-2($color) {
-    font-family: 'Lato', sans-serif;
-    font-size: 14px;
-    font-weight: 400;
+    font-family: $lato-font-family;
+    font-size: $font-small-2;
+    font-weight: $font-weight-regular;
     font-style: normal;
     font-stretch: normal;
-    line-height: 1.4;
-    letter-spacing: 0.3px;
+    line-height: $line-height-large-1;
+    letter-spacing: $letter-spacing-small-1;
     color: $color;
+    text-transform: unset;
 }
 
 @mixin p-body-3($color) {
-    font-family: 'Lato', sans-serif;
-    font-size: 12px;
-    font-weight: 400;
+    font-family: $lato-font-family;
+    font-size: $font-small-1;
+    font-weight: $font-weight-regular;
     font-style: normal;
     font-stretch: normal;
-    line-height: 1.5;
-    letter-spacing: 0.3px;
+    line-height: $line-height-large-2;
+    letter-spacing: $letter-spacing-small-1;
     color: $color;
+    text-transform: unset;
 }
 
+// E - Button Labels
 // Button Text Styles
 @mixin primary-button-text($color) {
     @include p-body-3($color);
@@ -138,4 +216,208 @@
     @include p-body-1($color);
     line-height: 1;
     font-weight: 700;
+}
+
+// * 03 - HOMEOWNERS TYPOGRAPHY MIXINS *
+
+// A - Jumbo Headers
+@mixin ho-h1-jumbo($color) {
+  font-family: $lato-font-family;
+  font-size: $font-large-4;
+  font-weight: $font-weight-black;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: $line-height-small-1;
+  letter-spacing: $letter-spacing-extra-large;
+  color: $color;
+}
+
+// B - Hero Headers
+@mixin ho-h1-hero($color) {
+  font-family: $lato-font-family;
+  font-size: $font-large-2;
+  font-weight: $font-weight-black;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: $line-height-small-1;
+  letter-spacing: $letter-spacing-small-1;
+  color: $color;
+}
+
+// C - Body Headers
+@mixin ho-h1-body($color) {
+  font-family: $lato-font-family;
+  font-size: $font-medium-3;
+  font-weight: $font-weight-black;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: $line-height-small-1;
+  letter-spacing: $letter-spacing-small;
+  color: $color;
+}
+
+@mixin ho-h2-body($color) {
+  font-family: $lato-font-family;
+  font-size: $font-medium-2;
+  font-weight: $font-weight-black;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: $line-height-small-1;
+  letter-spacing: $letter-spacing-small;
+  color: $color;
+}
+
+@mixin ho-h2-body-uppercase($color) {
+  font-family: $lato-font-family;
+  text-transform: uppercase;
+  font-size: $font-medium-2;
+  font-weight: $font-weight-black;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: $line-height-small-1;
+  letter-spacing: $letter-spacing-small-1;
+  color: $color;
+}
+
+@mixin ho-h3-body($color) {
+  font-family: $lato-font-family;
+  text-transform: uppercase;
+  font-size: $font-small-3;
+  font-weight: $font-weight-black;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: $line-height-large-3;
+  letter-spacing: $letter-spacing-small-2;
+  color: $color;
+}
+
+@mixin ho-h4-body($color) {
+  font-family: $lato-font-family;
+  text-transform: uppercase;
+  font-size: $font-small-3;
+  font-weight: $font-weight-regular;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: $line-height-small-1;
+  letter-spacing: $letter-spacing-extra-large;
+  color: $color;
+}
+
+@mixin ho-h5-body($color) {
+  font-family: $lato-font-family;
+  text-transform: uppercase;
+  font-size: $font-small-1;
+  font-weight: $font-weight-regular;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: $line-height-small-1;
+  letter-spacing: $letter-spacing-large;
+  color: $color;
+}
+
+// D - Body Copy
+@mixin ho-p-body-1($color) {
+  font-family: $lato-font-family;
+  font-size: $font-small-3;
+  font-weight: $font-weight-regular;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: $line-height-large-2;
+  letter-spacing: $letter-spacing-small-1;
+  color: $color;
+}
+
+@mixin ho-p-body-2($color) {
+  font-family: $lato-font-family;
+  font-size: $font-small-2;
+  font-weight: $font-weight-regular;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: $line-height-large-2;
+  letter-spacing: $letter-spacing-small-1;
+  color: $color;
+}
+
+@mixin ho-p-body-3($color) {
+  font-family: $lato-font-family;
+  font-size: $font-small-1;
+  font-weight: $font-weight-regular;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: $line-height-large-2;
+  letter-spacing: $letter-spacing-small-1;
+  color: $color;
+}
+
+// E - Input Text
+@mixin ho-input-label-text($color) {
+  font-family: $lato-font-family;
+  text-transform: uppercase;
+  font-size: $font-small-1;
+  font-weight: $font-weight-regular;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: $line-height-medium-4;
+  letter-spacing: $letter-spacing-extra-large;
+  color: $color;
+}
+
+@mixin ho-input-placeholder($color) {
+  font-family: $lato-font-family;
+  font-size: $font-small-3;
+  font-weight: $font-weight-regular;
+  font-style: italic;
+  font-stretch: normal;
+  line-height: $line-height-large-2;
+  letter-spacing: $letter-spacing-small-1;
+  color: $color;
+}
+
+@mixin ho-input-text($color) {
+  font-family: $lato-font-family;
+  font-size: $font-small-3;
+  font-weight: $font-weight-regular;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: $line-height-large-2;
+  letter-spacing: $letter-spacing-small-1;
+  color: $color;
+}
+
+// F - Button Text
+@mixin ho-button-default-text($color) {
+  font-family: $lato-font-family;
+  text-transform: uppercase;
+  font-size: $font-small-3;
+  font-weight: $font-weight-black;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: $line-height-large-2;
+  letter-spacing: $letter-spacing-extra-large;
+  color: $color;
+}
+
+@mixin ho-button-secondary-text($color) {
+  font-family: $lato-font-family;
+  text-transform: uppercase;
+  font-size: $font-small-3;
+  font-weight: $font-weight-regular;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: $line-height-medium-4;
+  letter-spacing: $letter-spacing-small-1;
+  color: $color;
+}
+
+// G - Quote Element Title
+@mixin ho-element-title($color) {
+  font-family: $lato-font-family;
+  text-transform: uppercase;
+  font-size: $font-small-3;
+  font-weight: $font-weight-regular;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: $line-height-large-2;
+  letter-spacing: $letter-spacing-large;
+  color: $color;
 }
